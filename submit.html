@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Partner with The Lonah Maiko Foundation to create sustainable development impact in communities.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <title>Partner With Us - The Lonah Maiko Foundation</title>
+</head>
+<body>
+    <header>
+        <div class="header-inner container">
+            <div class="logo">
+                <img src="Images/logo.png" alt="The Lonah Maiko Foundation Logo">
+                <span>The Lonah Maiko Foundation</span>
+            </div>
+            <nav class="main-nav">
+                <div class="nav-item dropdown">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="dropdown-menu dropdown-menu-featured">
+                        <div class="dropdown-header">Quick Links</div>
+                        <div class="dropdown-section">
+                            <a href="index.html#what-we-do" class="dropdown-link">Featured Programs</a>
+                            <a href="index.html#mission-vision" class="dropdown-link">Our Mission & Vision</a>
+                            <a href="index.html#board" class="dropdown-link">Meet Our Team</a>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-section">
+                            <a href="index.html#newsletters" class="dropdown-link">Newsletters</a>
+                            <a href="index.html#history" class="dropdown-link">Our Story</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <a href="about.html" class="dropdown-link">Who We Are</a>
+                            <a href="index.html#mission-vision" class="dropdown-link">Mission & Vision</a>
+                            <a href="index.html#board" class="dropdown-link">Leadership Team</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="education.html" class="nav-link">Education</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <a href="education.html" class="dropdown-link">Program Overview</a>
+                            <a href="sponsorship.html" class="dropdown-link">Student Sponsorship</a>
+                            <a href="young-women.html" class="dropdown-link">Young Women</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="health.html" class="nav-link">Health</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <a href="health.html" class="dropdown-link">Health Initiatives</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="wash.html" class="nav-link">WASH</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <a href="wash.html" class="dropdown-link">Water & Sanitation</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="news.html" class="nav-link">News</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <a href="news.html" class="dropdown-link">Project Updates</a>
+                            <a href="index.html#newsletters" class="dropdown-link">Newsletters</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <a href="contact.html" class="dropdown-link">Contact Form</a>
+                            <a href="contact.html" class="dropdown-link">Location & Hours</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="nav-link donate-btn">DONATE</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section container">
+            <h2 class="section-title">Partnership Form</h2>
+            <p class="section-subtitle">Interested in partnering with The Lonah Maiko Foundation? Tell us more about your organization and how we can work together.</p>
+            
+            <div class="form-container">
+                <form id="partnershipForm" method="POST" action="#" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="organizationName">Organization Name *</label>
+                        <input type="text" id="organizationName" name="organizationName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactName">Contact Person *</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address *</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number *</label>
+                        <input type="tel" id="contactPhone" name="contactPhone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="partnershipType">Partnership Type *</label>
+                        <select id="partnershipType" name="partnershipType" required>
+                            <option value="">Select Partnership Type</option>
+                            <option value="school">School/Educational Institution</option>
+                            <option value="business">Business/Corporate</option>
+                            <option value="ngo">NGO/Non-profit</option>
+                            <option value="community">Community Organization</option>
+                            <option value="individual">Individual Volunteer</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="focusArea">Focus Area of Interest *</label>
+                        <select id="focusArea" name="focusArea" required>
+                            <option value="">Select Focus Area</option>
+                            <option value="education">Education</option>
+                            <option value="health">Health</option>
+                            <option value="wash">WASH (Water, Sanitation, Hygiene)</option>
+                            <option value="all">All Programs</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Tell Us About Your Organization *</label>
+                        <textarea id="description" name="description" rows="5" required placeholder="Describe your organization, mission, and how you'd like to partner with us..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Partnership Inquiry *</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="What specific partnership or collaboration are you interested in?"></textarea>
+                    </div>
+
+                    <button type="submit" class="button">Send Partnership Request</button>
+                </form>
+                <p style="margin-top: 20px; font-size: 0.95em; color: #666; text-align: center;">
+                    We'll review your request and get back to you within 5 business days at the email or phone number provided.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner container">
+            <div class="footer-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="health.html" class="nav-link">Health</a>
+                <a href="wash.html" class="nav-link">WASH</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </div>
+            <div class="footer-copyright">© 2025 The Lonah Maiko Foundation. All rights reserved.</div>
+            <div class="social">
+                <a href="https://www.facebook.com/lonahmaiko" title="Facebook" target="_blank">Facebook</a>
+                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank">YouTube</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your interest in partnering with The Lonah Maiko Foundation! We will review your request and contact you shortly.');
+            document.getElementById('partnershipForm').reset();
+        }
+    </script>
+
+    <style>
+        .form-container {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 119, 190, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .button {
+            width: 100%;
+            padding: 1rem;
+            background: #218838;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #1a6b2c;
+        }
+    </style>
+</body>
+</html>
