@@ -35,6 +35,7 @@
                 <img src="Images/logo.png" alt="The Lonah Maiko Foundation Logo">
                 <span>The Lonah Maiko Foundation</span>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
             <nav class="main-nav">
                 <div class="nav-item dropdown">
                     <a href="index.html" class="nav-link">Home</a>
@@ -239,5 +240,46 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.main-nav');
+            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+            if (toggle) {
+                toggle.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+                });
+
+                dropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('.nav-link');
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth < 768) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('expanded');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('header')) {
+                        nav.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        dropdowns.forEach(d => d.classList.remove('expanded'));
+                    }
+                });
+
+                nav.querySelectorAll('a:not(.dropdown .nav-link)').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth < 768) {
+                            nav.classList.remove('active');
+                            toggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
