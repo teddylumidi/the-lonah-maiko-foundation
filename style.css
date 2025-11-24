@@ -639,6 +639,32 @@ main {
     }
 }
 
+.card-desc h5 {
+    color: var(--primary-dark);
+    font-size: 0.95em;
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.card-desc ul {
+    list-style-position: inside;
+    padding-left: 0;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.card-desc li {
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.card-desc p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
 .button-container {
     text-align: center;
     margin-top: 40px;
@@ -1548,4 +1574,16 @@ button {
 
 .card {
     min-height: 100px;
+}
+
+/* Clickable card title styling */
+.card-title-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-title-link:hover .card-title {
+    color: var(--primary);
+    text-decoration: underline;
 }
