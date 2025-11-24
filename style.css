@@ -99,11 +99,18 @@ button, a, .card, .dropdown-link {
 header {
     background: var(--primary);
     color: var(--text-light);
-    padding-top: 15px;
-    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 8px;
     border-bottom: 3px solid var(--primary);
     position: relative;
     z-index: 100;
+}
+
+@media (min-width: 768px) {
+    header {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
 }
 
 .header-inner {
@@ -123,16 +130,39 @@ header {
 }
 
 .logo img {
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 32px;
     margin-right: 8px;
 }
 
+@media (min-width: 768px) {
+    .logo img {
+        width: 50px;
+        height: 40px;
+    }
+}
+
 .logo span {
-    font-size: 1em;
+    font-size: 0.85em;
     font-weight: 700;
     color: var(--text-light);
     word-break: break-word;
+    line-height: 1.2;
+    max-width: 120px;
+}
+
+@media (min-width: 480px) {
+    .logo span {
+        font-size: 0.95em;
+        max-width: 140px;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo span {
+        font-size: 1em;
+        max-width: none;
+    }
 }
 
 /* Mobile-First Navigation - Hidden by default on mobile, visible on tablet+ */
