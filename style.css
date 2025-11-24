@@ -118,21 +118,28 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    flex-direction: row;
     flex: 1;
     min-width: 0;
+    gap: 6px;
 }
 
 .logo img {
-    width: 50px;
-    height: 40px;
-    margin-right: 8px;
+    width: 40px;
+    height: 32px;
+    margin-right: 0;
+    flex-shrink: 0;
 }
 
 .logo span {
     font-size: 1em;
     font-weight: 700;
     color: var(--text-light);
+    white-space: normal;
+    overflow-wrap: break-word;
     word-break: break-word;
+    max-width: 140px;
+    line-height: 1.1;
 }
 
 /* Mobile-First Navigation - Hidden by default on mobile, visible on tablet+ */
@@ -146,19 +153,24 @@ header {
     display: flex;
     position: relative;
     z-index: 100;
+     background: var(--primary);
+     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+     border-radius: 0 0 8px 8px;
+     padding: 0;
 }
 
 .main-nav.active {
     max-height: 600px;
+     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
 .nav-item {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     z-index: 100;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .nav-item.dropdown {
@@ -169,19 +181,19 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.85rem;
-    padding: 12px 15px;
+    font-size: 1em;
+    padding: 14px 18px;
     border-radius: 0;
     transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s;
-    opacity: 0.9;
-    display: block;
+    opacity: 0.95;
+    display: flex;
     white-space: nowrap;
     position: relative;
     z-index: 100;
     width: 100%;
-    min-height: 44px;
-    display: flex;
+    min-height: 48px;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .nav-item .nav-link:hover,
@@ -202,12 +214,12 @@ header {
 .dropdown-menu {
     position: static;
     display: none;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.08);
     box-shadow: none;
     border: none;
-    border-radius: 0;
+    border-radius: 0 0 8px 8px;
     min-width: auto;
-    padding: 0;
+    padding: 0 0 0 10px;
     opacity: 1;
     visibility: visible;
     transform: none;
@@ -217,6 +229,12 @@ header {
 
 .nav-item.dropdown.expanded > .dropdown-menu {
     display: block;
+    animation: dropdownFadeIn 0.2s;
+}
+
+@keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Tablet and Desktop Navigation */
@@ -418,12 +436,13 @@ header {
     }
 
     .logo img {
-        width: 60px;
-        height: 45px;
-        margin-right: 10px;
+        width: 50px;
+        height: 40px;
     }
-
     .logo span {
+        max-width: none;
+        font-size: 1em;
+    }
         font-size: 1.1em;
     }
 
