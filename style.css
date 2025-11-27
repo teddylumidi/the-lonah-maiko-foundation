@@ -161,6 +161,51 @@ header {
     }
 }
 
+@media (min-width: 768px) {
+    .logo {
+        max-width: none;
+        gap: 12px;
+    }
+    
+    .logo img {
+        width: 50px;
+        height: 40px;
+    }
+    
+    .logo span {
+        font-size: 1.1em;
+        max-width: none;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        background: linear-gradient(135deg, #fff 0%, #e8f4ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        max-width: none;
+        gap: 16px;
+    }
+    
+    .logo img {
+        width: 60px;
+        height: 48px;
+    }
+    
+    .logo span {
+        font-size: 1.3em;
+        font-weight: 800;
+        letter-spacing: 0.7px;
+        line-height: 1.3;
+        white-space: nowrap;
+    }
+}
+
 /* Mobile-First Navigation - Hidden by default on mobile, visible on tablet+ */
 .main-nav {
     max-height: 0;
