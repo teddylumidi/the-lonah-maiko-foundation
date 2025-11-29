@@ -220,11 +220,11 @@ header {
     left: 0;
     right: 0;
     z-index: 99;
-    background: rgba(26, 42, 74, 0.85);
+    background: linear-gradient(135deg, #0077BE 0%, #0055A4 100%);
     backdrop-filter: blur(8px);
     padding: 12px;
     border-radius: 0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -284,17 +284,15 @@ body.menu-open::before {
     align-items: center;
     justify-content: flex-start;
     letter-spacing: 0.5px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
     opacity: 1;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .nav-item .nav-link:hover,
 .nav-item .nav-link.active {
-    background: rgba(255, 255, 255, 0.15);
-    color: #FFD700;
+    background: rgba(255, 183, 3, 0.25);
+    color: #FFB703;
     transform: translateX(4px);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .nav-item.dropdown > .nav-link::after {
@@ -489,13 +487,12 @@ body.menu-open::before {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     opacity: 1;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .dropdown-link:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #FFD700;
-    border-left-color: #FFD700;
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFB703;
+    border-left-color: #FFB703;
     padding-left: 18px;
 }
 
