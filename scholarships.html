@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="About The Lonah Maiko Foundation - Learn about our mission, vision, and the impact we create.">
+    <meta name="description" content="Scholarships - Support students in Kenya through The Lonah Maiko Foundation's scholarship program.">
     <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
     <link rel="stylesheet" href="style.css">
-    <title>About Us - The Lonah Maiko Foundation</title>
+    <title>Scholarships - The Lonah Maiko Foundation</title>
     <script>
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -27,6 +27,165 @@
             document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
         }
     </script>
+    <style>
+        .scholarships-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Images/studentsponsorship.png');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .scholarships-hero h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .scholarships-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .scholarships-intro {
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .scholarships-intro p {
+            margin-bottom: 20px;
+        }
+
+        .section-box {
+            background-color: #f9f9f9;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            border-left: 5px solid #007bff;
+        }
+
+        .section-box h3 {
+            margin-top: 0;
+            color: #1a1a1a;
+            font-size: 1.5em;
+        }
+
+        .section-box p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .section-box ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section-box li {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .quote-box {
+            background-color: #efefef;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid #333;
+            font-style: italic;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .quote-attribution {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .scholarship-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .scholarship-card {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 25px;
+            border-radius: 5px;
+        }
+
+        .scholarship-card h4 {
+            color: #1a1a1a;
+            font-size: 1.3em;
+            margin-top: 0;
+        }
+
+        .scholarship-price {
+            color: #007bff;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .scholarship-card ul {
+            padding-left: 25px;
+        }
+
+        .scholarship-card li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .cta-button {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+        }
+
+        .disability-commitment {
+            background-color: #f0f0f0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+
+        .disability-commitment h4 {
+            color: #1a1a1a;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .scholarship-options {
+                grid-template-columns: 1fr;
+            }
+
+            .scholarships-hero h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -83,18 +242,18 @@
                 </div>
                 <div class="nav-item dropdown">
                     <a href="wash.html" class="nav-link">WASH</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <a href="wash.html" class="dropdown-link">Water & Sanitation</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="nav-item dropdown">
                     <a href="scholarships.html" class="nav-link">Scholarships</a>
                     <div class="dropdown-menu">
                         <div class="dropdown-section">
                             <a href="scholarships.html" class="dropdown-link">Scholarship Program</a>
                             <a href="scholarships.html#scholarship-options" class="dropdown-link">Scholarship Plans</a>
-                        </div>
-                    </div>
-                </div>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-section">
-                            <a href="wash.html" class="dropdown-link">Water & Sanitation</a>
                         </div>
                     </div>
                 </div>
@@ -119,67 +278,80 @@
                 <a href="donate.html" class="nav-link donate-btn">DONATE</a>
             </nav>
         </div>
-        <div class="hero">
-            <img src="Images/program-wash.png" alt="The Lonah Maiko Foundation">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h2>About The Lonah Maiko Foundation</h2>
-                <p style="color: #fff; font-size: 1.1em;">Transforming lives through education, health, and sustainable development</p>
+    </header>
+
+    <div class="scholarships-hero">
+        <h1>SCHOLARSHIPS</h1>
+    </div>
+
+    <main>
+        <div class="scholarships-content">
+            <div class="scholarships-intro">
+                <h2>Support Students in Kenya</h2>
+                <p>The Lonah Maiko Foundation currently has many needy students living in poverty whose lives would dramatically change with scholarship support.</p>
+            </div>
+
+            <div class="section-box">
+                <h3>Students Waiting for Scholarships</h3>
+                <p>For many, receiving a scholarship means that they can attend school and gain an education, rather than having to find work as a child labourer in tea plantations, quarries, or in other even less desirable circumstances such as the sex trade.</p>
+            </div>
+
+            <div class="quote-box">
+                <p>"For over a decade, education for girls has been identified as one of the best solutions to reversing the relentless trend of poverty and disease devastating large portions of sub-Saharan Africa."</p>
+                <div class="quote-attribution">— UN Chronicle</div>
+            </div>
+
+            <div class="section-box">
+                <h3>Our Commitment to Girls' Education</h3>
+                <p>The Lonah Maiko Foundation fully supports the United Nations emphasis on educating girls in Africa and encourages sponsors to support a girl's education through our program. Education is transformative—it breaks cycles of poverty and empowers women and girls to lead.</p>
+            </div>
+
+            <div class="disability-commitment">
+                <h4>Supporting Children with Disabilities</h4>
+                <p>The Lonah Maiko Foundation seeks to support children with disabilities to gain education and thereby increase their self-confidence and level of empowerment over their lives. We recognise the value of each individual, regardless of race, religion, ethnicity, indigeneity, disability, age, displacement, caste, gender, gender identity, sexuality, sexual orientation, poverty, class, or socio-economic status, and seek to enable achievement of their full potential.</p>
+            </div>
+
+            <div class="section-box">
+                <h3>What You'll Receive</h3>
+                <p>Scholarship donors receive a student profile, student school reports, and we encourage them to write to really get to know their child. This personal connection makes the impact even more meaningful.</p>
+            </div>
+
+            <div id="scholarship-options" class="scholarship-options">
+                <div class="scholarship-card">
+                    <h4>Standard Scholarship</h4>
+                    <div class="scholarship-price">$390/year</div>
+                    <p>Includes:</p>
+                    <ul>
+                        <li>A place in school for the year</li>
+                        <li>Full, new school uniform</li>
+                        <li>Stationery and exercise books</li>
+                    </ul>
+                </div>
+
+                <div class="scholarship-card">
+                    <h4>Scholarship Plus</h4>
+                    <div class="scholarship-price">$660/year</div>
+                    <p>Everything in Standard Scholarship, plus:</p>
+                    <ul>
+                        <li>Daily lunch at school for the student</li>
+                        <li>Additional $270/year for nutritional support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <h3>Important Update</h3>
+                <p>Due to the rapidly rising cost of living in Kenya, we have had to raise our scholarship fees for the first time in over 5 years. Your support is more critical than ever to ensure students can continue their education.</p>
+            </div>
+
+            <div class="section-box">
+                <h3>Payment Options</h3>
+                <p>Payment can be made as a lump sum or in monthly installments. A single receipt is issued at the end of the financial year for your records and tax purposes.</p>
+                <button class="cta-button" onclick="window.location.href='donate.html'">Support a Student Now</button>
             </div>
         </div>
-    </header>
-    <main>
-        <section class="section container">
-            <h3 class="section-title">Who We Are</h3>
-            <p style="text-align: center; color: #555; font-size: 1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-                The Lonah Maiko Foundation (LMF) is a community-centered organisation dedicated to improving the quality of life for children, families, and underserved communities in Kenya. Founded on the belief that every person deserves dignity, opportunity, and a healthy environment, LMF works to bridge gaps in Education, Health, and WASH (Water, Sanitation & Hygiene).
-We collaborate closely with schools, health facilities, local leaders, and partners to bring practical, sustainable solutions that directly transform lives. From supporting learners, promoting healthy communities, to advancing clean water and sanitation, our approach is rooted in compassion, transparency, and long-term impact.
-Guided by strong values and a passion for service, LMF continues to provide hope, empower communities, and create pathways for a brighter, more resilient future..
-            </p>
-        </section>
-        <section class="section container">
-            <h3 class="section-title">Our Mission & Vision</h3>
-            <div class="mission-vision-grid">
-                <div class="mission-box">
-                    <h4>Our Mission</h4>
-                    <p>To improve the quality of life for disadvantaged communities in Africa through integrated development programs that prioritize education, health, and environmental sustainability.</p>
-                </div>
-                <div class="vision-box">
-                    <h4>Our Vision</h4>
-                    <p>A future where every child has access to quality education, every community has access to healthcare and clean water, and sustainable development creates opportunity for all.</p>
-                </div>
-            </div>
-        </section>
-        <section class="section container">
-            <h3 class="section-title">Our Core Values</h3>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Compassion</div>
-                        <div class="card-desc">We genuinely care about the wellbeing of the communities we serve and approach our work with empathy and respect.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Integrity</div>
-                        <div class="card-desc">We operate with transparency, accountability, and ethical practices in all our programs and partnerships.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Sustainability</div>
-                        <div class="card-desc">We design programs that create lasting impact and empower communities to sustain progress over the long term.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Collaboration</div>
-                        <div class="card-desc">We work in partnership with communities, organizations, and stakeholders to achieve greater impact together.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
+
     <footer>
         <div class="footer-inner container">
             <div class="footer-links">
@@ -187,15 +359,6 @@ Guided by strong values and a passion for service, LMF continues to provide hope
                 <a href="education.html" class="nav-link">Education</a>
                 <a href="health.html" class="nav-link">Health</a>
                 <a href="wash.html" class="nav-link">WASH</a>
-                <div class="nav-item dropdown">
-                    <a href="scholarships.html" class="nav-link">Scholarships</a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-section">
-                            <a href="scholarships.html" class="dropdown-link">Scholarship Program</a>
-                            <a href="scholarships.html#scholarship-options" class="dropdown-link">Scholarship Plans</a>
-                        </div>
-                    </div>
-                </div>
                 <a href="contact.html" class="nav-link">Contact Us</a>
                 <a href="donate.html" class="nav-link">Donate</a>
             </div>
@@ -206,6 +369,7 @@ Guided by strong values and a passion for service, LMF continues to provide hope
             </div>
         </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const toggle = document.querySelector('.mobile-menu-toggle');
