@@ -215,25 +215,22 @@ header {
     flex-direction: column;
     gap: 8px;
     display: flex;
-    position: fixed;
-    top: 65px;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
     z-index: 99;
-    background: linear-gradient(135deg, #0077BE 0%, #0055A4 100%);
-    backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, #f0f7ff 0%, #e6f2ff 100%);
+    backdrop-filter: blur(10px);
     padding: 12px;
-    border-radius: 0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 16px rgba(0, 119, 190, 0.1);
+    pointer-events: auto;
+    opacity: 1;
 }
 
 .main-nav.active {
     max-height: 700px;
-    pointer-events: auto;
-    opacity: 1;
 }
 
 body::before {
@@ -268,7 +265,7 @@ body.menu-open::before {
 }
 
 .nav-item .nav-link {
-    color: #ffffff;
+    color: #003d7a;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95em;
@@ -284,14 +281,14 @@ body.menu-open::before {
     align-items: center;
     justify-content: flex-start;
     letter-spacing: 0.5px;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(0, 119, 190, 0.12);
     opacity: 1;
 }
 
 .nav-item .nav-link:hover,
 .nav-item .nav-link.active {
-    background: rgba(255, 183, 3, 0.25);
-    color: #FFB703;
+    background: linear-gradient(135deg, rgba(0, 119, 190, 0.25) 0%, rgba(0, 168, 232, 0.15) 100%);
+    color: #001f4d;
     transform: translateX(4px);
 }
 
@@ -477,7 +474,7 @@ body.menu-open::before {
 /* Mobile Dropdown Links */
 .dropdown-link {
     display: block;
-    color: #ffffff;
+    color: #003d7a;
     text-decoration: none;
     padding: 11px 18px;
     font-size: 0.9rem;
@@ -490,9 +487,9 @@ body.menu-open::before {
 }
 
 .dropdown-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #FFB703;
-    border-left-color: #FFB703;
+    background: rgba(0, 119, 190, 0.15);
+    color: #001f4d;
+    border-left-color: #0077BE;
     padding-left: 18px;
 }
 
