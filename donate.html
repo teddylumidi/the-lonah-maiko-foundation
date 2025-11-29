@@ -27,6 +27,173 @@
             document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
         }
     </script>
+    <style>
+        .donate-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Images/donate-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .donate-hero h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .donate-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .donate-intro {
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .donation-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .donation-method {
+            margin-bottom: 30px;
+        }
+
+        .donation-method h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .donation-method p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .donate-button {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .donate-button:hover {
+            background-color: #333;
+        }
+
+        .paypal-button {
+            margin-top: 10px;
+        }
+
+        .info-box {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+        }
+
+        .info-box h4 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .guarantee-section {
+            background-color: #f0f0f0;
+            padding: 30px;
+            margin-bottom: 50px;
+            border-radius: 5px;
+        }
+
+        .guarantee-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 40px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group.full {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            grid-column: 1 / -1;
+        }
+
+        .submit-btn {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .donation-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .donate-hero h1 {
+                font-size: 2em;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -110,119 +277,88 @@
                 <a href="donate.html" class="nav-link donate-btn">DONATE</a>
             </nav>
         </div>
-        <div class="hero">
-            <img src="Images/donate-hero.jpg" alt="Make a Donation">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h2>Make a Difference Today</h2>
-                <p style="color: #fff; font-size: 1.1em;">Your donation will transform lives in underserved communities</p>
+    </header>
+
+    <div class="donate-hero">
+        <h1>DONATE</h1>
+    </div>
+
+    <main>
+        <div class="donate-content">
+            <div class="donate-intro">
+                <h2>Donate</h2>
+                <p>The Lonah Maiko Foundation is recognized by the Australian Tax Office as a Public Benevolent Institution and endorsed as a deductible gift recipient (DGR) which means that all donations over $2 are claimable on your tax return.</p>
+            </div>
+
+            <div class="donation-methods">
+                <div class="donation-method">
+                    <h3>Credit Card</h3>
+                    <button class="donate-button">DONATE NOW</button>
+                </div>
+
+                <div class="donation-method">
+                    <h3>PayPal</h3>
+                    <form action="https://www.paypal.com/donate" method="post" target="_top" class="paypal-button">
+                        <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                    </form>
+                </div>
+            </div>
+
+            <div class="donation-methods">
+                <div class="info-box">
+                    <h4>Direct Deposit:</h4>
+                    <p><strong>Account Name:</strong> The Lonah Maiko Foundation</p>
+                    <p><strong>BSB:</strong> 12-345</p>
+                    <p><strong>Account Number:</strong> 16 833 0177</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>Cash or Cheque:</h4>
+                    <p><strong>PO Box 5431</strong></p>
+                    <p><strong>Weston Creek</strong></p>
+                    <p><strong>ACT 2600</strong></p>
+                </div>
+            </div>
+
+            <div class="guarantee-section">
+                <h3>Our Guarantee</h3>
+                <p>100% of money donated by donor schools in Australia and student sponsors goes to Africa to directly benefit the people or person for whom the money was donated.</p>
+            </div>
+
+            <div>
+                <h2>Contact Us</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <div>
+                            <label for="name">Name (required)</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email">Email (required)</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div>
+                            <label for="subject">Subject (required)</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                    </div>
+                    <div class="form-group full">
+                        <label for="message">Message (required)</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
             </div>
         </div>
-    </header>
-    <main>
-        <section class="section container">
-            <h3 class="section-title">Support Our Mission</h3>
-            <p class="section-subtitle">Your generosity makes it possible for us to provide education, health, and WASH services to vulnerable communities.</p>
-        </section>
-        <section class="section container">
-            <h3 class="section-title">Donation Options</h3>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">One-Time Donation</div>
-                        <p style="color: #666; margin-bottom: 20px;">Make a single contribution to support any of our programs.</p>
-                        <form style="text-align: left;">
-                            <label for="amount">Donation Amount (USD):</label>
-                            <input type="number" id="amount" name="amount" placeholder="Enter amount" value="50" min="1" style="margin-bottom: 15px;">
-                            <button type="submit" class="button" style="width: 100%; text-align: center;">Donate Now</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Monthly Giving</div>
-                        <p style="color: #666; margin-bottom: 20px;">Become a sustaining member with automatic monthly donations.</p>
-                        <form style="text-align: left;">
-                            <label for="monthly-amount">Monthly Amount (USD):</label>
-                            <input type="number" id="monthly-amount" name="monthly-amount" placeholder="Enter amount" value="30" min="1" style="margin-bottom: 15px;">
-                            <button type="submit" class="button" style="width: 100%; text-align: center;">Start Monthly Giving</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Sponsor a Student</div>
-                        <p style="color: #666; margin-bottom: 20px;">Invest in a student's future through our sponsorship program.</p>
-                        <a href="sponsorship.html" class="button" style="display: block; text-align: center; width: 100%;">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section container">
-            <h3 class="section-title">Where Your Donation Goes</h3>
-            <div class="mission-vision-grid">
-                <div class="mission-box">
-                    <h4>Education (40%)</h4>
-                    <p>Student scholarships, teacher training, school infrastructure, and educational materials to ensure quality education for all.</p>
-                </div>
-                <div class="vision-box">
-                    <h4>Health (30%)</h4>
-                    <p>Healthcare services, health education, maternal health programs, and medical supplies for vulnerable communities.</p>
-                </div>
-                <div class="mission-box">
-                    <h4>WASH (20%)</h4>
-                    <p>Water systems, sanitation facilities, and hygiene education programs to ensure safe water and sanitation.</p>
-                </div>
-                <div class="vision-box">
-                    <h4>Administration (10%)</h4>
-                    <p>Essential operational costs to ensure effective program management and transparency in fund utilization.</p>
-                </div>
-            </div>
-        </section>
-        <section class="section container">
-            <h3 class="section-title">Tax & Donation Information</h3>
-            <div class="policies-list">
-                <div class="policy-item">
-                    <h4>Tax-Deductible Donations</h4>
-                    <p>The Lonah Maiko Foundation is a registered non-profit organization. Your donation may be tax-deductible. Please consult your tax advisor or visit our organization page for details.</p>
-                </div>
-                <div class="policy-item">
-                    <h4>Secure Donations</h4>
-                    <p>All donations are processed securely through our trusted payment partners. We use industry-standard encryption to protect your financial information.</p>
-                </div>
-                <div class="policy-item">
-                    <h4>Transparency & Impact</h4>
-                    <p>We are committed to transparency. Receive regular updates on how your donation is being used and the impact you're making in communities.</p>
-                </div>
-            </div>
-        </section>
-        <section class="section container">
-            <h3 class="section-title">Other Ways to Support</h3>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Volunteer</div>
-                        <div class="card-desc">Share your skills and expertise by volunteering with our programs or helping with fundraising events.</div>
-                        <a href="get-involved-personal.html" class="button" style="margin-top: 15px; display: inline-block;">Get Involved</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Partner With Us</div>
-                        <div class="card-desc">Organizations can partner with us for corporate social responsibility initiatives and fundraising campaigns.</div>
-                        <a href="get-involved-business.html" class="button" style="margin-top: 15px; display: inline-block;">Learn More</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-title">Host an Event</div>
-                        <div class="card-desc">Organize fundraising events at your school, workplace, or community to support our programs.</div>
-                        <a href="get-involved-events.html" class="button" style="margin-top: 15px; display: inline-block;">View Events</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
+
     <footer>
         <div class="footer-inner container">
             <div class="footer-links">
@@ -240,6 +376,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const toggle = document.querySelector('.mobile-menu-toggle');
