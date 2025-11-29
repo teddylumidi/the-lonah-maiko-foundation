@@ -201,6 +201,7 @@ Guided by strong values and a passion for service, LMF continues to provide hope
                 toggle.addEventListener('click', function(e) {
                     e.stopPropagation();
                     nav.classList.toggle('active');
+                    document.body.classList.toggle('menu-open');
                     toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
                 });
 
@@ -220,6 +221,7 @@ Guided by strong values and a passion for service, LMF continues to provide hope
                     const isClickInside = toggle.contains(e.target) || nav.contains(e.target);
                     if (!isClickInside && nav.classList.contains('active')) {
                         nav.classList.remove('active');
+                        document.body.classList.remove('menu-open');
                         toggle.setAttribute('aria-expanded', 'false');
                         dropdowns.forEach(d => d.classList.remove('expanded'));
                     }
@@ -231,6 +233,7 @@ Guided by strong values and a passion for service, LMF continues to provide hope
                     link.addEventListener('click', function() {
                         if (window.innerWidth < 768) {
                             nav.classList.remove('active');
+                            document.body.classList.remove('menu-open');
                             toggle.setAttribute('aria-expanded', 'false');
                             dropdowns.forEach(d => d.classList.remove('expanded'));
                         }
@@ -241,6 +244,7 @@ Guided by strong values and a passion for service, LMF continues to provide hope
                 window.addEventListener('resize', function() {
                     if (window.innerWidth >= 768) {
                         nav.classList.remove('active');
+                        document.body.classList.remove('menu-open');
                         toggle.setAttribute('aria-expanded', 'false');
                         dropdowns.forEach(d => d.classList.remove('expanded'));
                     }
