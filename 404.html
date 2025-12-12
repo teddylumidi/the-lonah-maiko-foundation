@@ -17,13 +17,14 @@
                 <img src="Images/logo.png" alt="The Lonah Maiko Foundation Logo">
                 <span>The Lonah Maiko Foundation</span>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
             <nav class="main-nav">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
                 <a href="education.html" class="nav-link">Education</a>
                 <a href="health.html" class="nav-link">Health</a>
                 <a href="wash.html" class="nav-link">WASH</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="scholarships.html" class="nav-link">Scholarships</a>
+                <a href="news.html" class="nav-link">News</a>
                 <a href="donate.html" class="nav-link donate-btn">DONATE</a>
             </nav>
         </div>
@@ -43,11 +44,55 @@
                 <a href="education.html" class="nav-link">Education</a>
                 <a href="health.html" class="nav-link">Health</a>
                 <a href="wash.html" class="nav-link">WASH</a>
-                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="scholarships.html" class="nav-link">Scholarships</a>
+                <a href="news.html" class="nav-link">News</a>
                 <a href="donate.html" class="nav-link">Donate</a>
             </div>
             <div class="footer-copyright">© 2025 The Lonah Maiko Foundation. All rights reserved.</div>
+            <div class="social">
+                <a href="https://www.facebook.com/lonahmaiko" title="Facebook" target="_blank" rel="noopener noreferrer" class="social-icon facebook-icon">f</a>
+                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon">▶</a>
+            </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.main-nav');
+
+            if (toggle) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    nav.classList.toggle('active');
+                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+                });
+
+                document.addEventListener('click', function(e) {
+                    const isClickInside = toggle.contains(e.target) || nav.contains(e.target);
+                    if (!isClickInside && nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                const regularLinks = nav.querySelectorAll('.nav-link');
+                regularLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth < 768) {
+                            nav.classList.remove('active');
+                            toggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 768) {
+                        nav.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
