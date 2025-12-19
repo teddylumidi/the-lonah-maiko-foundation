@@ -19,11 +19,23 @@
             <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
                                                 <nav class="main-nav">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="education.html" class="nav-link">Education</a>
-                <a href="health.html" class="nav-link">Health</a>
-                <a href="wash.html" class="nav-link">WASH</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Programs</a>
+                    <div class="dropdown-menu">
+                        <a href="education.html" class="dropdown-link">Education</a>
+                        <a href="health.html" class="dropdown-link">Health</a>
+                        <a href="wash.html" class="dropdown-link">WASH</a>
+                    </div>
+                </div>
                 <a href="scholarships.html" class="nav-link">Scholarships</a>
                 <a href="news.html" class="nav-link">News</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">About</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-link">About Us</a>
+                        <a href="contact.html" class="dropdown-link">Contact</a>
+                    </div>
+                </div>
                 <a href="donate.html" class="nav-link donate-btn">DONATE</a>
             </nav>
         </div>
@@ -66,6 +78,19 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Active state
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                    // If it's a dropdown link, also activate parent
+                    const parentDropdown = link.closest('.nav-item.dropdown');
+                    if (parentDropdown) {
+                        parentDropdown.querySelector('.nav-link').classList.add('active');
+                    }
+                }
+            });
+
             const toggle = document.querySelector('.mobile-menu-toggle');
             const nav = document.querySelector('.main-nav');
             const dropdowns = document.querySelectorAll('.nav-item.dropdown');

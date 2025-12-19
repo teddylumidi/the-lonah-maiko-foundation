@@ -664,7 +664,8 @@ body.menu-open::before {
 }
 
 .main-nav .nav-link.active, .main-nav .nav-link:focus, .main-nav .nav-link:hover,
-.footer-links .nav-link.active, .footer-links .nav-link:focus, .footer-links .nav-link:hover {
+.footer-links .nav-link.active, .footer-links .nav-link:focus, .footer-links .nav-link:hover,
+.dropdown-link.active, .dropdown-link:focus, .dropdown-link:hover {
     background: rgba(255, 183, 3, 0.2);
     color: #FFB703;
     opacity: 1;

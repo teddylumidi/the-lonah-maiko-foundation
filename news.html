@@ -11,6 +11,74 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
     <link rel="stylesheet" href="style.css">
     <title>News & Updates - The Lonah Maiko Foundation</title>
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Active state
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                    // If it's a dropdown link, also activate parent
+                    const parentDropdown = link.closest('.nav-item.dropdown');
+                    if (parentDropdown) {
+                        parentDropdown.querySelector('.nav-link').classList.add('active');
+                    }
+                }
+            });
+
+            // Mobile menu and dropdown toggle
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.main-nav');
+            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+            if (toggle) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    nav.classList.toggle('active');
+                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+                });
+
+                dropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('.nav-link');
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth < 768) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('expanded');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    const isClickInside = toggle.contains(e.target) || nav.contains(e.target);
+                    if (!isClickInside && nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        dropdowns.forEach(d => d.classList.remove('expanded'));
+                    }
+                });
+
+                const regularLinks = nav.querySelectorAll('.nav-link:not(.dropdown .nav-link)');
+                regularLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth < 768) {
+                            nav.classList.remove('active');
+                            toggle.setAttribute('aria-expanded', 'false');
+                            dropdowns.forEach(d => d.classList.remove('expanded'));
+                        }
+                    });
+                });
+
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 768) {
+                        nav.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        dropdowns.forEach(d => d.classList.remove('expanded'));
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -22,11 +90,23 @@
             <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
                                                 <nav class="main-nav">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="education.html" class="nav-link">Education</a>
-                <a href="health.html" class="nav-link">Health</a>
-                <a href="wash.html" class="nav-link">WASH</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Programs</a>
+                    <div class="dropdown-menu">
+                        <a href="education.html" class="dropdown-link">Education</a>
+                        <a href="health.html" class="dropdown-link">Health</a>
+                        <a href="wash.html" class="dropdown-link">WASH</a>
+                    </div>
+                </div>
                 <a href="scholarships.html" class="nav-link">Scholarships</a>
                 <a href="news.html" class="nav-link">News</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">About</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-link">About Us</a>
+                        <a href="contact.html" class="dropdown-link">Contact</a>
+                    </div>
+                </div>
                 <a href="donate.html" class="nav-link donate-btn">DONATE</a>
             </nav>
         </div>
