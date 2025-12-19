@@ -220,11 +220,11 @@ header {
     left: 0;
     right: 0;
     z-index: 99;
-    background: black;
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
     padding: 12px;
     border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 16px rgba(0, 119, 190, 0.1);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.3);
     pointer-events: auto;
     opacity: 1;
 }
@@ -240,16 +240,15 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.0);
     z-index: 50;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body.menu-open::before {
-    opacity: 1;
-    pointer-events: auto;
+body.menu-open .mobile-menu-toggle::before {
+    content: "✕";
 }
 
 .nav-item {
@@ -664,10 +663,9 @@ body.menu-open::before {
 }
 
 .main-nav .nav-link.active, .main-nav .nav-link:focus, .main-nav .nav-link:hover,
-.footer-links .nav-link.active, .footer-links .nav-link:focus, .footer-links .nav-link:hover,
-.dropdown-link.active, .dropdown-link:focus, .dropdown-link:hover {
-    background: rgba(255, 183, 3, 0.2);
-    color: #FFB703;
+.footer-links .nav-link.active, .footer-links .nav-link:focus, .footer-links .nav-link:hover {
+    background: rgba(0, 119, 190, 0.2);
+    color: #0077BE;
     opacity: 1;
     text-decoration: none;
 }
@@ -2042,7 +2040,7 @@ button {
     display: block;
     background: none;
     border: none;
-    color: #fff;
+    color: transparent;
     font-size: 1.5rem;
     cursor: pointer;
     padding: 8px 12px;
@@ -2051,6 +2049,16 @@ button {
     z-index: 101;
     line-height: 1;
     margin-left: auto;
+    position: relative;
+}
+
+.mobile-menu-toggle::before {
+    content: "☰";
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .mobile-menu-toggle:hover {
