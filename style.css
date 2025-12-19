@@ -208,43 +208,33 @@ header {
 
 /* Mobile-First Navigation - Hidden by default on mobile, visible on tablet+ */
 .main-nav {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 100%;
-    flex-direction: column;
-    gap: 8px;
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 12px;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.3);
-    pointer-events: auto;
-    opacity: 1;
-}
-
-.main-nav.active {
-    max-height: 700px;
-}
-
-body::before {
-    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.0);
-    z-index: 50;
-    opacity: 0;
+    height: 100vh;
+    flex-direction: column;
+    gap: 16px;
+    display: flex;
+    z-index: 99;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 80px 20px 20px;
+    overflow-y: auto;
+    transform: translateY(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
-    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+}
+
+.main-nav.active {
+    transform: translateY(0);
+    pointer-events: auto;
+    opacity: 1;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 body.menu-open .mobile-menu-toggle::before {
@@ -556,6 +546,9 @@ body.menu-open .mobile-menu-toggle::before {
 
 /* Tablet and Desktop */
 @media (min-width: 768px) {
+    .footer-links {
+        display: flex;
+    }
     .logo {
         min-width: auto;
         margin-bottom: 0;
@@ -652,14 +645,17 @@ body.menu-open .mobile-menu-toggle::before {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.95rem;
-    padding: 6px 10px;
-    border-radius: 6px;
+    font-size: 1.1rem;
+    padding: 16px 20px;
+    border-radius: 8px;
     transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s;
     opacity: 1;
-    min-height: 44px;
+    min-height: 56px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
 }
 
 .main-nav .nav-link.active, .main-nav .nav-link:focus, .main-nav .nav-link:hover,
@@ -1158,6 +1154,7 @@ footer {
     flex-wrap: wrap;
     gap: 6px;
     align-items: center;
+    display: none; /* Hide on mobile to reduce redundancy */
 }
 
 .footer-links a {
