@@ -1,0 +1,16 @@
+# Robots.txt for The Lonah Maiko Foundation
+# https://lonahmaiko.org
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lonahmaiko.org/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow specific paths
+Disallow: /server.py
+Disallow: /.git/
+Disallow: /*.py$

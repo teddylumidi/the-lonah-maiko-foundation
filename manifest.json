@@ -1,0 +1,27 @@
+{
+    "name": "The Lonah Maiko Foundation",
+    "short_name": "LMF",
+    "description": "Transforming lives through education, health, and WASH initiatives in Kenya.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0077BE",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/Images/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/Images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["nonprofit", "education", "health"],
+    "lang": "en",
+    "dir": "ltr"
+}

@@ -6,165 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="WASH Programs - Water, Sanitation and Hygiene initiatives by The Lonah Maiko Foundation.">
     <meta name="robots" content="index, follow">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
+    
+    <!-- PWA & Icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="Images/logo.png">
+    <meta name="theme-color" content="#0077BE">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
+    
     <title>WASH Programs - The Lonah Maiko Foundation</title>
-    <script>
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
-        }
-    </script>
-    <script>
-        // Navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Active state
-            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
-                if (link.getAttribute('href') === currentPath) {
-                    link.classList.add('active');
-                    // If it's a dropdown link, also activate parent
-                    const parentDropdown = link.closest('.nav-item.dropdown');
-                    if (parentDropdown) {
-                        parentDropdown.querySelector('.nav-link').classList.add('active');
-                    }
-                }
-            });
-
-            // Mobile menu and dropdown toggle
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.main-nav');
-            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-
-            if (toggle) {
-                toggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    nav.classList.toggle('active');
-                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
-                });
-
-                dropdowns.forEach(dropdown => {
-                    const link = dropdown.querySelector('.nav-link');
-                    link.addEventListener('click', function(e) {
-                        if (window.innerWidth < 768) {
-                            e.preventDefault();
-                            dropdown.classList.toggle('expanded');
-                        }
-                    });
-                });
-
-                document.addEventListener('click', function(e) {
-                    const isClickInside = toggle.contains(e.target) || nav.contains(e.target);
-                    if (!isClickInside && nav.classList.contains('active')) {
-                        nav.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        dropdowns.forEach(d => d.classList.remove('expanded'));
-                    }
-                });
-
-                const regularLinks = nav.querySelectorAll('.nav-link:not(.dropdown .nav-link)');
-                regularLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth < 768) {
-                            nav.classList.remove('active');
-                            toggle.setAttribute('aria-expanded', 'false');
-                            dropdowns.forEach(d => d.classList.remove('expanded'));
-                        }
-                    });
-                });
-
-                window.addEventListener('resize', function() {
-                    if (window.innerWidth >= 768) {
-                        nav.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        dropdowns.forEach(d => d.classList.remove('expanded'));
-                    }
-                });
-            }
-        });
-    </script>
-    <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.main-nav');
-
-            if (toggle && nav) {
-                toggle.addEventListener('click', function() {
-                    nav.classList.toggle('active');
-                    document.body.classList.toggle('menu-open');
-                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
-                });
-
-                // Close menu when clicking on a link
-                nav.querySelectorAll('.nav-link').forEach(link => {
-                    link.addEventListener('click', function() {
-                        nav.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    });
-                });
-
-                // Close menu when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!toggle.contains(e.target) && !nav.contains(e.target)) {
-                        nav.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-
-                // Close menu on resize
-                window.addEventListener('resize', function() {
-                    if (window.innerWidth >= 768) {
-                        nav.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
-        });
-    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
+    
     <header>
         <div class="header-inner container">
             <div class="logo">
-                <img src="Images/logo.png" alt="The Lonah Maiko Foundation Logo">
+                <img src="Images/logo.png" alt="The Lonah Maiko Foundation Logo" width="50" height="50">
                 <span>The Lonah Maiko Foundation</span>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-                                                <nav class="main-nav">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+            <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
                 <a href="index.html" class="nav-link">Home</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">Programs</a>
-                    <div class="dropdown-menu">
-                        <a href="education.html" class="dropdown-link">Education</a>
-                        <a href="health.html" class="dropdown-link">Health</a>
-                        <a href="wash.html" class="dropdown-link">WASH</a>
-                    </div>
-                </div>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="health.html" class="nav-link">Health</a>
+                <a href="wash.html" class="nav-link">WASH</a>
                 <a href="scholarships.html" class="nav-link">Scholarships</a>
                 <a href="news.html" class="nav-link">News</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">About</a>
-                    <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-link">About Us</a>
-                        <a href="contact.html" class="dropdown-link">Contact</a>
-                    </div>
-                </div>
                 <a href="donate.html" class="nav-link donate-btn">DONATE</a>
             </nav>
         </div>
@@ -177,48 +52,49 @@
             </div>
         </div>
     </header>
-    <main>
+    
+    <main id="main-content" role="main">
         <section class="section container">
             <h3 class="section-title">WASH Program Overview</h3>
             <p class="section-subtitle">Water, sanitation, and hygiene (WASH) are fundamental human rights. We work to ensure all communities have access to clean water and proper sanitation.</p>
             <div class="grid">
                 <div class="card">
-                    <img src="Images/community-empowerment.jpeg" alt="Water Access">
+                    <img src="Images/community-empowerment.jpeg" alt="Water Access" loading="lazy">
                     <div class="card-inner">
                         <div class="card-title">Water Supply</div>
                         <div class="card-desc">Building boreholes, wells, and water harvesting systems to provide reliable access to clean drinking water.</div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="Images/beforeafter.jpeg" alt="Sanitation">
+                    <img src="Images/beforeafter.jpeg" alt="Sanitation" loading="lazy">
                     <div class="card-inner">
                         <div class="card-title">Sanitation Facilities</div>
                         <div class="card-desc">Constructing and maintaining proper toilets and washing facilities in schools and communities.</div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="Images/program-wash.png" alt="Hygiene Education">
+                    <img src="Images/program-wash.png" alt="Hygiene Education" loading="lazy">
                     <div class="card-inner">
                         <div class="card-title">Hygiene Education</div>
                         <div class="card-desc">Training communities on handwashing, menstrual hygiene, food safety, and personal health practices.</div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="Images/wash.jpeg" alt="School WASH">
+                    <img src="Images/wash.jpeg" alt="School WASH" loading="lazy">
                     <div class="card-inner">
                         <div class="card-title">School WASH Programs</div>
                         <div class="card-desc">Implementing comprehensive WASH initiatives in schools to improve student health and attendance.</div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="Images/systemmaintainance.jpeg" alt="Maintenance">
+                    <img src="Images/systemmaintainance.jpeg" alt="Maintenance" loading="lazy">
                     <div class="card-inner">
                         <div class="card-title">System Maintenance</div>
                         <div class="card-desc">Establishing maintenance systems and training local teams to ensure long-term functionality of water systems.</div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="Images/community-health-projects.jpeg" alt="Environmental Protection">
+                    <img src="Images/community-health-projects.jpeg" alt="Environmental Protection" loading="lazy">
                     <div class="card-inner">
                         <div class="card-title">Environmental Care</div>
                         <div class="card-desc">Protecting water sources and promoting environmental conservation for sustainable WASH services.</div>
@@ -251,9 +127,10 @@
             </div>
         </section>
     </main>
-    <footer>
+    
+    <footer role="contentinfo">
         <div class="footer-inner container">
-                        <div class="footer-links">
+            <div class="footer-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="education.html" class="nav-link">Education</a>
                 <a href="health.html" class="nav-link">Health</a>
@@ -263,64 +140,13 @@
                 <a href="donate.html" class="nav-link">Donate</a>
             </div>
             <div class="footer-copyright">© 2025 The Lonah Maiko Foundation. All rights reserved.</div>
-            <div class="social">
-                <a href="https://www.facebook.com/lonahmaiko" title="Facebook" target="_blank" rel="noopener noreferrer" class="social-icon facebook-icon">f</a>
-                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon">▶</a>
+            <div class="social" aria-label="Social media links">
+                <a href="https://www.facebook.com/lonahmaiko" title="Facebook" target="_blank" rel="noopener noreferrer" class="social-icon facebook-icon" aria-label="Facebook">f</a>
+                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon" aria-label="YouTube">▶</a>
             </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.main-nav');
-            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-
-            if (toggle) {
-                toggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    nav.classList.toggle('active');
-                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
-                });
-
-                dropdowns.forEach(dropdown => {
-                    const link = dropdown.querySelector('.nav-link');
-                    link.addEventListener('click', function(e) {
-                        if (window.innerWidth < 768) {
-                            e.preventDefault();
-                            dropdown.classList.toggle('expanded');
-                        }
-                    });
-                });
-
-                document.addEventListener('click', function(e) {
-                    const isClickInside = toggle.contains(e.target) || nav.contains(e.target);
-                    if (!isClickInside && nav.classList.contains('active')) {
-                        nav.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        dropdowns.forEach(d => d.classList.remove('expanded'));
-                    }
-                });
-
-                const regularLinks = nav.querySelectorAll('.nav-link:not(.dropdown .nav-link)');
-                regularLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth < 768) {
-                            nav.classList.remove('active');
-                            toggle.setAttribute('aria-expanded', 'false');
-                            dropdowns.forEach(d => d.classList.remove('expanded'));
-                        }
-                    });
-                });
-
-                window.addEventListener('resize', function() {
-                    if (window.innerWidth >= 768) {
-                        nav.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        dropdowns.forEach(d => d.classList.remove('expanded'));
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/main.js" defer></script>
 </body>
 </html>

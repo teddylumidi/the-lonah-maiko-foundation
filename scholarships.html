@@ -12,63 +12,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
     <link rel="stylesheet" href="style.css">
     <title>Scholarships - The Lonah Maiko Foundation</title>
-    <script>
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
-        }
-    </script>
-    <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.main-nav');
-
-            if (toggle && nav) {
-                toggle.addEventListener('click', function() {
-                    nav.classList.toggle('active');
-                    document.body.classList.toggle('menu-open');
-                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
-                });
-
-                // Close menu when clicking on a link
-                nav.querySelectorAll('.nav-link').forEach(link => {
-                    link.addEventListener('click', function() {
-                        nav.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    });
-                });
-
-                // Close menu when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!toggle.contains(e.target) && !nav.contains(e.target)) {
-                        nav.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-
-                // Close menu on resize
-                window.addEventListener('resize', function() {
-                    if (window.innerWidth >= 768) {
-                        nav.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
-        });
-    </script>
     <style>
         .scholarships-hero {
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Images/studentsponsorship.png');
@@ -230,14 +173,15 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
     <header>
         <div class="header-inner container">
             <div class="logo">
                 <img src="Images/logo.png" alt="The Lonah Maiko Foundation Logo">
                 <span>The Lonah Maiko Foundation</span>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-                                                <nav class="main-nav">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+                                                <nav class="main-nav" role="navigation" aria-label="Main navigation" id="main-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link">Programs</a>
@@ -265,7 +209,7 @@
         <h1>ABOUT SCHOLARSHIPS</h1>
     </div>
 
-    <main>
+    <main id="main-content" role="main">
         <div class="scholarships-content">
             <div class="scholarships-intro">
                 <h2>Support Students in Kenya</h2>
@@ -333,7 +277,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-inner container">
                         <div class="footer-links">
                 <a href="index.html" class="nav-link">Home</a>
@@ -345,65 +289,13 @@
                 <a href="donate.html" class="nav-link">Donate</a>
             </div>
             <div class="footer-copyright">© 2025 The Lonah Maiko Foundation. All rights reserved.</div>
-            <div class="social">
-                <a href="https://www.facebook.com/lonahmaiko" title="Facebook" target="_blank" rel="noopener noreferrer" class="social-icon facebook-icon">f</a>
-                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon">▶</a>
+            <div class="social" aria-label="Social media links">
+                <a href="https://www.facebook.com/lonahmaiko" title="Facebook" target="_blank" rel="noopener noreferrer" class="social-icon facebook-icon" aria-label="Facebook">f</a>
+                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon" aria-label="YouTube">▶</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.main-nav');
-            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-
-            if (toggle) {
-                toggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    nav.classList.toggle('active');
-                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
-                });
-
-                dropdowns.forEach(dropdown => {
-                    const link = dropdown.querySelector('.nav-link');
-                    link.addEventListener('click', function(e) {
-                        if (window.innerWidth < 768) {
-                            e.preventDefault();
-                            dropdown.classList.toggle('expanded');
-                        }
-                    });
-                });
-
-                document.addEventListener('click', function(e) {
-                    const isClickInside = toggle.contains(e.target) || nav.contains(e.target);
-                    if (!isClickInside && nav.classList.contains('active')) {
-                        nav.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        dropdowns.forEach(d => d.classList.remove('expanded'));
-                    }
-                });
-
-                const regularLinks = nav.querySelectorAll('.nav-link:not(.dropdown .nav-link)');
-                regularLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth < 768) {
-                            nav.classList.remove('active');
-                            toggle.setAttribute('aria-expanded', 'false');
-                            dropdowns.forEach(d => d.classList.remove('expanded'));
-                        }
-                    });
-                });
-
-                window.addEventListener('resize', function() {
-                    if (window.innerWidth >= 768) {
-                        nav.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        dropdowns.forEach(d => d.classList.remove('expanded'));
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
