@@ -27,6 +27,48 @@
             document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
         }
     </script>
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.main-nav');
+
+            if (toggle && nav) {
+                toggle.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                    document.body.classList.toggle('menu-open');
+                    toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+                });
+
+                // Close menu when clicking on a link
+                nav.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        nav.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+                        nav.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Close menu on resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 768) {
+                        nav.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
