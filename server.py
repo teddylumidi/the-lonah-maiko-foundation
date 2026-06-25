@@ -40,8 +40,8 @@ class SecureHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         # Prevent MIME type sniffing
         self.send_header('X-Content-Type-Options', 'nosniff')
         
-        # Prevent clickjacking
-        self.send_header('X-Frame-Options', 'SAMEORIGIN')
+        # Prevent clickjacking (allow iframe embedding in dev proxy)
+        # self.send_header('X-Frame-Options', 'SAMEORIGIN')
         
         # XSS Protection (legacy browsers)
         self.send_header('X-XSS-Protection', '1; mode=block')
