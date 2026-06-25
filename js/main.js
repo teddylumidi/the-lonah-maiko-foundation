@@ -312,6 +312,7 @@
             document.querySelectorAll('form').forEach(form => {
                 this.setupValidation(form);
                 this.setupCSRFProtection(form);
+                this.setupContactForm(form);
             });
         },
 
@@ -327,6 +328,58 @@
             form.querySelectorAll('input, textarea, select').forEach(field => {
                 utils.on(field, 'blur', () => this.validateField(field));
                 utils.on(field, 'input', () => this.clearError(field));
+            });
+        },
+
+        setupContactForm(form) {
+            if (!document.querySelector('.contact-page') || !form.classList.contains('contact-form')) {
+                return;
+            }
+
+            utils.on(form, 'submit', async (e) => {
+                if (!form.checkValidity()) {
+                    return;
+                }
+
+                e.preventDefault();
+
+                const name = form.querySelector('#name')?.value.trim() || 'Website visitor';
+                const email = form.querySelector('#email')?.value.trim() || '';
+                const message = form.querySelector('#message')?.value.trim() || '';
+                const responseMessage = form.querySelector('.response-message');
+
+                try {
+                    const response = await fetch('/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ name, email, message })
+                    });
+
+                    const result = await response.json();
+                    if (response.ok && result.success) {
+                        if (responseMessage) {
+                            responseMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                            responseMessage.classList.remove('error');
+                            responseMessage.classList.add('success');
+                        } else {
+                            alert('Thank you! Your message has been sent successfully.');
+                        }
+                        form.reset();
+                    } else {
+                        throw new Error(result.error || 'Unable to send message');
+                    }
+                } catch (error) {
+                    if (responseMessage) {
+                        responseMessage.textContent = 'Sorry, there was a problem sending your message. Please try again later.';
+                        responseMessage.classList.remove('success');
+                        responseMessage.classList.add('error');
+                    } else {
+                        alert('Sorry, there was a problem sending your message. Please try again later.');
+                    }
+                    console.error('Contact form submission failed:', error);
+                }
             });
         },
 

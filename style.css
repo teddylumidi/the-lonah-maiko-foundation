@@ -1231,13 +1231,22 @@ footer {
     align-items: center;
 }
 
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    padding: 8px 10px;
-    border-radius: 4px;
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        color: #fff;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        flex: 1 1 200px;
+    }
+
+    .footer-contact a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+    }
+
     transition: all 0.2s ease;
     opacity: 0.9;
     display: block;
@@ -1454,19 +1463,20 @@ footer {
     transition: background-color 0.2s;
 }
 
-@media (min-width: 768px) {
-    .contact-form button {
-        font-size: 1rem;
-        padding: 14px;
+    .response-message {
+        margin-top: 15px;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
-}
 
-.contact-form button:hover {
-    background-color: var(--primary-dark);
-}
+    .response-message.success {
+        color: #2c7a7b;
+    }
 
-/* Mission and Vision Section - Mobile First */
-.mission-vision-grid {
+    .response-message.error {
+        color: #c53030;
+    }
+
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
