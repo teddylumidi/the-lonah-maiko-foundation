@@ -347,14 +347,24 @@
                 const email = form.querySelector('#email')?.value.trim() || '';
                 const message = form.querySelector('#message')?.value.trim() || '';
                 const responseMessage = form.querySelector('.response-message');
+                const submitBtn = form.querySelector('button[type="submit"]');
+
+                if (submitBtn) submitBtn.disabled = true;
 
                 try {
-                    const response = await fetch('/contact', {
+                    const response = await fetch('https://api.web3forms.com/submit', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
                         },
-                        body: JSON.stringify({ name, email, message })
+                        body: JSON.stringify({
+                            access_key: '340df2e0-02b9-4154-80d6-b57fb178e569',
+                            name,
+                            email,
+                            message,
+                            subject: 'New Contact Message - Lonah Maiko Foundation'
+                        })
                     });
 
                     const result = await response.json();
@@ -368,7 +378,7 @@
                         }
                         form.reset();
                     } else {
-                        throw new Error(result.error || 'Unable to send message');
+                        throw new Error(result.message || 'Unable to send message');
                     }
                 } catch (error) {
                     if (responseMessage) {
@@ -379,6 +389,8 @@
                         alert('Sorry, there was a problem sending your message. Please try again later.');
                     }
                     console.error('Contact form submission failed:', error);
+                } finally {
+                    if (submitBtn) submitBtn.disabled = false;
                 }
             });
         },
