@@ -352,23 +352,17 @@
                 if (submitBtn) submitBtn.disabled = true;
 
                 try {
-                    const response = await fetch('https://api.web3forms.com/submit', {
+                    const response = await fetch('https://formspree.io/f/maqgokgv', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json'
                         },
-                        body: JSON.stringify({
-                            access_key: '340df2e0-02b9-4154-80d6-b57fb178e569',
-                            name,
-                            email,
-                            message,
-                            subject: 'New Contact Message - Lonah Maiko Foundation'
-                        })
+                        body: JSON.stringify({ name, email, message })
                     });
 
                     const result = await response.json();
-                    if (response.ok && result.success) {
+                    if (response.ok && result.ok) {
                         if (responseMessage) {
                             responseMessage.textContent = 'Thank you! Your message has been sent successfully.';
                             responseMessage.classList.remove('error');
