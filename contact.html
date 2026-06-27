@@ -38,16 +38,25 @@
             <p><strong>Email:</strong> <a href="mailto:lonah@thelonahmaikofoundation.com">lonah@thelonahmaikofoundation.com</a></p>
             <p><strong>Address:</strong> The Lonah Maiko Foundation, Nairobi, Kenya</p>
         </div>
-        <form id="contactForm" class="contact-form" action="/contact" method="POST" novalidate>
+        <div class="response-message success" data-fs-success aria-live="polite" style="display:none">Thank you! Your message has been sent successfully.</div>
+        <div class="response-message error" data-fs-error aria-live="polite" style="display:none"></div>
+        <form id="contactForm" class="contact-form" novalidate>
             <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required data-fs-field>
+            <span data-fs-error="name" class="response-message error"></span>
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required data-fs-field>
+            <span data-fs-error="email" class="response-message error"></span>
             <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-            <button type="submit">Send Message</button>
-            <div class="response-message" aria-live="polite"></div>
+            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required data-fs-field></textarea>
+            <span data-fs-error="message" class="response-message error"></span>
+            <button type="submit" data-fs-submit-btn>Send Message</button>
         </form>
+        <script>
+            window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+            formspree('initForm', { formElement: '#contactForm', formId: 'maqgokgv' });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     </div>
     </main>
     <footer role="contentinfo">

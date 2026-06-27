@@ -332,61 +332,7 @@
         },
 
         setupContactForm(form) {
-            if (!document.querySelector('.contact-page') || !form.classList.contains('contact-form')) {
-                return;
-            }
-
-            utils.on(form, 'submit', async (e) => {
-                if (!form.checkValidity()) {
-                    return;
-                }
-
-                e.preventDefault();
-
-                const name = form.querySelector('#name')?.value.trim() || 'Website visitor';
-                const email = form.querySelector('#email')?.value.trim() || '';
-                const message = form.querySelector('#message')?.value.trim() || '';
-                const responseMessage = form.querySelector('.response-message');
-                const submitBtn = form.querySelector('button[type="submit"]');
-
-                if (submitBtn) submitBtn.disabled = true;
-
-                try {
-                    const response = await fetch('https://formspree.io/f/maqgokgv', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({ name, email, message })
-                    });
-
-                    const result = await response.json();
-                    if (response.ok && result.ok) {
-                        if (responseMessage) {
-                            responseMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                            responseMessage.classList.remove('error');
-                            responseMessage.classList.add('success');
-                        } else {
-                            alert('Thank you! Your message has been sent successfully.');
-                        }
-                        form.reset();
-                    } else {
-                        throw new Error(result.message || 'Unable to send message');
-                    }
-                } catch (error) {
-                    if (responseMessage) {
-                        responseMessage.textContent = 'Sorry, there was a problem sending your message. Please try again later.';
-                        responseMessage.classList.remove('success');
-                        responseMessage.classList.add('error');
-                    } else {
-                        alert('Sorry, there was a problem sending your message. Please try again later.');
-                    }
-                    console.error('Contact form submission failed:', error);
-                } finally {
-                    if (submitBtn) submitBtn.disabled = false;
-                }
-            });
+            // Handled by Formspree's @formspree/ajax CDN library (see contact.html)
         },
 
         validateField(field) {
