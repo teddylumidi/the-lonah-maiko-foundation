@@ -333,7 +333,7 @@
         },
 
         setupContactForm(form) {
-            // Handled by Formspree's @formspree/ajax CDN library (see contact.html)
+            // Contact form handled by Formsubmit.co (see contact.html)
         },
 
         validateField(field) {
@@ -458,6 +458,8 @@
         init();
     }
 
-    // Expose utilities for debugging (remove in production)
-    window.LMF = { CONFIG, utils, navigation, lazyLoad };
+    // Debug utilities (localhost only)
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+        window.LMF = { CONFIG, utils, navigation, lazyLoad };
+    }
 })();
