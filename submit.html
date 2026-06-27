@@ -11,7 +11,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
     <link rel="stylesheet" href="style.css">
-    <title>Partner With Us - The Lonah Maiko Foundation</title>
+    <title>Partnership Form - The Lonah Maiko Foundation</title>
 </head>
 <body>
     <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
@@ -21,8 +21,8 @@
                 <img src="Images/logo.png" alt="The Lonah Maiko Foundation Logo">
                 <span>The Lonah Maiko Foundation</span>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">☰</button>
-                                                <nav class="main-nav" role="navigation" aria-label="Main navigation" id="main-nav">
+                        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+            <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="education.html" class="nav-link">Education</a>
                 <a href="health.html" class="nav-link">Health</a>
@@ -34,13 +34,28 @@
         </div>
     </header>
 
+    <!-- Thank-you banner: shown when redirected here after contact/partnership form submission -->
+    <div id="thank-you-banner" style="display:none;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:1.5rem 2rem;margin:2rem auto;max-width:700px;text-align:center;">
+        <p style="font-size:1.2rem;font-weight:700;color:#2e7d32;margin:0 0 0.5rem;">&#10004; Message Sent Successfully!</p>
+        <p style="color:#388e3c;margin:0;">Thank you for reaching out. We'll get back to you within 5 business days.</p>
+        <a href="index.html" style="display:inline-block;margin-top:1rem;color:#2e7d32;font-weight:600;">&#8592; Return to Home</a>
+    </div>
+    <script>
+        if (window.location.search.includes('thanks=1')) {
+            document.getElementById('thank-you-banner').style.display = 'block';
+        }
+    </script>
     <main id="main-content" role="main">
         <section class="section container">
             <h2 class="section-title">Partnership Form</h2>
             <p class="section-subtitle">Interested in partnering with The Lonah Maiko Foundation? Tell us more about your organization and how we can work together.</p>
             
             <div class="form-container">
-                <form id="partnershipForm" method="POST" action="#" onsubmit="handleSubmit(event)">
+                <form id="partnershipForm" method="POST" action="https://formsubmit.co/lonahmaikofoundation@gmail.com">
+                    <input type="hidden" name="_subject" value="Partnership Request - Lonah Maiko Foundation">
+                    <input type="hidden" name="_next" value="https://thelonahmaikofoundation.com/submit.html?thanks=1">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
                     <div class="form-group">
                         <label for="organizationName">Organization Name *</label>
                         <input type="text" id="organizationName" name="organizationName" required>
@@ -104,36 +119,30 @@
         </section>
     </main>
 
-    <footer role="contentinfo">
+        <footer role="contentinfo">
         <div class="footer-inner container">
             <div class="footer-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="education.html" class="nav-link">Education</a>
                 <a href="health.html" class="nav-link">Health</a>
                 <a href="wash.html" class="nav-link">WASH</a>
-                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="scholarships.html" class="nav-link">Scholarships</a>
+                <a href="news.html" class="nav-link">News</a>
                 <a href="donate.html" class="nav-link">Donate</a>
-                        <div class="footer-contact">
+            </div>
+            <div class="footer-contact">
                 <p><strong>Tel:</strong> <a href="tel:+254141068534">+254 141 068 534</a></p>
                 <p><strong>Email:</strong> <a href="mailto:lonah@thelonahmaikofoundation.com">lonah@thelonahmaikofoundation.com</a></p>
             </div>
-</div>
-            <div class="footer-copyright">© 2025 The Lonah Maiko Foundation. All rights reserved.</div>
+            <div class="footer-copyright">&copy; 2026 The Lonah Maiko Foundation. All rights reserved.</div>
             <div class="social" aria-label="Social media links">
                 <a href="https://www.facebook.com/lonahmaiko" title="Facebook" target="_blank" rel="noopener noreferrer" class="social-icon facebook-icon" aria-label="Facebook">f</a>
-                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon" aria-label="YouTube">▶</a>
+                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon" aria-label="YouTube">&#9658;</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your interest in partnering with The Lonah Maiko Foundation! We will review your request and contact you shortly.');
-            document.getElementById('partnershipForm').reset();
-        }
-    </script>
-    <script src="js/main.js" defer></script>
+<script src="js/main.js" defer></script>
 
     <style>
         .form-container {
