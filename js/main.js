@@ -310,6 +310,7 @@
     const forms = {
         init() {
             document.querySelectorAll('form').forEach(form => {
+                if (form.dataset.externalAction) return;
                 this.setupValidation(form);
                 this.setupCSRFProtection(form);
                 this.setupContactForm(form);

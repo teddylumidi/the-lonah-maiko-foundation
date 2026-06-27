@@ -60,10 +60,10 @@ class SecureHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
             "img-src 'self' data: https:; "
-            "connect-src 'self' https://formspree.io; "
+            "connect-src 'self'; "
             "frame-ancestors 'self'; "
             "base-uri 'self'; "
-            "form-action 'self' https://formspree.io"
+            "form-action 'self' https://formsubmit.co"
         )
         self.send_header('Content-Security-Policy', csp)
         
