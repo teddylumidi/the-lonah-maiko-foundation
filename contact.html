@@ -38,25 +38,17 @@
             <p><strong>Email:</strong> <a href="mailto:lonah@thelonahmaikofoundation.com">lonah@thelonahmaikofoundation.com</a></p>
             <p><strong>Address:</strong> The Lonah Maiko Foundation, Nairobi, Kenya</p>
         </div>
-        <div class="response-message success" data-fs-success aria-live="polite" style="display:none">Thank you! Your message has been sent successfully.</div>
-        <div class="response-message error" data-fs-error aria-live="polite" style="display:none"></div>
-        <form id="contactForm" class="contact-form" novalidate>
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/maqgokgv" method="POST">
+            <input type="hidden" name="_subject" value="New Contact Message - Lonah Maiko Foundation">
+            <input type="hidden" name="_next" value="https://thelonahmaikofoundation.com/contact.html">
             <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required data-fs-field>
-            <span data-fs-error="name" class="response-message error"></span>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required data-fs-field>
-            <span data-fs-error="email" class="response-message error"></span>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
             <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required data-fs-field></textarea>
-            <span data-fs-error="message" class="response-message error"></span>
-            <button type="submit" data-fs-submit-btn>Send Message</button>
+            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
-        <script>
-            window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-            formspree('initForm', { formElement: '#contactForm', formId: 'maqgokgv' });
-        </script>
-        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     </div>
     </main>
     <footer role="contentinfo">

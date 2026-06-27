@@ -56,14 +56,14 @@ class SecureHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         # Content Security Policy
         csp = (
             "default-src 'self'; "
-            "script-src 'self' 'unsafe-inline' https://unpkg.com; "
+            "script-src 'self' 'unsafe-inline'; "
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
             "img-src 'self' data: https:; "
             "connect-src 'self' https://formspree.io; "
             "frame-ancestors 'self'; "
             "base-uri 'self'; "
-            "form-action 'self'"
+            "form-action 'self' https://formspree.io"
         )
         self.send_header('Content-Security-Policy', csp)
         
