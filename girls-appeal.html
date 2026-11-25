@@ -235,6 +235,27 @@
         }
         .ga-share .wa { border-color: #1fa855; color: #fff; background: #1fa855; }
 
+
+        /* Payment steps */
+        .ga-steps { display: flex; gap: 6px; margin: 0 0 14px; font-size: .72rem; font-weight: 700; }
+        .ga-steps span { flex: 1; text-align: center; padding: 6px 4px; border-radius: 4px; background: #eef2f6; color: #7a8794; }
+        .ga-steps span.on { background: var(--primary); color: #fff; }
+        .ga-steps span.done { background: #d8f0e2; color: #146c3a; }
+        .ga-error { background: #fdecec; color: #8a1c1c; border-radius: 6px; padding: 10px 12px; font-size: .86rem; margin: 0 0 12px; line-height: 1.4; }
+        .ga-paynow { padding: 14px 22px 22px; outline: none; }
+        .ga-paynow h3 { margin: 0 0 14px; font-size: 1.1rem; line-height: 1.4; color: #111; }
+        .ga-paynow p { font-size: .92rem; line-height: 1.55; color: #333; }
+        .ga-big { display: block; font-size: 1.7rem; color: #146c3a; font-weight: 800; margin-top: 4px; }
+        .ga-mpesa-steps { margin: 0 0 18px; padding: 14px 14px 14px 34px; background: #effaf3; border: 1px solid #bfe6cd; border-radius: 10px; display: grid; gap: 8px; font-size: .93rem; line-height: 1.45; color: #1d3326; }
+        .ga-mono { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1.02rem; letter-spacing: .02em; }
+        .ga-copy { min-height: 0 !important; line-height: 1.4; vertical-align: middle; }
+        .ga-mono { white-space: nowrap; }
+        .ga-confirm-h { font-size: .88rem; margin: 0 0 10px; color: #333; line-height: 1.45; }
+        .ga-confirm { border-top: 1px dashed #d6e2ec; padding-top: 14px; }
+        .ga-confirm input { text-transform: uppercase; letter-spacing: .06em; }
+        .ga-wa-confirm { display: block; text-align: center; margin: 12px 0 6px; padding: 11px; border-radius: 8px; background: #1fa855; color: #fff; font-weight: 700; text-decoration: none; font-size: .92rem; }
+        .ga-back { display: block; margin: 8px auto 0; background: none; border: 0; color: var(--primary); font-weight: 600; cursor: pointer; font-family: inherit; font-size: .88rem; padding: 8px; }
+
         /* Final CTA */
         .ga-final {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff;
@@ -336,19 +357,21 @@
                 <div class="ga-card">
                     <div class="ga-card-head">
                         <h2 id="ga-give-h">Sponsor a girl this December</h2>
-                        <p>Choose an amount, tell us how to reach you, then pay using the details below.</p>
+                        <p>Choose an amount and add your details. We'll then show you how to pay by M-Pesa.</p>
                         <div class="ga-countdown" id="ga-countdown" aria-live="polite">Camp opens 16 December 2026</div>
                     </div>
 
-                    <form class="ga-form" id="ga-form" action="https://formsubmit.co/lonahmaikofoundation@gmail.com" method="POST">
+                    <!-- STEP 1: amount + details -->
+                    <form class="ga-form" id="ga-form" action="https://formsubmit.co/lonahmaikofoundation@gmail.com" method="POST" novalidate>
                         <input type="hidden" name="_subject" value="New pledge – My Body, My Rights, My Future appeal">
-                        <input type="hidden" name="_next" value="https://thelonahmaikofoundation.com/submit.html">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
                         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="Appeal" value="My Body, My Rights, My Future – Dec 2026">
                         <input type="hidden" name="Pledge amount (KSh)" id="ga-amount-field" value="6366">
-                        <input type="hidden" name="Girls sponsored (approx.)" id="ga-girls-field" value="1">
+                        <input type="hidden" name="Girls sponsored (approx.)" id="ga-girls-field" value="1.0">
+
+                        <div class="ga-steps" aria-hidden="true"><span class="on">1 Choose gift</span><span>2 Pay by M-Pesa</span><span>3 Confirm</span></div>
 
                         <fieldset>
                             <legend>Choose your gift (KSh)</legend>
@@ -362,7 +385,7 @@
                             </div>
                             <div class="ga-other">
                                 <span>KSh</span>
-                                <input type="number" id="ga-other" min="100" step="1" inputmode="numeric" placeholder="Other amount" aria-label="Other amount in Kenya shillings">
+                                <input type="number" id="ga-other" min="10" step="1" inputmode="numeric" placeholder="Any other amount" aria-label="Other amount in Kenya shillings">
                             </div>
                         </fieldset>
 
@@ -370,36 +393,65 @@
 
                         <div class="ga-row">
                             <div class="ga-field"><label for="ga-name">Full name *</label><input type="text" id="ga-name" name="Name" required autocomplete="name"></div>
-                            <div class="ga-field"><label for="ga-phone">Phone / WhatsApp *</label><input type="tel" id="ga-phone" name="Phone" required autocomplete="tel" placeholder="07XX XXX XXX"></div>
+                            <div class="ga-field"><label for="ga-phone">M-Pesa / phone number *</label><input type="tel" id="ga-phone" name="Phone" required autocomplete="tel" placeholder="07XX XXX XXX"></div>
                         </div>
-                        <div class="ga-field"><label for="ga-email">Email *</label><input type="email" id="ga-email" name="email" required autocomplete="email"></div>
+                        <div class="ga-field"><label for="ga-email">Email (optional, for your receipt)</label><input type="email" id="ga-email" name="email" autocomplete="email"></div>
                         <div class="ga-field">
-                            <label for="ga-method">How will you pay?</label>
+                            <label for="ga-method">How will you give?</label>
                             <select id="ga-method" name="Payment method">
-                                <option>Bank deposit / transfer</option>
-                                <option>M-Pesa</option>
-                                <option>International transfer</option>
-                                <option>Cheque</option>
-                                <option>Please contact me</option>
+                                <option value="M-Pesa">M-Pesa</option>
+                                <option value="Outside Kenya / other – please contact me">From outside Kenya / other – please contact me</option>
                             </select>
                         </div>
                         <div class="ga-field"><label for="ga-msg">Message (optional)</label><textarea id="ga-msg" name="Message" placeholder="e.g. giving on behalf of our church / in honour of..."></textarea></div>
                         <label class="ga-check"><input type="checkbox" name="Keep my name private" value="Yes"> Keep my name private in any donor acknowledgements</label>
 
-                        <button type="submit" class="ga-submit" id="ga-submit">Pledge KSh 6,366</button>
-                        <p class="ga-secure">We'll confirm your pledge by phone or email. Your details are used only to process and acknowledge your gift.</p>
+                        <p class="ga-error" id="ga-error" role="alert" hidden></p>
+                        <button type="submit" class="ga-submit" id="ga-submit">Continue to pay KSh 6,366</button>
+                        <p class="ga-secure">Your details are only used to confirm and acknowledge your gift.</p>
                     </form>
 
+                    <!-- STEP 2 + 3: pay and confirm (shown after step 1) -->
+                    <div class="ga-paynow" id="ga-paynow" hidden tabindex="-1">
+                        <div class="ga-steps" aria-hidden="true"><span class="done">1 Choose gift</span><span class="on">2 Pay by M-Pesa</span><span>3 Confirm</span></div>
+                        <h3 id="ga-paynow-h">Thank you, <span id="ga-thanks-name"></span>! Now send <span class="ga-big" id="ga-pay-amount">KSh 6,366</span></h3>
+
+                        <ol class="ga-mpesa-steps">
+                            <li>Open <b>M-PESA</b> on your phone (SIM Toolkit or M-PESA app)</li>
+                            <li>Select <b>Send Money</b></li>
+                            <li>Enter phone number <b class="ga-mono" id="ga-mp-num"></b> <button type="button" class="ga-copy" data-copy-text="mpesa">Copy</button></li>
+                            <li>Enter amount <b class="ga-mono" id="ga-mp-amt"></b> <button type="button" class="ga-copy" data-copy-text="amount">Copy</button></li>
+                            <li id="ga-mp-name-step">Check the name shown, then enter your PIN and confirm</li>
+                        </ol>
+
+                        <form id="ga-confirm" class="ga-confirm" novalidate>
+                            <p class="ga-confirm-h"><b>Step 3:</b> after paying, enter the code from your M-Pesa SMS so we can match your gift.</p>
+                            <div class="ga-field">
+                                <label for="ga-code">M-Pesa confirmation code (from your SMS)</label>
+                                <input type="text" id="ga-code" autocomplete="off" autocapitalize="characters" placeholder="e.g. TKP3XXXXXX" maxlength="12">
+                            </div>
+                            <p class="ga-error" id="ga-code-error" role="alert" hidden></p>
+                            <button type="submit" class="ga-submit">I've paid – confirm my gift</button>
+                        </form>
+                        <a class="ga-wa-confirm" id="ga-wa-confirm" href="#" target="_blank" rel="noopener noreferrer">Or send your M-Pesa SMS to us on WhatsApp</a>
+                        <button type="button" class="ga-back" id="ga-back">&larr; Change amount or details</button>
+                    </div>
+
+                    <!-- Done -->
+                    <div class="ga-paynow" id="ga-done" hidden tabindex="-1">
+                        <h3>Asante sana! 🙏🏾</h3>
+                        <p>We've received your confirmation for <b id="ga-done-amount"></b>. The Lonah Maiko Foundation team will confirm your gift by phone or email once it reflects.</p>
+                        <p>Please share this appeal so more girls can attend.</p>
+                    </div>
+
                     <div class="ga-pay">
-                        <h3>Payment details</h3>
+                        <h3>Quick pay by M-Pesa</h3>
                         <dl>
-                            <dt>Bank</dt><dd>Co-operative Bank of Kenya</dd>
-                            <dt>Account name</dt><dd>Lonah Maiko</dd>
-                            <dt>Account no.</dt><dd><span id="ga-acc">01109347044900</span><button type="button" class="ga-copy" data-copy="ga-acc">Copy</button></dd>
-                            <dt>Reference</dt><dd>Your name + "GIRLS"</dd>
+                            <dt>Send Money to</dt><dd><span class="ga-mpesa-num"></span><button type="button" class="ga-copy" data-copy-text="mpesa">Copy</button></dd>
+                            <dt class="ga-mpesa-name-row">Name</dt><dd class="ga-mpesa-name-row ga-mpesa-name"></dd>
                         </dl>
-                        <p><strong>M-Pesa or other options:</strong> call or WhatsApp <a href="tel:+254705834784">0705 834 784</a>.</p>
-                        <p>Questions: <a href="mailto:lonahmaikofoundation@gmail.com">lonahmaikofoundation@gmail.com</a></p>
+                        <p>Already paid? Send your M-Pesa SMS on <a id="ga-wa-plain" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a> so we can thank you.</p>
+                        <p><strong>Giving from outside Kenya or as an organisation?</strong> Email <a href="mailto:lonahmaikofoundation@gmail.com">lonahmaikofoundation@gmail.com</a> or call <a href="tel:+254705834784">0705 834 784</a>.</p>
                         <div class="ga-share">
                             <a class="wa" id="ga-wa" href="#" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a>
                             <button type="button" id="ga-share">Share appeal</button>
@@ -499,12 +551,12 @@
                 <section class="ga-block ga-faq" aria-labelledby="ga-faq-h">
                     <h2 id="ga-faq-h">Questions</h2>
                     <details>
-                        <summary>How do I pay after making a pledge?</summary>
-                        <p>Pay by bank deposit or transfer using the account details beside the form, or call/WhatsApp us on 0705 834 784 for M-Pesa and other options. Use your name as the payment reference so we can match it to your pledge.</p>
+                        <summary>How do I pay?</summary>
+                        <p>By M-Pesa: choose your amount, add your name and phone number, then follow the steps shown &mdash; Send Money to 0705 834 784 and enter your M-Pesa confirmation code so we can match and acknowledge your gift. You can also send your M-Pesa SMS to us on WhatsApp.</p>
                     </details>
                     <details>
-                        <summary>Can I give from outside Kenya?</summary>
-                        <p>Yes. Make a pledge with the form and email us at lonahmaikofoundation@gmail.com &mdash; we will send international transfer details and confirm receipt.</p>
+                        <summary>Can I give from outside Kenya or by bank?</summary>
+                        <p>Yes. The foundation's bank account is being set up &mdash; email lonahmaikofoundation@gmail.com or call 0705 834 784 and we will share the right details for international or bank transfers.</p>
                     </details>
                     <details>
                         <summary>Will I get a receipt and an update?</summary>
@@ -564,48 +616,65 @@
     <script>
     (function () {
         /* ================================================================
-           APPEAL SETTINGS — update RAISED as money comes in, then commit.
+           APPEAL SETTINGS — edit these, then commit.
            ================================================================ */
-        var GOAL = 1909740;          // KSh total funding request
-        var PER_GIRL = 6365.80;      // KSh cost per participant
-        var RAISED = 0;              // KSh received so far  <-- update this
+        var GOAL = 1909740;            // KSh total funding request
+        var PER_GIRL = 6365.80;        // KSh cost per participant
+        var RAISED = 0;                // KSh received so far  <-- update as gifts come in
+        var MIN_GIFT = 10;             // KSh smallest gift accepted
+        var MPESA_NUMBER = '0705834784';   // M-Pesa "Send Money" number
+        var MPESA_NAME = '';               // Registered M-Pesa name, e.g. 'LONAH MAIKO' (leave '' to hide)
+        var WHATSAPP = '254705834784';     // WhatsApp number for confirmations (international format)
+        var FORM_ENDPOINT = 'https://formsubmit.co/ajax/lonahmaikofoundation@gmail.com';
         var CAMP_START = new Date('2026-12-16T00:00:00+03:00');
         var CAMP_END = new Date('2026-12-24T00:00:00+03:00');
 
+        var $ = function (id) { return document.getElementById(id); };
         var fmt = function (n) { return 'KSh ' + Math.round(n).toLocaleString('en-KE'); };
+        var prettyNum = MPESA_NUMBER.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
 
         /* Progress */
         var pct = Math.min(100, (RAISED / GOAL) * 100);
-        document.getElementById('ga-raised').textContent = fmt(RAISED);
-        var bar = document.getElementById('ga-bar');
+        $('ga-raised').textContent = fmt(RAISED);
+        var bar = $('ga-bar');
         bar.setAttribute('aria-valuenow', Math.round(pct));
         requestAnimationFrame(function () { bar.firstElementChild.style.width = (pct > 0 ? Math.max(pct, 2) : 0) + '%'; });
-        document.getElementById('ga-girls').textContent = Math.min(300, Math.floor(RAISED / PER_GIRL));
+        $('ga-girls').textContent = Math.min(300, Math.floor(RAISED / PER_GIRL));
 
         /* Countdown */
         var now = new Date();
-        var daysEl = document.getElementById('ga-days'), daysLbl = document.getElementById('ga-days-label'), cd = document.getElementById('ga-countdown');
         var days = Math.ceil((CAMP_START - now) / 86400000);
         if (now < CAMP_START) {
-            daysEl.textContent = days;
-            daysLbl.textContent = days === 1 ? 'day to camp' : 'days to camp';
-            cd.textContent = days <= 1 ? 'Camp opens tomorrow — 16 December' : 'Only ' + days + ' days until camp opens on 16 December';
+            $('ga-days').textContent = days;
+            $('ga-days-label').textContent = days === 1 ? 'day to camp' : 'days to camp';
+            $('ga-countdown').textContent = days <= 1 ? 'Camp opens tomorrow — 16 December' : 'Only ' + days + ' days until camp opens on 16 December';
         } else if (now < CAMP_END) {
-            daysEl.textContent = 'Live'; daysLbl.textContent = 'camp in progress';
-            cd.textContent = 'The camp is happening now — gifts still help cover costs';
+            $('ga-days').textContent = 'Live'; $('ga-days-label').textContent = 'camp in progress';
+            $('ga-countdown').textContent = 'The camp is happening now — gifts still help cover costs';
         } else {
-            daysEl.textContent = '✓'; daysLbl.textContent = 'camp completed';
-            cd.textContent = 'Thank you — gifts now support follow-up mentorship';
+            $('ga-days').textContent = '✓'; $('ga-days-label').textContent = 'camp completed';
+            $('ga-countdown').textContent = 'Thank you — gifts now support follow-up mentorship';
         }
 
+        /* M-Pesa details everywhere */
+        document.querySelectorAll('.ga-mpesa-num').forEach(function (el) { el.textContent = prettyNum; });
+        $('ga-mp-num').textContent = prettyNum;
+        if (MPESA_NAME) {
+            document.querySelectorAll('.ga-mpesa-name').forEach(function (el) { el.textContent = MPESA_NAME; });
+            $('ga-mp-name-step').innerHTML = 'Check the name shows <b></b>, then enter your PIN and confirm';
+            $('ga-mp-name-step').querySelector('b').textContent = MPESA_NAME;
+        } else {
+            document.querySelectorAll('.ga-mpesa-name-row').forEach(function (el) { el.style.display = 'none'; });
+        }
+        var waLink = function (text) { return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text); };
+        $('ga-wa-plain').href = waLink('Hello Lonah Maiko Foundation, I have sent a gift for the girls’ appeal. My M-Pesa message: ');
+
         /* Amount selection */
-        var form = document.getElementById('ga-form');
-        var other = document.getElementById('ga-other');
-        var amountField = document.getElementById('ga-amount-field');
-        var girlsField = document.getElementById('ga-girls-field');
-        var msg = document.getElementById('ga-impact-msg');
-        var submit = document.getElementById('ga-submit');
+        var form = $('ga-form'), other = $('ga-other');
+        var amountField = $('ga-amount-field'), girlsField = $('ga-girls-field');
+        var msg = $('ga-impact-msg'), submit = $('ga-submit');
         var radios = form.querySelectorAll('input[name="preset"]');
+        var amount = 6366;
 
         function impactText(a) {
             if (!a || a < 1) return 'Enter any amount — every shilling helps a girl attend.';
@@ -615,76 +684,121 @@
             if (g >= 1) return fmt(a) + ' sponsors ' + g + ' girl' + (g > 1 ? 's’' : '’s') + ' full seven-day place' + (g > 1 ? 's' : '') + '.';
             if (a >= 2640) return fmt(a) + ' covers a girl’s meals for the whole camp, plus part of her place.';
             if (a >= 1000) return fmt(a) + ' provides a gift pack and helps toward a girl’s meals.';
-            return fmt(a) + ' helps provide meals and clean water at the camp.';
+            return fmt(a) + ' helps provide meals and clean water at the camp. Thank you!';
         }
-
         function setAmount(a) {
-            a = Math.round(Number(a) || 0);
-            amountField.value = a;
-            girlsField.value = (a / PER_GIRL).toFixed(1);
-            msg.textContent = impactText(a);
-            submit.textContent = a > 0 ? 'Pledge ' + fmt(a) : 'Make a pledge';
+            amount = Math.round(Number(a) || 0);
+            amountField.value = amount;
+            girlsField.value = (amount / PER_GIRL).toFixed(1);
+            msg.textContent = impactText(amount);
+            submit.textContent = amount > 0 ? 'Continue to pay ' + fmt(amount) : 'Continue to pay';
         }
+        radios.forEach(function (r) { r.addEventListener('change', function () { other.value = ''; setAmount(r.value); }); });
+        other.addEventListener('input', function () { radios.forEach(function (r) { r.checked = false; }); setAmount(other.value); });
 
-        radios.forEach(function (r) {
-            r.addEventListener('change', function () { other.value = ''; setAmount(r.value); });
-        });
-        other.addEventListener('input', function () {
-            radios.forEach(function (r) { r.checked = false; });
-            setAmount(other.value);
-        });
-
-        /* "Give" buttons in impact cards */
         document.querySelectorAll('[data-pick]').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var v = btn.getAttribute('data-pick');
-                var r = document.getElementById('amt-' + v);
+                var v = btn.getAttribute('data-pick'), r = $('amt-' + v);
                 if (r) { r.checked = true; other.value = ''; } else { other.value = v; radios.forEach(function (x) { x.checked = false; }); }
                 setAmount(v);
-                document.getElementById('give').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                setTimeout(function () { document.getElementById('ga-name').focus({ preventScroll: true }); }, 600);
+                showStep('form');
+                $('give').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setTimeout(function () { $('ga-name').focus({ preventScroll: true }); }, 600);
             });
         });
 
-        form.addEventListener('submit', function (e) {
-            var a = Number(amountField.value);
-            if (!a || a < 100) {
-                e.preventDefault();
-                msg.textContent = 'Please choose an amount of at least KSh 100.';
-                other.focus();
+        /* Send data to the foundation's inbox (FormSubmit AJAX). Never blocks the donor. */
+        function sendToInbox(data) {
+            if (!window.fetch) return Promise.resolve(false);
+            return fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(function (r) { return r.ok; }).catch(function () { return false; });
+        }
+        function formData() {
+            var d = {};
+            new FormData(form).forEach(function (v, k) { if (k !== 'preset' && k !== '_honey') d[k] = v; });
+            return d;
+        }
+
+        function showStep(step) {
+            form.hidden = step !== 'form';
+            $('ga-paynow').hidden = step !== 'pay';
+            $('ga-done').hidden = step !== 'done';
+            var target = step === 'form' ? null : $(step === 'pay' ? 'ga-paynow' : 'ga-done');
+            if (target) {
+                $('give').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setTimeout(function () { target.focus({ preventScroll: true }); }, 400);
             }
+        }
+        function fail(id, text, focusEl) { var e = $(id); e.textContent = text; e.hidden = false; if (focusEl) focusEl.focus(); }
+
+        /* STEP 1 → 2 */
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            $('ga-error').hidden = true;
+            if (form.querySelector('[name="_honey"]').value) return;
+            if (!amount || amount < MIN_GIFT) return fail('ga-error', 'Please choose an amount of at least KSh ' + MIN_GIFT + '.', other);
+            var name = $('ga-name').value.trim(), phone = $('ga-phone').value.trim(), email = $('ga-email').value.trim();
+            if (!name) return fail('ga-error', 'Please enter your name.', $('ga-name'));
+            if (phone.replace(/\D/g, '').length < 9) return fail('ga-error', 'Please enter a valid phone number.', $('ga-phone'));
+            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('ga-error', 'Please check your email address.', $('ga-email'));
+
+            var d = formData(); d['Status'] = 'Pledged – about to pay';
+            sendToInbox(d);
+
+            $('ga-thanks-name').textContent = name.split(' ')[0];
+            $('ga-pay-amount').textContent = fmt(amount);
+            $('ga-mp-amt').textContent = amount;
+            $('ga-done-amount').textContent = fmt(amount);
+            $('ga-wa-confirm').href = waLink('Hello Lonah Maiko Foundation, I (' + name + ') have sent ' + fmt(amount) + ' for the girls’ appeal. My M-Pesa message: ');
+            if ($('ga-method').value !== 'M-Pesa') {
+                // Outside Kenya / other: foundation will contact them; still show M-Pesa in case it suits them.
+                d['Status'] = 'Asked to be contacted';
+            }
+            showStep('pay');
         });
 
-        /* Copy account number */
+        /* STEP 3: confirm payment */
+        $('ga-confirm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var code = $('ga-code').value.trim().toUpperCase();
+            if (!/^[A-Z0-9]{8,12}$/.test(code)) return fail('ga-code-error', 'Enter the code at the start of your M-Pesa SMS (e.g. TKP3XXXXXX), or send the SMS on WhatsApp below.', $('ga-code'));
+            $('ga-code-error').hidden = true;
+            var d = formData();
+            d._subject = 'PAID – ' + fmt(amount) + ' – girls’ appeal (' + code + ')';
+            d['M-Pesa code'] = code; d['Status'] = 'Donor says paid – verify on M-Pesa statement';
+            sendToInbox(d);
+            showStep('done');
+        });
+        $('ga-back').addEventListener('click', function () { showStep('form'); $('ga-name').focus(); });
+
+        /* Copy buttons */
         document.querySelectorAll('.ga-copy').forEach(function (b) {
             b.addEventListener('click', function () {
-                var t = document.getElementById(b.getAttribute('data-copy')).textContent;
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(t).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); });
-                }
+                var t = b.getAttribute('data-copy-text') === 'amount' ? String(amount) : MPESA_NUMBER;
+                if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); });
             });
         });
 
         /* Sharing */
         var shareText = 'Help 300 girls in Nyamira attend a safe 7-day empowerment camp this December. KSh 6,366 sponsors one girl. ';
         var url = window.location.href.split('#')[0];
-        document.getElementById('ga-wa').href = 'https://wa.me/?text=' + encodeURIComponent(shareText + url);
-        var shareBtn = document.getElementById('ga-share');
-        shareBtn.addEventListener('click', function () {
-            if (navigator.share) {
-                navigator.share({ title: 'My Body, My Rights, My Future', text: shareText, url: url }).catch(function () {});
-            } else if (navigator.clipboard) {
-                navigator.clipboard.writeText(url).then(function () { shareBtn.textContent = 'Link copied'; setTimeout(function () { shareBtn.textContent = 'Share appeal'; }, 1800); });
-            }
+        $('ga-wa').href = 'https://wa.me/?text=' + encodeURIComponent(shareText + url);
+        $('ga-share').addEventListener('click', function () {
+            var b = this;
+            if (navigator.share) navigator.share({ title: 'My Body, My Rights, My Future', text: shareText, url: url }).catch(function () {});
+            else if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { b.textContent = 'Link copied'; setTimeout(function () { b.textContent = 'Share appeal'; }, 1800); });
         });
 
-        /* Mobile sticky bar: show once hero is passed, hide when the form is on screen */
-        var sticky = document.getElementById('ga-sticky');
+        /* Mobile sticky bar */
+        var sticky = $('ga-sticky');
         if ('IntersectionObserver' in window) {
             var heroGone = false, giveVisible = false;
             var update = function () { sticky.classList.toggle('show', heroGone && !giveVisible); };
             new IntersectionObserver(function (en) { heroGone = !en[0].isIntersecting; update(); }).observe(document.querySelector('.ga-hero'));
-            new IntersectionObserver(function (en) { giveVisible = en[0].isIntersecting; update(); }, { threshold: 0.15 }).observe(document.getElementById('give'));
+            new IntersectionObserver(function (en) { giveVisible = en[0].isIntersecting; update(); }, { threshold: 0.15 }).observe($('give'));
         }
     })();
     </script>
