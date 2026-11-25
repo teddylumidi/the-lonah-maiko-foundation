@@ -463,3 +463,33 @@
         window.LMF = { CONFIG, utils, navigation, lazyLoad };
     }
 })();
+
+/* UI refresh: collapse long card/bio text with a "Read more" toggle (Nov 2026) */
+document.addEventListener('DOMContentLoaded', function () {
+    var targets = document.querySelectorAll('.card-desc, .member-bio');
+    targets.forEach(function (el) {
+        if (el.querySelector('ul, ol, h5, form, table')) return; // leave structured content alone
+        el.classList.add('lmf-clamp');
+        if (el.scrollHeight <= el.clientHeight + 4) { el.classList.remove('lmf-clamp'); return; }
+        var link = el.closest('a');
+        if (link) {
+            // Whole card is already a link: show a visual cue instead of a button
+            var cue = document.createElement('span');
+            cue.className = 'lmf-more-link';
+            cue.textContent = 'Learn more →';
+            el.insertAdjacentElement('afterend', cue);
+            return;
+        }
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'lmf-more';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Read more';
+        btn.addEventListener('click', function () {
+            var open = el.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            btn.textContent = open ? 'Show less' : 'Read more';
+        });
+        el.insertAdjacentElement('afterend', btn);
+    });
+});
