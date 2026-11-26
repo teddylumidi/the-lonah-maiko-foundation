@@ -5,9 +5,9 @@ html {
 
 /* CSS Custom Properties for Theming */
 :root {
-    --primary: #0077BE;
-    --primary-dark: #005a8e;
-    --primary-light: #e6f4ff;
+    --primary: #007A87;
+    --primary-dark: #0A2F3F;
+    --primary-light: #E6FAFC;
     --text: #333;
     --text-light: #666;
     --bg: #f4f4f4;
@@ -142,10 +142,10 @@ button, a, .card, .dropdown-link {
 
 /* Color Variables */
 :root {
-    --primary: #0077BE;      /* Ocean Blue */
-    --primary-dark: #0055A4; /* Darker Ocean Blue */
-    --primary-light: #00A8E8; /* Lighter Ocean Blue */
-    --accent: #FFB703;       /* Golden Accent */
+    --primary: #007A87;      /* Ocean Blue */
+    --primary-dark: #0A2F3F; /* Darker Ocean Blue */
+    --primary-light: #00C4D4; /* Lighter Ocean Blue */
+    --accent: #19E3EE;       /* Golden Accent */
     --bg: #f7fafc;
     --text: #222;
     --text-light: #fff;
@@ -335,7 +335,7 @@ body.menu-open .mobile-menu-toggle::before {
 }
 
 .nav-item .nav-link {
-    color: #003d7a;
+    color: #0A2F3F;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95em;
@@ -358,7 +358,7 @@ body.menu-open .mobile-menu-toggle::before {
 .nav-item .nav-link:hover,
 .nav-item .nav-link.active {
     background: linear-gradient(135deg, rgba(0, 119, 190, 0.25) 0%, rgba(0, 168, 232, 0.15) 100%);
-    color: #001f4d;
+    color: #071C27;
     transform: translateX(4px);
 }
 
@@ -434,7 +434,7 @@ body.menu-open .mobile-menu-toggle::before {
     }
 
     .nav-item .nav-link:hover {
-        background: rgba(255, 183, 3, 0.2);
+        background: rgba(25, 227, 238, 0.2);
         color: var(--accent);
         transform: translateY(-2px);
     }
@@ -457,7 +457,7 @@ body.menu-open .mobile-menu-toggle::before {
     display: none;
     background: rgba(255, 255, 255, 0.08);
     box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
-    border-left: 3px solid rgba(255, 183, 3, 0.6);
+    border-left: 3px solid rgba(25, 227, 238, 0.6);
     border-radius: 8px;
     min-width: auto;
     padding: 8px 0;
@@ -544,7 +544,7 @@ body.menu-open .mobile-menu-toggle::before {
 /* Mobile Dropdown Links */
 .dropdown-link {
     display: block;
-    color: #003d7a;
+    color: #0A2F3F;
     text-decoration: none;
     padding: 11px 18px;
     font-size: 0.9rem;
@@ -558,8 +558,8 @@ body.menu-open .mobile-menu-toggle::before {
 
 .dropdown-link:hover {
     background: rgba(0, 119, 190, 0.15);
-    color: #001f4d;
-    border-left-color: #0077BE;
+    color: #071C27;
+    border-left-color: #007A87;
     padding-left: 18px;
 }
 
@@ -605,24 +605,24 @@ body.menu-open .mobile-menu-toggle::before {
 
 /* Donate Button */
 .donate-btn {
-    background: linear-gradient(135deg, var(--accent) 0%, #FF9D00 100%) !important;
+    background: linear-gradient(135deg, var(--accent) 0%, #00C4D4 100%) !important;
     color: #000 !important;
     border-radius: 8px;
     padding: 10px 18px !important;
     font-weight: 700;
     opacity: 1 !important;
     font-size: 0.9rem !important;
-    box-shadow: 0 4px 12px rgba(255, 183, 3, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(25, 227, 238, 0.3) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     border: none !important;
     letter-spacing: 0.5px;
 }
 
 .donate-btn:hover {
-    background: linear-gradient(135deg, #FF9D00 0%, var(--accent) 100%) !important;
+    background: linear-gradient(135deg, #00C4D4 0%, var(--accent) 100%) !important;
     color: #000 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 183, 3, 0.4) !important;
+    box-shadow: 0 6px 16px rgba(25, 227, 238, 0.4) !important;
 }
 
 /* Tablet and Desktop */
@@ -659,20 +659,20 @@ body.menu-open .mobile-menu-toggle::before {
     }
 
     .dropdown-link:hover {
-        background: #f0f7ff;
+        background: #EEFBFC;
     }
 
     .donate-btn {
         font-size: 0.95rem !important;
         padding: 10px 16px !important;
         border-radius: 6px !important;
-        box-shadow: 0 2px 8px rgba(255, 183, 3, 0.2);
+        box-shadow: 0 2px 8px rgba(25, 227, 238, 0.2);
         transition: all 0.3s ease !important;
     }
 
     .donate-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 183, 3, 0.3) !important;
+        box-shadow: 0 4px 12px rgba(25, 227, 238, 0.3) !important;
     }
 
     .nav-item .nav-link {
@@ -736,7 +736,7 @@ body.menu-open .mobile-menu-toggle::before {
 .main-nav .nav-link.active, .main-nav .nav-link:focus, .main-nav .nav-link:hover,
 .footer-links .nav-link.active, .footer-links .nav-link:focus, .footer-links .nav-link:hover {
     background: rgba(0, 119, 190, 0.2);
-    color: #0077BE;
+    color: #007A87;
     opacity: 1;
     text-decoration: none;
 }
@@ -1137,7 +1137,7 @@ main {
 }
 
 .partner-card {
-    background: #E0F7FF; /* Light Ocean Blue background */
+    background: #E6FAFC; /* Light Ocean Blue background */
     padding: 15px;
     border-radius: 5px;
 }
@@ -1253,8 +1253,8 @@ footer {
 }
 
 .footer-links a:hover {
-    background: rgba(255, 183, 3, 0.2);
-    color: #FFB703;
+    background: rgba(25, 227, 238, 0.2);
+    color: #19E3EE;
     opacity: 1;
 }
 
@@ -1284,8 +1284,8 @@ footer {
 }
 
 .social a:hover {
-    background: rgba(255, 183, 3, 0.2);
-    color: #FFB703;
+    background: rgba(25, 227, 238, 0.2);
+    color: #19E3EE;
     opacity: 1;
 }
 
@@ -1497,7 +1497,7 @@ footer {
 }
 
 .mission-box, .vision-box {
-    background: #f0f9ff;
+    background: #EEFBFC;
     border-left: 4px solid var(--primary);
     padding: 15px;
     border-radius: 4px;
@@ -1621,7 +1621,7 @@ footer {
 }
 
 .member-title {
-    color: #0077BE;
+    color: #007A87;
     font-weight: 600;
     margin: 0 0 8px 0;
     font-size: 0.85rem;
@@ -1668,8 +1668,8 @@ footer {
 }
 
 .policy-item {
-    background: #f0f9ff;
-    border: 1px solid #00A8E8;
+    background: #EEFBFC;
+    border: 1px solid #00C4D4;
     border-radius: 6px;
     padding: 15px;
 }
@@ -2147,7 +2147,7 @@ button {
 }
 
 .mobile-menu-toggle:focus {
-    outline: 2px solid #FFB703;
+    outline: 2px solid #19E3EE;
     outline-offset: 2px;
 }
 
@@ -2193,22 +2193,22 @@ button {
 /* Base readability */
 body { line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-    outline: 3px solid #FFB703; outline-offset: 2px;
+    outline: 3px solid #19E3EE; outline-offset: 2px;
 }
 img { max-width: 100%; }
 
 /* Mobile menu: the closed menu was leaving a dark strip under the header */
 @media (max-width: 767px) {
     .main-nav:not(.active) { padding-top: 0; padding-bottom: 0; box-shadow: none; }
-    .main-nav { background: rgba(0, 45, 85, 0.97); }
+    .main-nav { background: rgba(5, 34, 46, 0.97); }
     .main-nav .nav-link { padding: 12px 14px; border-radius: 8px; font-size: 1rem; }
     .main-nav .donate-btn { text-align: center; justify-content: center; margin-top: 4px; }
 }
-header { box-shadow: 0 2px 12px rgba(0, 40, 80, 0.12); }
+header { box-shadow: 0 2px 12px rgba(5, 34, 46, 0.12); }
 
 /* Hero: legible text on busy photos */
 .hero-overlay {
-    background: linear-gradient(180deg, rgba(0, 35, 70, 0.30) 0%, rgba(0, 35, 70, 0.55) 55%, rgba(0, 30, 60, 0.78) 100%);
+    background: linear-gradient(180deg, rgba(5, 34, 46, 0.30) 0%, rgba(5, 34, 46, 0.55) 55%, rgba(5, 34, 46, 0.78) 100%);
 }
 .hero-content h1, .hero-content h2 {
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
@@ -2217,12 +2217,12 @@ header { box-shadow: 0 2px 12px rgba(0, 40, 80, 0.12); }
     line-height: 1.18;
 }
 .hero-content .cta.button, .hero-content .button {
-    background: linear-gradient(135deg, #FFB703 0%, #FF9D00 100%);
+    background: linear-gradient(135deg, #19E3EE 0%, #00C4D4 100%);
     color: #111;
     font-weight: 800;
     padding: 14px 30px;
     border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(255, 157, 0, 0.35);
+    box-shadow: 0 6px 18px rgba(0, 196, 212, 0.35);
     min-height: 48px;
 }
 .hero-content .cta.button:hover, .hero-content .button:hover { filter: brightness(1.05); transform: translateY(-1px); }
@@ -2239,7 +2239,7 @@ header { box-shadow: 0 2px 12px rgba(0, 40, 80, 0.12); }
 .section-title { letter-spacing: -0.01em; }
 .section-title::after {
     content: ""; display: block; width: 56px; height: 4px; border-radius: 2px;
-    background: #FFB703; margin: 12px auto 0;
+    background: #19E3EE; margin: 12px auto 0;
 }
 .section-subtitle { max-width: 760px; margin-left: auto; margin-right: auto; }
 
@@ -2247,11 +2247,11 @@ header { box-shadow: 0 2px 12px rgba(0, 40, 80, 0.12); }
 .card {
     border-radius: 14px;
     border: 1px solid #e3ebf3;
-    box-shadow: 0 2px 10px rgba(0, 40, 80, 0.06);
+    box-shadow: 0 2px 10px rgba(5, 34, 46, 0.06);
     display: flex; flex-direction: column;
 }
 .card > a { display: flex; flex-direction: column; height: 100%; }
-.card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0, 40, 80, 0.12); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(5, 34, 46, 0.12); }
 .card img { aspect-ratio: 16 / 10; height: auto !important; }
 .card-inner { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
 .card-title { font-size: 1.15rem; margin-bottom: 8px; }
@@ -2268,7 +2268,7 @@ header { box-shadow: 0 2px 12px rgba(0, 40, 80, 0.12); }
 .lmf-more-link { display: inline-block; margin-top: 10px; color: var(--primary); font-weight: 700; font-size: 0.9rem; }
 
 /* Board */
-.board-member { border-radius: 14px; border: 1px solid #e3ebf3; box-shadow: 0 2px 10px rgba(0, 40, 80, 0.06); overflow: hidden; }
+.board-member { border-radius: 14px; border: 1px solid #e3ebf3; box-shadow: 0 2px 10px rgba(5, 34, 46, 0.06); overflow: hidden; }
 .member-info h4 { margin-bottom: 4px; }
 .member-title { font-weight: 700; }
 .member-bio { color: #3d4a57; }
@@ -2287,7 +2287,7 @@ header { box-shadow: 0 2px 12px rgba(0, 40, 80, 0.12); }
 .newsletter-form button { border-radius: 8px; }
 
 /* Footer: organised layout */
-footer { background: linear-gradient(180deg, #0077BE 0%, #005f99 100%); }
+footer { background: linear-gradient(180deg, #007A87 0%, #0A2F3F 100%); }
 .footer-inner {
     display: grid !important;
     grid-template-columns: 1fr;
@@ -2313,4 +2313,37 @@ footer { background: linear-gradient(180deg, #0077BE 0%, #005f99 100%); }
 
 @media (prefers-reduced-motion: reduce) {
     .card, .card:hover, .hero-content .button { transition: none; transform: none; }
+}
+
+/* ===== Brand theme from logo (aqua #00FDFF on deep navy) — Nov 2026 ===== */
+:root {
+    --primary: #007A87;        /* deep aqua: text, links, buttons (AA on white) */
+    --primary-dark: #0A2F3F;   /* deep navy-teal: header, footer, headings */
+    --primary-light: #00C4D4;  /* bright aqua */
+    --accent: #19E3EE;         /* logo aqua: highlights, CTAs on dark */
+    --ink: #0F2430;
+    --bg: #F5FAFB;
+}
+body { background: var(--bg); color: var(--ink); }
+header { background: var(--primary-dark) !important; }
+footer { background: linear-gradient(180deg, #0A2F3F 0%, #071C27 100%) !important; }
+.section-title { color: var(--primary-dark); }
+.card-title, .member-info h4, .card-title a { color: var(--primary); }
+.main-nav .nav-link:hover, .main-nav .nav-link.active { color: var(--accent); }
+.donate-btn, .main-nav .donate-btn { background: var(--accent) !important; color: #0A2F3F !important; }
+.donate-btn:hover { background: #fff !important; }
+.button, .cta.button, .see-more { background: var(--primary); color: #fff; }
+.button:hover, .cta.button:hover, .see-more:hover { background: var(--primary-dark); }
+.hero-content .cta.button, .hero-content .button { background: var(--accent) !important; color: #0A2F3F !important; box-shadow: 0 6px 18px rgba(25, 227, 238, 0.3); }
+.section-title::after { background: var(--accent); }
+.footer-links a:hover, .social a:hover { color: var(--accent) !important; }
+.hero-content h1, .hero-content h2 { color: #fff; }
+
+/* Mobile-first touch comfort */
+@media (max-width: 767px) {
+    .section { padding-top: 44px; padding-bottom: 44px; }
+    .section-title { font-size: 1.6rem; }
+    .button, .cta.button, .see-more, .donate-button { width: 100%; text-align: center; box-sizing: border-box; }
+    .hero-content .cta.button { width: auto; }
+    input, select, textarea { font-size: 16px; } /* stops iOS zoom on focus */
 }
