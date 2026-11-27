@@ -16,6 +16,29 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="theme-color" content="#0A2F3F">
+
+    <style>
+        .featured-story { display: grid; grid-template-columns: 1fr; background: #fff; border: 1px solid #e3ebf3; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,40,80,.07); }
+        @media (min-width: 992px) { .featured-story { grid-template-columns: 1.1fr 1fr; align-items: start; } .story-carousel { position: sticky; top: 16px; } }
+        .story-carousel { position: relative; background: #0A2F3F; }
+        .story-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+        .story-track::-webkit-scrollbar { display: none; }
+        .story-slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; aspect-ratio: 4 / 3; }
+        .story-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .story-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(10,47,63,.75); color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .story-nav:hover { background: #007A87; }
+        .story-nav.prev { left: 10px; } .story-nav.next { right: 10px; }
+        .story-dots { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; gap: 6px; justify-content: center; }
+        .story-dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.5); }
+        .story-dots span.on { background: #19E3EE; width: 20px; border-radius: 4px; }
+        .story-body { padding: 24px 24px 28px; }
+        .story-body h4 { font-size: 1.5rem; margin: 6px 0 6px; color: #0A2F3F; }
+        .story-lede { font-weight: 700; color: #007A87; font-size: 1.05rem; }
+        .story-body p { line-height: 1.7; color: #3d4a57; margin: 0 0 12px; }
+        .story-quote { margin: 18px 0; padding: 14px 18px; border-left: 4px solid #19E3EE; background: #EEFBFC; font-style: italic; color: #0B3A40; border-radius: 0 8px 8px 0; }
+        .story-sign { font-weight: 700; color: #0A2F3F !important; }
+        .story-cta { display: inline-block; margin-top: 8px; padding: 13px 26px; border-radius: 8px; background: #19E3EE; color: #0A2F3F; font-weight: 800; text-decoration: none; }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
@@ -50,6 +73,39 @@
         <section class="section container">
             <h3 class="section-title">Latest News</h3>
             <p class="section-subtitle">Stay updated with our latest project developments, impact stories, and community initiatives.</p>
+        </section>
+
+        <section class="section container" aria-labelledby="story-reunited">
+            <article class="featured-story">
+                <div class="story-carousel" aria-roledescription="carousel" aria-label="Photos: Restoring Hope, Reuniting Families">
+                    <div class="story-track" id="story-track" tabindex="0">
+                        <figure class="story-slide"><img src="Images/news-reunited/01.jpeg" alt="Four of the six children in their new school uniforms with their older brother, Ikonge village" ></figure>
+                        <figure class="story-slide"><img src="Images/news-reunited/02.jpeg" alt="Children receiving new folders and exercise books from the Lonah Maiko Foundation" loading="lazy" ></figure>
+                        <figure class="story-slide"><img src="Images/news-reunited/03.jpeg" alt="LMF team handing school folders to the children" loading="lazy" ></figure>
+                        <figure class="story-slide"><img src="Images/news-reunited/04.jpeg" alt="Family members and LMF team with the children at home in Ikonge" loading="lazy" ></figure>
+                        <figure class="story-slide"><img src="Images/news-reunited/05.jpeg" alt="The children holding their new folders and books" loading="lazy" ></figure>
+                        <figure class="story-slide"><img src="Images/news-reunited/06.jpeg" alt="The children in new uniforms receiving school supplies" loading="lazy" ></figure>
+                        <figure class="story-slide"><img src="Images/news-reunited/07.jpeg" alt="LMF team member handing school folders to the children" loading="lazy" ></figure>
+                        <figure class="story-slide"><img src="Images/news-reunited/08.jpeg" alt="LMF appeal poster: Give six children a brighter future" loading="lazy" ></figure>
+                    </div>
+                    <button type="button" class="story-nav prev" aria-label="Previous photo">&#8249;</button>
+                    <button type="button" class="story-nav next" aria-label="Next photo">&#8250;</button>
+                    <div class="story-dots" aria-hidden="true"></div>
+                </div>
+                <div class="story-body">
+                    <div class="news-date">27 November 2026 &middot; Ikonge Village</div>
+                    <h4 id="story-reunited">Restoring Hope, Reuniting Families</h4>
+                    <p class="story-lede">Six children. One family reunited. A new beginning.</p>
+                    <p>The Lonah Maiko Foundation (LMF) intervened to support six children&mdash;four boys and two girls&mdash;who had been abandoned by their mothers amid challenges associated with drug and substance abuse. Their father is currently undergoing rehabilitation.</p>
+                    <p>The children had been moving from door to door, seeking food and shelter. Through LMF's intervention, all six were reunited with their grandfather, who had never known they existed.</p>
+                    <p>The four boys have since undergone circumcision, while the girls are safe and protected from Female Genital Mutilation (FGM).</p>
+                    <p>Our work continues. The children need support with education, food, clothing and daily upkeep. We invite well-wishers, donors and partners to join us in giving them a brighter future.</p>
+                    <blockquote class="story-quote">&ldquo;Sometimes changing a child's world doesn't begin with millions of money. It begins with showing up, extending a hand, and reminding them that their dreams matter. Every child deserves a chance.&rdquo; &#10084;&#65039;</blockquote>
+                    <p><strong>No child should be forgotten, abandoned or left behind.</strong></p>
+                    <p class="story-sign">THE LONAH MAIKO FOUNDATION (LMF)<br><em>Restoring Hope. Transforming Lives.</em></p>
+                    <a href="donate.html" class="donate-button story-cta">Support the six children</a>
+                </div>
+            </article>
         </section>
 
         <section class="section container">
@@ -171,5 +227,26 @@
         </div>
     </footer>
     <script src="js/main.js" defer></script>
+    <script>
+    (function () {
+        var track = document.getElementById('story-track'); if (!track) return;
+        var slides = track.children, dots = document.querySelector('.story-dots');
+        for (var i = 0; i < slides.length; i++) dots.appendChild(document.createElement('span'));
+        function idx() { return Math.round(track.scrollLeft / track.clientWidth); }
+        function mark() { var n = idx(); [].forEach.call(dots.children, function (d, i) { d.className = i === n ? 'on' : ''; }); }
+        function go(n) { n = (n + slides.length) % slides.length; track.scrollTo({ left: n * track.clientWidth }); }
+        document.querySelector('.story-nav.prev').addEventListener('click', function () { go(idx() - 1); });
+        document.querySelector('.story-nav.next').addEventListener('click', function () { go(idx() + 1); });
+        track.addEventListener('scroll', function () { window.requestAnimationFrame(mark); });
+        track.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(idx() + 1); if (e.key === 'ArrowLeft') go(idx() - 1); });
+        mark();
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches, timer;
+        function auto() { if (!reduce) timer = setInterval(function () { go(idx() + 1); }, 5000); }
+        track.parentNode.addEventListener('mouseenter', function () { clearInterval(timer); });
+        track.parentNode.addEventListener('mouseleave', auto);
+        track.addEventListener('touchstart', function () { clearInterval(timer); }, { passive: true });
+        auto();
+    })();
+    </script>
 </body>
 </html>
