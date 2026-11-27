@@ -25,6 +25,7 @@
         .story-track::-webkit-scrollbar { display: none; }
         .story-slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; aspect-ratio: 4 / 3; }
         .story-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .story-slide--poster img { object-fit: contain; background: #0A2F3F; }
         .story-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(10,47,63,.75); color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .story-nav:hover { background: #007A87; }
         .story-nav.prev { left: 10px; } .story-nav.next { right: 10px; }
@@ -82,14 +83,14 @@
             <article class="featured-story">
                 <div class="story-carousel" aria-roledescription="carousel" aria-label="Photos: Restoring Hope, Reuniting Families">
                     <div class="story-track" id="story-track" tabindex="0">
-                        <figure class="story-slide"><img src="Images/news-reunited/01.jpeg" alt="Four of the six children in their new school uniforms with their older brother, Ikonge village" ></figure>
+                        <figure class="story-slide story-slide--poster"><img src="Images/news-reunited/08.jpeg" alt="LMF appeal poster: Give six children a brighter future" ></figure>
+                        <figure class="story-slide"><img src="Images/news-reunited/01.jpeg" loading="lazy" alt="Four of the six children in their new school uniforms with their older brother, Ikonge village" ></figure>
                         <figure class="story-slide"><img src="Images/news-reunited/02.jpeg" alt="Children receiving new folders and exercise books from the Lonah Maiko Foundation" loading="lazy" ></figure>
                         <figure class="story-slide"><img src="Images/news-reunited/03.jpeg" alt="LMF team handing school folders to the children" loading="lazy" ></figure>
                         <figure class="story-slide"><img src="Images/news-reunited/04.jpeg" alt="Family members and LMF team with the children at home in Ikonge" loading="lazy" ></figure>
                         <figure class="story-slide"><img src="Images/news-reunited/05.jpeg" alt="The children holding their new folders and books" loading="lazy" ></figure>
                         <figure class="story-slide"><img src="Images/news-reunited/06.jpeg" alt="The children in new uniforms receiving school supplies" loading="lazy" ></figure>
                         <figure class="story-slide"><img src="Images/news-reunited/07.jpeg" alt="LMF team member handing school folders to the children" loading="lazy" ></figure>
-                        <figure class="story-slide"><img src="Images/news-reunited/08.jpeg" alt="LMF appeal poster: Give six children a brighter future" loading="lazy" ></figure>
                     </div>
                     <button type="button" class="story-nav prev" aria-label="Previous photo">&#8249;</button>
                     <button type="button" class="story-nav next" aria-label="Next photo">&#8250;</button>
