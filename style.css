@@ -2365,3 +2365,7 @@ footer { background: linear-gradient(180deg, #0A2F3F 0%, #071C27 100%) !importan
     .camp-gallery img { height: 220px !important; }
     .camp-gallery .camp-main { height: 340px !important; }
 }
+
+/* Two stacked photos in one card */
+.photo-stack { display: grid; gap: 4px; }
+.photo-stack img { width: 100%; height: 170px !important; aspect-ratio: auto !important; object-fit: cover; display: block; }
