@@ -2356,3 +2356,12 @@ footer { background: linear-gradient(180deg, #0A2F3F 0%, #071C27 100%) !importan
 }
 @media (max-width: 767px) { .member-initials { height: 180px; } }
 .card img { object-position: center 30%; }
+
+/* Medical camp photo gallery (health page) */
+.camp-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.camp-gallery img { width: 100%; height: 170px !important; aspect-ratio: auto !important; object-fit: cover; display: block; }
+.camp-gallery .camp-main { grid-column: 1 / -1; height: 260px !important; object-position: center 40%; }
+@media (min-width: 768px) {
+    .camp-gallery img { height: 220px !important; }
+    .camp-gallery .camp-main { height: 340px !important; }
+}
