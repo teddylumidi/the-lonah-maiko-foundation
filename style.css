@@ -2347,3 +2347,11 @@ footer { background: linear-gradient(180deg, #0A2F3F 0%, #071C27 100%) !importan
     .hero-content .cta.button { width: auto; }
     input, select, textarea { font-size: 16px; } /* stops iOS zoom on focus */
 }
+
+/* Advisor card without photo */
+.member-initials {
+    height: 250px; width: 100%; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #0A2F3F 0%, #007A87 100%);
+    color: #19E3EE; font-size: 3.2rem; font-weight: 800; letter-spacing: 0.04em;
+}
+@media (max-width: 767px) { .member-initials { height: 180px; } }
