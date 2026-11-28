@@ -53,3 +53,388 @@ content:
       - name: body
         label: Full story
         type: rich-text
+
+  - name: menu
+    label: Menus
+    type: file
+    path: data/menu.json
+    format: json
+    fields:
+      - name: header
+        label: Top menu (in order)
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Text
+            type: string
+            required: true
+          - name: url
+            label: Link (e.g. health.html or https://...)
+            type: string
+            required: true
+          - name: button
+            label: Show as highlighted button (like DONATE)
+            type: boolean
+      - name: footer
+        label: Footer links (in order)
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Text
+            type: string
+            required: true
+          - name: url
+            label: Link
+            type: string
+            required: true
+
+  - name: images
+    label: Site images
+    type: file
+    path: data/images.json
+    format: json
+    fields:
+      - name: site
+        label: Whole site
+        type: object
+        fields:
+          - name: logo
+            label: Logo (header on every page)
+            type: image
+      - name: donate
+        label: "Donate page (donate.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "M-Pesa"
+            type: image
+          - name: img02
+            label: "Co-operative Bank of Kenya"
+            type: image
+      - name: education
+        label: "Education page (education.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Education Programs"
+            type: image
+          - name: img02
+            label: "Student Sponsorship"
+            type: image
+          - name: img03
+            label: "Young Women Program"
+            type: image
+          - name: img04
+            label: "Capacity Building"
+            type: image
+      - name: get_involved_business
+        label: "Get Involved – Business page (get-involved-business.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Corporate Partnership"
+            type: image
+          - name: img02
+            label: "Financial Support"
+            type: image
+          - name: img03
+            label: "Skills Support"
+            type: image
+          - name: img04
+            label: "Employee Engagement"
+            type: image
+          - name: img05
+            label: "Product Donations"
+            type: image
+          - name: img06
+            label: "Joint Events"
+            type: image
+          - name: img07
+            label: "Impact Reporting"
+            type: image
+      - name: get_involved_events
+        label: "Get Involved – Events page (get-involved-events.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Events"
+            type: image
+          - name: img02
+            label: "Fundraisers"
+            type: image
+          - name: img03
+            label: "Awareness"
+            type: image
+          - name: img04
+            label: "Volunteer Days"
+            type: image
+          - name: img05
+            label: "Celebrations"
+            type: image
+      - name: get_involved_personal
+        label: "Get Involved – Personal page (get-involved-personal.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Get Involved"
+            type: image
+          - name: img02
+            label: "Donate"
+            type: image
+          - name: img03
+            label: "Sponsor"
+            type: image
+          - name: img04
+            label: "Volunteer"
+            type: image
+          - name: img05
+            label: "Advocate"
+            type: image
+          - name: img06
+            label: "Subscribe"
+            type: image
+          - name: img07
+            label: "Host Event"
+            type: image
+      - name: get_involved_school
+        label: "Get Involved – Schools page (get-involved-school.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "School Programs"
+            type: image
+          - name: img02
+            label: "Fundraising"
+            type: image
+          - name: img03
+            label: "Sponsorship"
+            type: image
+          - name: img04
+            label: "Volunteer"
+            type: image
+          - name: img05
+            label: "Awareness"
+            type: image
+      - name: girls_appeal
+        label: "Girls' Appeal page (girls-appeal.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Schoolgirls in a classroom holding up sanitary pad packs received from"
+            type: image
+          - name: img02
+            label: "A group of girls outside a school building raising sanitary pad packs"
+            type: image
+      - name: health
+        label: "Health page (health.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Surgeon and nurse performing an operation in a hospital theatre"
+            type: image
+          - name: img02
+            label: "Community Health Education and Awareness"
+            type: image
+          - name: img03
+            label: "Maternal and Child Health Support"
+            type: image
+          - name: img04
+            label: "Doctor examining a pregnant mother"
+            type: image
+          - name: img05
+            label: "Health worker counselling a mother holding her baby"
+            type: image
+          - name: img06
+            label: "Mental Health and Psychosocial Support"
+            type: image
+          - name: img07
+            label: "Early Pregnancy Prevention"
+            type: image
+          - name: img08
+            label: "Rehabilitation Services Overview"
+            type: image
+          - name: img09
+            label: "Caregivers and a child receiving support from the Lonah Maiko Foundati"
+            type: image
+          - name: img10
+            label: "Community-Based Rehabilitation"
+            type: image
+          - name: img11
+            label: "Health worker checking a woman's blood pressure at a free medical camp"
+            type: image
+          - name: img12
+            label: "Clinician consulting a young woman at a free medical camp tent"
+            type: image
+          - name: img13
+            label: "Volunteer taking a patient's temperature during medical camp screening"
+            type: image
+      - name: index
+        label: "Home page (index.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "The Lonah Maiko Foundation"
+            type: image
+          - name: img02
+            label: "Education Programs"
+            type: image
+          - name: img03
+            label: "Healthcare Initiatives"
+            type: image
+          - name: img04
+            label: "WASH Programs"
+            type: image
+          - name: img05
+            label: "Student Sponsorship"
+            type: image
+          - name: img06
+            label: "Community Empowerment"
+            type: image
+          - name: img07
+            label: "Strategic Partnerships"
+            type: image
+          - name: img08
+            label: "Board Member"
+            type: image
+          - name: img09
+            label: "Board Member"
+            type: image
+          - name: img10
+            label: "Board Member"
+            type: image
+          - name: img11
+            label: "Board Member"
+            type: image
+          - name: img12
+            label: "Emily Osiemo, Board Member"
+            type: image
+      - name: news
+        label: "News page (news.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "News & Updates"
+            type: image
+          - name: img02
+            label: "LMF appeal poster: Give six children a brighter future"
+            type: image
+          - name: img03
+            label: "Four of the six children in their new school uniforms with their older"
+            type: image
+          - name: img04
+            label: "Children receiving new folders and exercise books from the Lonah Maiko"
+            type: image
+          - name: img05
+            label: "LMF team handing school folders to the children"
+            type: image
+          - name: img06
+            label: "Family members and LMF team with the children at home in Ikonge"
+            type: image
+          - name: img07
+            label: "The children holding their new folders and books"
+            type: image
+          - name: img08
+            label: "The children in new uniforms receiving school supplies"
+            type: image
+          - name: img09
+            label: "LMF team member handing school folders to the children"
+            type: image
+          - name: img10
+            label: "Faith's Scholarship Success Story"
+            type: image
+          - name: img11
+            label: "Inclusive Education for Children with Disabilities"
+            type: image
+          - name: img12
+            label: "Educating Girls in Africa"
+            type: image
+          - name: img13
+            label: "Preventing Child Labor Through Education"
+            type: image
+          - name: img14
+            label: "Updated Scholarship Costs"
+            type: image
+          - name: img15
+            label: "Sponsor-Student Connections"
+            type: image
+          - name: img16
+            label: "' + esc(n.title) + '"
+            type: image
+      - name: projects
+        label: "Projects page (projects.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Our Programs"
+            type: image
+          - name: img02
+            label: "Education"
+            type: image
+          - name: img03
+            label: "Health"
+            type: image
+          - name: img04
+            label: "WASH"
+            type: image
+      - name: sponsorship
+        label: "Sponsorship page (sponsorship.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Student Sponsorship"
+            type: image
+          - name: img02
+            label: "Step 1"
+            type: image
+          - name: img03
+            label: "Step 2"
+            type: image
+          - name: img04
+            label: "Step 3"
+            type: image
+          - name: img05
+            label: "Step 4"
+            type: image
+      - name: wash
+        label: "WASH page (wash.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "WASH Programs"
+            type: image
+          - name: img02
+            label: "Water Access"
+            type: image
+          - name: img03
+            label: "Sanitation"
+            type: image
+          - name: img04
+            label: "Hygiene Education"
+            type: image
+          - name: img05
+            label: "School WASH"
+            type: image
+          - name: img06
+            label: "Maintenance"
+            type: image
+          - name: img07
+            label: "Builder plastering an underground water storage tank"
+            type: image
+          - name: img08
+            label: "Workers building a brick protective wall beside a maize field"
+            type: image
+      - name: young_women
+        label: "Young Women page (young-women.html)"
+        type: object
+        fields:
+          - name: img01
+            label: "Young Women Program"
+            type: image
+          - name: img02
+            label: "Education Support"
+            type: image
+          - name: img03
+            label: "Economic Opportunities"
+            type: image

@@ -493,3 +493,54 @@ document.addEventListener('DOMContentLoaded', function () {
         el.insertAdjacentElement('afterend', btn);
     });
 });
+
+/* ===== Editable content from Pages CMS (data/images.json, data/menu.json) ===== */
+(function () {
+    function getJSON(url) {
+        return fetch(url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    }
+    function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+
+    // Images: each <img data-img="page.key"> takes its path from data/images.json
+    getJSON('data/images.json').then(function (map) {
+        if (!map) return;
+        ready(function () {
+            document.querySelectorAll('img[data-img]').forEach(function (img) {
+                var parts = img.getAttribute('data-img').split('.'), v = map[parts[0]] && map[parts[0]][parts[1]];
+                if (!v || typeof v !== 'string') return;
+                var cur = img.getAttribute('src');
+                if (v.replace(/^\//, '') === (cur || '').replace(/^\//, '')) return;
+                if (img.parentNode && img.parentNode.tagName === 'PICTURE') {
+                    img.parentNode.querySelectorAll('source').forEach(function (s) { s.remove(); });
+                }
+                img.removeAttribute('srcset');
+                img.src = v;
+            });
+        });
+    });
+
+    // Menus: header navigation and footer links
+    getJSON('data/menu.json').then(function (menu) {
+        if (!menu) return;
+        ready(function () {
+            var here = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
+            function link(item, cls) {
+                var a = document.createElement('a');
+                a.href = item.url || '#'; a.textContent = item.label || ''; a.className = cls;
+                if (/^https?:/.test(a.getAttribute('href'))) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+                if ((item.url || '').replace(/\.html$/, '') === here) { a.classList.add('active'); a.setAttribute('aria-current', 'page'); }
+                return a;
+            }
+            var nav = document.getElementById('main-nav');
+            if (nav && Array.isArray(menu.header) && menu.header.length) {
+                nav.textContent = '';
+                menu.header.forEach(function (item) { nav.appendChild(link(item, 'nav-link' + (item.button ? ' donate-btn' : ''))); });
+            }
+            var foot = document.querySelector('.footer-links');
+            if (foot && Array.isArray(menu.footer) && menu.footer.length) {
+                foot.textContent = '';
+                menu.footer.forEach(function (item) { foot.appendChild(link(item, 'nav-link')); });
+            }
+        });
+    });
+})();

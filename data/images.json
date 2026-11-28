@@ -1,0 +1,126 @@
+{
+  "site": {
+    "logo": "Images/logo.png"
+  },
+  "donate": {
+    "img01": "Images/logo-mpesa.png",
+    "img02": "Images/logo-coopbank.png"
+  },
+  "education": {
+    "img01": "Images/program-education.jpeg",
+    "img02": "Images/hero-banner.png",
+    "img03": "Images/early-pregnancy-prevention.jpeg",
+    "img04": "Images/community-empowerment.png"
+  },
+  "get_involved_business": {
+    "img01": "Images/strategic-partnerships.jpeg",
+    "img02": "Images/strategic-partnerships.jpeg",
+    "img03": "Images/community-empowerment.jpeg",
+    "img04": "Images/community-health-projects.jpeg",
+    "img05": "Images/program-education.jpeg",
+    "img06": "Images/hero-banner.png",
+    "img07": "Images/program-health.png"
+  },
+  "get_involved_events": {
+    "img01": "Images/hero-banner.png",
+    "img02": "Images/hero-banner.png",
+    "img03": "Images/community-empowerment.jpeg",
+    "img04": "Images/community-health-projects.jpeg",
+    "img05": "Images/strategic-partnerships.jpeg"
+  },
+  "get_involved_personal": {
+    "img01": "Images/community-empowerment.jpeg",
+    "img02": "Images/hero-banner.png",
+    "img03": "Images/studentsponsorship.png",
+    "img04": "Images/community-health-projects.jpeg",
+    "img05": "Images/strategic-partnerships.jpeg",
+    "img06": "Images/program-education.jpeg",
+    "img07": "Images/community-empowerment.jpeg"
+  },
+  "get_involved_school": {
+    "img01": "Images/program-education.jpeg",
+    "img02": "Images/program-education.jpeg",
+    "img03": "Images/studentsponsorship.png",
+    "img04": "Images/community-empowerment.jpeg",
+    "img05": "Images/community-health-projects.jpeg"
+  },
+  "girls_appeal": {
+    "img01": "Images/appeal-girls-classroom.jpg",
+    "img02": "Images/appeal-girls-outdoor.jpg"
+  },
+  "health": {
+    "img01": "Images/health-hero-theatre.jpeg",
+    "img02": "Images/health-education.jpeg",
+    "img03": "Images/maternal-child-health.jpeg",
+    "img04": "Images/kits.png",
+    "img05": "Images/nutrition-counselling.jpeg",
+    "img06": "Images/mhpss.png",
+    "img07": "Images/early-pregnancy-prevention.jpeg",
+    "img08": "Images/disability-rehabilitation.jpeg",
+    "img09": "Images/caregiver-support-community.jpeg",
+    "img10": "Images/community-based-rehabilitation.jpeg",
+    "img11": "Images/medical-camp-bp.jpeg",
+    "img12": "Images/medical-camp-consultation.jpeg",
+    "img13": "Images/medical-camp-screening.jpeg"
+  },
+  "index": {
+    "img01": "Images/hero-banner.png",
+    "img02": "Images/program-education.jpeg",
+    "img03": "Images/program-health.png",
+    "img04": "Images/program-wash.png",
+    "img05": "Images/studentsponsorship.png",
+    "img06": "Images/community-empowerment.jpeg",
+    "img07": "Images/strategic-partnerships.jpeg",
+    "img08": "Images/lonamaiko.png",
+    "img09": "Images/board1.png",
+    "img10": "Images/board2.png",
+    "img11": "Images/diana.png",
+    "img12": "Images/emily-osiemo.jpeg"
+  },
+  "news": {
+    "img01": "Images/hero-banner.png",
+    "img02": "Images/news-reunited/08.jpeg",
+    "img03": "Images/news-reunited/01.jpeg",
+    "img04": "Images/news-reunited/02.jpeg",
+    "img05": "Images/news-reunited/03.jpeg",
+    "img06": "Images/news-reunited/04.jpeg",
+    "img07": "Images/news-reunited/05.jpeg",
+    "img08": "Images/news-reunited/06.jpeg",
+    "img09": "Images/news-reunited/07.jpeg",
+    "img10": "Images/news.jpeg",
+    "img11": "Images/disability-rehabilitation.jpeg",
+    "img12": "Images/program-wash.png",
+    "img13": "Images/studentsponsorship.png",
+    "img14": "Images/kidseating.jpeg",
+    "img15": "Images/sponsors.jpeg",
+    "img16": "' + esc(n.image) + '"
+  },
+  "projects": {
+    "img01": "Images/hero-banner.png",
+    "img02": "Images/program-education.jpeg",
+    "img03": "Images/program-health.png",
+    "img04": "Images/program-wash.png"
+  },
+  "sponsorship": {
+    "img01": "Images/studentsponsorship.png",
+    "img02": "Images/studentsponsorship.png",
+    "img03": "Images/program-education.jpeg",
+    "img04": "Images/community-empowerment.jpeg",
+    "img05": "Images/hero-banner.png"
+  },
+  "wash": {
+    "img01": "Images/hero-banner.png",
+    "img02": "Images/community-empowerment.jpeg",
+    "img03": "Images/beforeafter.jpeg",
+    "img04": "Images/program-wash.png",
+    "img05": "Images/wash.jpeg",
+    "img06": "Images/systemmaintainance.jpeg",
+    "img07": "Images/environment-water-tank.jpeg",
+    "img08": "Images/environment-wall.jpeg"
+  },
+  "young_women": {
+    "img01": "Images/early-pregnancy-prevention.jpeg",
+    "img02": "Images/program-education.jpeg",
+    "img03": "Images/caregiver-support.jpeg"
+  }
+}

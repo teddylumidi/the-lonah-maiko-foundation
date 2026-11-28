@@ -1,0 +1,23 @@
+{
+  "header": [
+    { "label": "Home", "url": "index.html", "button": false },
+    { "label": "Education", "url": "education.html", "button": false },
+    { "label": "Health", "url": "health.html", "button": false },
+    { "label": "WASH", "url": "wash.html", "button": false },
+    { "label": "Scholarships", "url": "scholarships.html", "button": false },
+    { "label": "News", "url": "news.html", "button": false },
+    { "label": "Contact", "url": "contact.html", "button": false },
+    { "label": "DONATE", "url": "donate.html", "button": true }
+  ],
+  "footer": [
+    { "label": "Home", "url": "index.html" },
+    { "label": "Education", "url": "education.html" },
+    { "label": "Health", "url": "health.html" },
+    { "label": "WASH", "url": "wash.html" },
+    { "label": "Scholarships", "url": "scholarships.html" },
+    { "label": "News", "url": "news.html" },
+    { "label": "Get Involved", "url": "get-involved-personal.html" },
+    { "label": "Contact", "url": "contact.html" },
+    { "label": "Donate", "url": "donate.html" }
+  ]
+}
