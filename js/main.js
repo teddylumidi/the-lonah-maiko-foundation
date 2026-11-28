@@ -1,3 +1,16 @@
+/* Content edited in Pages CMS is read live from GitHub, so CMS edits need no Netlify deploy. */
+var LMF_RAW = 'https://raw.githubusercontent.com/teddylumidi/the-lonah-maiko-foundation/main/';
+function lmfData(path) {
+    var bust = '?t=' + Math.floor(Date.now() / 60000);
+    return fetch(LMF_RAW + path + bust, { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+        .catch(function () { return fetch(path, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); });
+}
+function lmfAsset(p) {
+    if (!p || /^https?:/.test(p)) return p;
+    var clean = p.replace(/^\//, '');
+    return /^Images\/uploads\//.test(clean) ? LMF_RAW + clean : clean;
+}
 /**
  * The Lonah Maiko Foundation - Main JavaScript Module
  * Handles navigation, accessibility, and common functionality
@@ -496,9 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* ===== Editable content from Pages CMS (data/images.json, data/menu.json) ===== */
 (function () {
-    function getJSON(url) {
-        return fetch(url, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
-    }
+    function getJSON(url) { return lmfData(url); }
     function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
 
     // Images: each <img data-img="page.key"> takes its path from data/images.json
@@ -510,6 +521,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!v || typeof v !== 'string') return;
                 var cur = img.getAttribute('src');
                 if (v.replace(/^\//, '') === (cur || '').replace(/^\//, '')) return;
+                v = lmfAsset(v);
                 if (img.parentNode && img.parentNode.tagName === 'PICTURE') {
                     img.parentNode.querySelectorAll('source').forEach(function (s) { s.remove(); });
                 }

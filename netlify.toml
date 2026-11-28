@@ -1,0 +1,7 @@
+# Static site: no build step.
+[build]
+  publish = "."
+  # Skip the Netlify deploy (and its credits) when a commit only changes
+  # content edited in Pages CMS. The site reads those files live from GitHub.
+  # Exit code 0 = skip deploy, 1 = deploy.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)data' ':(exclude)Images/uploads' ':(exclude).pages.yml'"

@@ -622,7 +622,8 @@
     </footer>
 
     <script>
-    fetch('data/appeal.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (CFG) {
+    document.addEventListener('DOMContentLoaded', function () {
+    lmfData('data/appeal.json').then(function (CFG) { CFG = CFG || {};
     (function () {
         /* ================================================================
            APPEAL SETTINGS — edit these, then commit.
@@ -816,6 +817,7 @@
             new IntersectionObserver(function (en) { giveVisible = en[0].isIntersecting; update(); }, { threshold: 0.15 }).observe($('give'));
         }
     })();
+    });
     });
     </script>
     <script src="js/main.js" defer></script>
