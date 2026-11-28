@@ -79,6 +79,8 @@
             <p class="section-subtitle">Stay updated with our latest project developments, impact stories, and community initiatives.</p>
         </section>
 
+        <section class="section container" id="cms-news" hidden aria-label="Latest stories"></section>
+
         <section class="section container" aria-labelledby="story-reunited">
             <article class="featured-story">
                 <div class="story-carousel" aria-roledescription="carousel" aria-label="Photos: Restoring Hope, Reuniting Families">
@@ -261,6 +263,22 @@
         track.addEventListener('touchstart', function () { clearInterval(timer); }, { passive: true });
         auto();
     })();
+    </script>
+    <script>
+    /* Stories added in Pages CMS (data/news.json), newest first */
+    fetch('data/news.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }).then(function (items) {
+        if (!Array.isArray(items) || !items.length) return;
+        var wrap = document.getElementById('cms-news'), esc = function (t) { var d = document.createElement('div'); d.textContent = t || ''; return d.innerHTML; };
+        wrap.innerHTML = items.map(function (n) {
+            var img = n.image ? '<div class="story-carousel"><img src="' + esc(n.image) + '" alt="' + esc(n.title) + '" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;"></div>' : '';
+            var meta = [n.date, n.place].filter(Boolean).map(esc).join(' &middot; ');
+            return '<article class="featured-story" style="margin-bottom:28px;">' + img + '<div class="story-body">' +
+                (meta ? '<div class="news-date">' + meta + '</div>' : '') + '<h4>' + esc(n.title) + '</h4>' +
+                (n.summary ? '<p class="story-lede">' + esc(n.summary) + '</p>' : '') + (n.body || '') +
+                '<a href="donate.html" class="donate-button story-cta">Support our work</a></div></article>';
+        }).join('');
+        wrap.hidden = false;
+    });
     </script>
 </body>
 </html>

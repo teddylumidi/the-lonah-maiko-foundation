@@ -1,0 +1,55 @@
+# Pages CMS configuration — https://app.pagescms.org
+# Lets the foundation team edit selected content without touching code.
+media:
+  input: Images/uploads
+  output: /Images/uploads
+
+content:
+  - name: appeal
+    label: December Girls' Appeal
+    type: file
+    path: data/appeal.json
+    format: json
+    fields:
+      - name: raised
+        label: Amount raised so far (KSh, numbers only)
+        type: number
+      - name: goal
+        label: Appeal goal (KSh)
+        type: number
+      - name: per_girl
+        label: Cost per girl (KSh)
+        type: number
+      - name: mpesa_number
+        label: M-Pesa number (e.g. 0705834784)
+        type: string
+      - name: mpesa_name
+        label: Name M-Pesa shows (capitals)
+        type: string
+
+  - name: news
+    label: News stories
+    type: file
+    path: data/news.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date (e.g. 3 December 2026)
+        type: string
+      - name: place
+        label: Place (optional)
+        type: string
+      - name: image
+        label: Main photo
+        type: image
+      - name: summary
+        label: Short summary (1–2 sentences)
+        type: text
+      - name: body
+        label: Full story
+        type: rich-text

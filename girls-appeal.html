@@ -622,6 +622,7 @@
     </footer>
 
     <script>
+    fetch('data/appeal.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (CFG) {
     (function () {
         /* ================================================================
            APPEAL SETTINGS — edit these, then commit.
@@ -632,6 +633,12 @@
         var MIN_GIFT = 10;             // KSh smallest gift accepted
         var MPESA_NUMBER = '0705834784';   // M-Pesa "Send Money" number
         var MPESA_NAME = 'LONAH MAIKO';             // Registered M-Pesa name, e.g. 'LONAH MAIKO' (leave '' to hide)
+        /* Values from data/appeal.json (edited in Pages CMS) override the defaults above */
+        if (typeof CFG.raised === 'number') RAISED = CFG.raised;
+        if (typeof CFG.goal === 'number') GOAL = CFG.goal;
+        if (typeof CFG.per_girl === 'number') PER_GIRL = CFG.per_girl;
+        if (CFG.mpesa_number) MPESA_NUMBER = String(CFG.mpesa_number).replace(/\s/g, '');
+        if (typeof CFG.mpesa_name === 'string') MPESA_NAME = CFG.mpesa_name;
         var WHATSAPP = '254705834784';     // WhatsApp number for confirmations (international format)
         var FORM_ENDPOINT = 'https://formsubmit.co/ajax/lonahmaikofoundation@gmail.com';
         var CAMP_START = new Date('2026-12-16T00:00:00+03:00');
@@ -809,6 +816,7 @@
             new IntersectionObserver(function (en) { giveVisible = en[0].isIntersecting; update(); }, { threshold: 0.15 }).observe($('give'));
         }
     })();
+    });
     </script>
     <script src="js/main.js" defer></script>
 </body>
