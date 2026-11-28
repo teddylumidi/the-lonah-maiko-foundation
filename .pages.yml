@@ -1934,104 +1934,101 @@ content:
             label: "To grow a network of confident young women who finish their "
             type: text
 
-  # ---- Full page editing (HTML). Saving these republishes the site (uses Netlify credits). ----
-  - name: html_index
-    label: "HTML · Home (index.html)"
+  - name: sections
+    label: Add sections to pages
     type: file
-    path: index.html
-    format: code
-  - name: html_404
-    label: "HTML · Page not found (404) (404.html)"
+    path: data/sections.json
+    format: json
+    list: true
+    fields:
+      - name: page
+        label: Which page?
+        type: select
+        required: true
+        options:
+          values:
+              - name: "index.html"
+                label: "Home"
+              - name: "contact.html"
+                label: "Contact"
+              - name: "donate.html"
+                label: "Donate"
+              - name: "education.html"
+                label: "Education"
+              - name: "get-involved-business.html"
+                label: "Get Involved Business"
+              - name: "get-involved-events.html"
+                label: "Get Involved Events"
+              - name: "get-involved-personal.html"
+                label: "Get Involved Personal"
+              - name: "get-involved-school.html"
+                label: "Get Involved School"
+              - name: "girls-appeal.html"
+                label: "Girls' Appeal"
+              - name: "health.html"
+                label: "Health"
+              - name: "news.html"
+                label: "News"
+              - name: "projects.html"
+                label: "Projects"
+              - name: "scholarships.html"
+                label: "Scholarships"
+              - name: "sponsorship.html"
+                label: "Sponsorship"
+              - name: "wash.html"
+                label: "WASH"
+              - name: "young-women.html"
+                label: "Young Women"
+      - name: position
+        label: Where on the page?
+        type: select
+        options:
+          values:
+            - name: bottom
+              label: At the bottom (before the footer)
+            - name: top
+              label: At the top (just under the banner)
+      - name: heading
+        label: Section heading
+        type: string
+      - name: image
+        label: Photo (optional)
+        type: image
+      - name: body
+        label: Text (bold, lists, links, photos)
+        type: rich-text
+        options:
+          format: html
+      - name: button_text
+        label: Button text (optional, e.g. Donate now)
+        type: string
+      - name: button_link
+        label: Button link (e.g. donate.html)
+        type: string
+
+  - name: pages
+    label: New pages
     type: file
-    path: 404.html
-    format: code
-  - name: html_about
-    label: "HTML · About (redirects to Home) (about.html)"
-    type: file
-    path: about.html
-    format: code
-  - name: html_contact
-    label: "HTML · Contact (contact.html)"
-    type: file
-    path: contact.html
-    format: code
-  - name: html_donate
-    label: "HTML · Donate (donate.html)"
-    type: file
-    path: donate.html
-    format: code
-  - name: html_education
-    label: "HTML · Education (education.html)"
-    type: file
-    path: education.html
-    format: code
-  - name: html_get_involved_business
-    label: "HTML · Get Involved Business (get-involved-business.html)"
-    type: file
-    path: get-involved-business.html
-    format: code
-  - name: html_get_involved_events
-    label: "HTML · Get Involved Events (get-involved-events.html)"
-    type: file
-    path: get-involved-events.html
-    format: code
-  - name: html_get_involved_personal
-    label: "HTML · Get Involved Personal (get-involved-personal.html)"
-    type: file
-    path: get-involved-personal.html
-    format: code
-  - name: html_get_involved_school
-    label: "HTML · Get Involved School (get-involved-school.html)"
-    type: file
-    path: get-involved-school.html
-    format: code
-  - name: html_girls_appeal
-    label: "HTML · Girls' Appeal (girls-appeal.html)"
-    type: file
-    path: girls-appeal.html
-    format: code
-  - name: html_health
-    label: "HTML · Health (health.html)"
-    type: file
-    path: health.html
-    format: code
-  - name: html_news
-    label: "HTML · News (news.html)"
-    type: file
-    path: news.html
-    format: code
-  - name: html_projects
-    label: "HTML · Projects (projects.html)"
-    type: file
-    path: projects.html
-    format: code
-  - name: html_scholarships
-    label: "HTML · Scholarships (scholarships.html)"
-    type: file
-    path: scholarships.html
-    format: code
-  - name: html_sponsorship
-    label: "HTML · Sponsorship (sponsorship.html)"
-    type: file
-    path: sponsorship.html
-    format: code
-  - name: html_submit
-    label: "HTML · Submit (submit.html)"
-    type: file
-    path: submit.html
-    format: code
-  - name: html_wash
-    label: "HTML · WASH (wash.html)"
-    type: file
-    path: wash.html
-    format: code
-  - name: html_young_women
-    label: "HTML · Young Women (young-women.html)"
-    type: file
-    path: young-women.html
-    format: code
-  - name: html_styles
-    label: "HTML · Site styles (style.css)"
-    type: file
-    path: style.css
-    format: code
+    path: data/pages.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        required: true
+      - name: slug
+        label: "Page address: short, lowercase, no spaces (e.g. partners). The page will be at thelonahmaikofoundation.com/page.html?p=partners"
+        type: string
+        required: true
+      - name: image
+        label: Banner photo
+        type: image
+      - name: intro
+        label: Short introduction
+        type: text
+      - name: body
+        label: Page content (headings, text, bold, lists, links, photos)
+        type: rich-text
+        options:
+          format: html

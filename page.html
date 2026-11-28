@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="The Lonah Maiko Foundation - Transforming lives through education, health, and WASH in Kenya.">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <title>The Lonah Maiko Foundation</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#0A2F3F">
+</head>
+<body>
+    <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
+    <header>
+        <div class="header-inner container">
+            <div class="logo">
+                <img data-img="site.logo" src="Images/logo.png" alt="The Lonah Maiko Foundation Logo">
+                <span>The Lonah Maiko Foundation</span>
+            </div>
+                        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+            <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="health.html" class="nav-link">Health</a>
+                <a href="wash.html" class="nav-link">WASH</a>
+                <a href="scholarships.html" class="nav-link">Scholarships</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link donate-btn">DONATE</a>
+            </nav>
+        </div>
+                <div class="hero" id="cms-page-hero" hidden>
+            <img id="cms-page-img" src="Images/hero-banner.png" alt="">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 id="cms-page-title"></h2>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="section container cms-rich" id="cms-page-body">
+            <p>Loading…</p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-inner container">
+            <div class="footer-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="health.html" class="nav-link">Health</a>
+                <a href="wash.html" class="nav-link">WASH</a>
+                <a href="scholarships.html" class="nav-link">Scholarships</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="get-involved-personal.html" class="nav-link">Get Involved</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </div>
+            <div class="footer-contact">
+                <p><strong>Tel:</strong> <a href="tel:+254141068534">+254 141 068 534</a></p>
+                <p><strong>Email:</strong> <a href="mailto:lonah@thelonahmaikofoundation.com">lonah@thelonahmaikofoundation.com</a></p>
+            </div>
+            <div class="footer-copyright">&copy; 2026 The Lonah Maiko Foundation. All rights reserved.</div>
+            <div class="social" aria-label="Social media links">
+                <a href="https://www.facebook.com/lonahmaiko" title="Facebook" target="_blank" rel="noopener noreferrer" class="social-icon facebook-icon" aria-label="Facebook">f</a>
+                <a href="https://www.youtube.com/lonahmaiko" title="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon" aria-label="YouTube">&#9658;</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script>
+    /* Pages created in Pages CMS (data/pages.json), opened as page.html?p=<page address> */
+    document.addEventListener('DOMContentLoaded', function () {
+        var slug = (new URLSearchParams(location.search).get('p') || '').toLowerCase();
+        lmfData('data/pages.json').then(function (pages) {
+            var pg = Array.isArray(pages) && pages.filter(function (x) { return (x.slug || '').toLowerCase() === slug; })[0];
+            var body = document.getElementById('cms-page-body');
+            if (!pg) { body.innerHTML = '<h3 class="section-title">Page not found</h3><p style="text-align:center"><a href="index.html">Go to the home page</a></p>'; return; }
+            document.title = pg.title + ' | The Lonah Maiko Foundation';
+            document.getElementById('cms-page-title').textContent = pg.title || '';
+            if (pg.image) document.getElementById('cms-page-img').src = lmfAsset(pg.image);
+            document.getElementById('cms-page-hero').hidden = false;
+            body.innerHTML = (pg.intro ? '<p class="section-subtitle">' + pg.intro.replace(/</g, '&lt;') + '</p>' : '') + (pg.body || '');
+        });
+    });
+    </script>
+</body>
+</html>

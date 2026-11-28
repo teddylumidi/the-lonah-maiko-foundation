@@ -581,3 +581,28 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.readyState !== 'loading') apply(); else document.addEventListener('DOMContentLoaded', apply);
     });
 })();
+
+/* Extra sections added to any page in Pages CMS (data/sections.json) */
+(function () {
+    lmfData('data/sections.json').then(function (list) {
+        if (!Array.isArray(list) || !list.length) return;
+        function run() {
+            var here = location.pathname.split('/').pop() || 'index.html';
+            if (here === 'page.html') here = 'page.html?p=' + (new URLSearchParams(location.search).get('p') || '');
+            var main = document.querySelector('main'); if (!main) return;
+            list.forEach(function (sec) {
+                if (!sec || (sec.page || '') !== here.replace(/^\//, '')) return;
+                var el = document.createElement('section');
+                el.className = 'section container cms-rich cms-section';
+                var h = '';
+                if (sec.image) h += '<div class="cms-section-media"><img src="' + lmfAsset(sec.image).replace(/"/g, '&quot;') + '" alt=""></div>';
+                if (sec.heading) { var t = document.createElement('h3'); t.className = 'section-title'; t.textContent = sec.heading; h += t.outerHTML; }
+                h += sec.body || '';
+                if (sec.button_text && sec.button_link) { var a = document.createElement('a'); a.className = 'cms-section-btn'; a.href = sec.button_link; a.textContent = sec.button_text; h += a.outerHTML; }
+                el.innerHTML = h;
+                if (sec.position === 'top') main.insertBefore(el, main.firstChild); else main.appendChild(el);
+            });
+        }
+        if (document.readyState !== 'loading') run(); else document.addEventListener('DOMContentLoaded', run);
+    });
+})();
