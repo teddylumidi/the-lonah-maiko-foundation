@@ -438,3 +438,1498 @@ content:
           - name: img03
             label: "Economic Opportunities"
             type: image
+
+  - name: text
+    label: Page text
+    type: file
+    path: data/text.json
+    format: json
+    fields:
+      - name: "404"
+        label: "Page not found (404) page (404.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Sorry, the page you're looking for doesn't exist or has been"
+            type: text
+          - name: t002
+            label: "You might be looking for:"
+            type: text
+      - name: contact
+        label: "Contact page (contact.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Contact Us"
+            type: string
+          - name: t002
+            label: "Have questions or need more information? Reach out to our te"
+            type: text
+      - name: donate
+        label: "Donate page (donate.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "DONATE"
+            type: string
+          - name: t002
+            label: "Donate"
+            type: string
+          - name: t003
+            label: "The Lonah Maiko Foundation relies on the generosity of suppo"
+            type: text
+          - name: t004
+            label: "We are committed to transparency, accountability, and long-t"
+            type: text
+          - name: t005
+            label: "M-Pesa"
+            type: string
+          - name: t006
+            label: "Card or from abroad"
+            type: string
+          - name: t007
+            label: "Giving by card, as an organisation, or from outside Kenya? E"
+            type: text
+          - name: t008
+            label: "Direct Deposit:"
+            type: string
+          - name: t009
+            label: "100% Donation Guarantee"
+            type: string
+          - name: t010
+            label: "At The Lonah Maiko Foundation, every cent donated by partner"
+            type: text
+          - name: t011
+            label: "Contact Us"
+            type: string
+      - name: education
+        label: "Education page (education.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Transforming Lives Through Education"
+            type: string
+          - name: t002
+            label: "Our Education Programs"
+            type: string
+          - name: t003
+            label: "We believe education is the foundation for breaking cycles o"
+            type: text
+          - name: t004
+            label: "Student Sponsorship"
+            type: string
+          - name: t005
+            label: "Connecting generous donors with deserving students to provid"
+            type: text
+          - name: t006
+            label: "Young Women Program"
+            type: string
+          - name: t007
+            label: "Empowering young women through education, skill development,"
+            type: text
+          - name: t008
+            label: "Capacity Building"
+            type: string
+          - name: t009
+            label: "Training teachers, school administrators, and community lead"
+            type: text
+          - name: t010
+            label: "Why Education Matters"
+            type: string
+          - name: t011
+            label: "Breaking Poverty Cycles"
+            type: string
+          - name: t012
+            label: "Education is the most powerful tool to lift families out of "
+            type: text
+          - name: t013
+            label: "Empowering Communities"
+            type: string
+          - name: t014
+            label: "Education creates informed citizens who can make better deci"
+            type: text
+          - name: t015
+            label: "Gender Equality"
+            type: string
+          - name: t016
+            label: "Education, especially for girls, leads to healthier families"
+            type: text
+      - name: get_involved_business
+        label: "Get Involved Business page (get-involved-business.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Strategic Business Partnerships"
+            type: string
+          - name: t002
+            label: "Corporate Social Responsibility"
+            type: string
+          - name: t003
+            label: "Partner with The Lonah Maiko Foundation to fulfill your corp"
+            type: text
+          - name: t004
+            label: "Partnership Opportunities"
+            type: string
+          - name: t005
+            label: "Financial Sponsorship"
+            type: string
+          - name: t006
+            label: "Corporate grants and funding for specific programs or projec"
+            type: text
+          - name: t007
+            label: "Skills & Expertise"
+            type: string
+          - name: t008
+            label: "Provide professional expertise in areas like technology, bus"
+            type: text
+          - name: t009
+            label: "Employee Engagement"
+            type: string
+          - name: t010
+            label: "Organize employee volunteer days, team building through comm"
+            type: text
+          - name: t011
+            label: "Product Donations"
+            type: string
+          - name: t012
+            label: "Donate products or services such as technology, educational "
+            type: text
+          - name: t013
+            label: "Joint Fundraising"
+            type: string
+          - name: t014
+            label: "Co-host fundraising events to support our programs while rai"
+            type: text
+          - name: t015
+            label: "Impact Reporting"
+            type: string
+          - name: t016
+            label: "Receive detailed reports on the impact of your partnership a"
+            type: text
+          - name: t017
+            label: "Why Partner With Us"
+            type: string
+          - name: t018
+            label: "Proven Track Record"
+            type: string
+          - name: t019
+            label: "We have a proven track record of implementing effective prog"
+            type: text
+          - name: t020
+            label: "Transparency & Accountability"
+            type: string
+          - name: t021
+            label: "Full transparency in fund utilization, regular reporting, an"
+            type: text
+          - name: t022
+            label: "Tax Benefits"
+            type: string
+          - name: t023
+            label: "As a registered non-profit, corporate donations are typicall"
+            type: text
+          - name: t024
+            label: "Brand Enhancement"
+            type: string
+          - name: t025
+            label: "Partner with a trusted foundation and showcase your company'"
+            type: text
+          - name: t026
+            label: "Get Started"
+            type: string
+          - name: t027
+            label: "Let's work together to create lasting change. Contact our pa"
+            type: text
+      - name: get_involved_events
+        label: "Get Involved Events page (get-involved-events.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Join Our Community Events"
+            type: string
+          - name: t002
+            label: "Upcoming Events"
+            type: string
+          - name: t003
+            label: "Join us for inspiring events that support our mission and bu"
+            type: text
+          - name: t004
+            label: "Event Types"
+            type: string
+          - name: t005
+            label: "Fundraising Events"
+            type: string
+          - name: t006
+            label: "Participate in gala dinners, sports events, auctions, and fu"
+            type: text
+          - name: t007
+            label: "Awareness Campaigns"
+            type: string
+          - name: t008
+            label: "Join us for workshops, seminars, and community forums to lea"
+            type: text
+          - name: t009
+            label: "Volunteer Days"
+            type: string
+          - name: t010
+            label: "Get hands-on experience by participating in our volunteer ac"
+            type: text
+          - name: t011
+            label: "Impact Celebrations"
+            type: string
+          - name: t012
+            label: "Celebrate milestones and successes with our community, donor"
+            type: text
+          - name: t013
+            label: "How to Host Your Own Event"
+            type: string
+          - name: t014
+            label: "Share Your Passion"
+            type: string
+          - name: t015
+            label: "Host a fundraiser in your community - a dinner, concert, gam"
+            type: text
+          - name: t016
+            label: "We Provide Support"
+            type: string
+          - name: t017
+            label: "We'll assist with promotional materials, donor lists, impact"
+            type: text
+          - name: t018
+            label: "Build Community"
+            type: string
+          - name: t019
+            label: "Your event creates awareness, engages supporters, and builds"
+            type: text
+          - name: t020
+            label: "Maximize Impact"
+            type: string
+          - name: t021
+            label: "All proceeds go directly to our programs, ensuring your effo"
+            type: text
+          - name: t022
+            label: "Event Calendar & Registration"
+            type: string
+          - name: t023
+            label: "Stay tuned for updates on upcoming events. Contact us to reg"
+            type: text
+      - name: get_involved_personal
+        label: "Get Involved Personal page (get-involved-personal.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Make a Personal Impact"
+            type: string
+          - name: t002
+            label: "Personal Ways to Help"
+            type: string
+          - name: t003
+            label: "There are many ways you can personally support The Lonah Mai"
+            type: text
+          - name: t004
+            label: "How You Can Get Involved"
+            type: string
+          - name: t005
+            label: "Make a Donation"
+            type: string
+          - name: t006
+            label: "Contribute financially to support our education, health, and"
+            type: text
+          - name: t007
+            label: "Sponsor a Student"
+            type: string
+          - name: t008
+            label: "Transform a young person's life by sponsoring their educatio"
+            type: text
+          - name: t009
+            label: "Volunteer"
+            type: string
+          - name: t010
+            label: "Share your skills and time. We need tutors, mentors, healthc"
+            type: text
+          - name: t011
+            label: "Be an Advocate"
+            type: string
+          - name: t012
+            label: "Raise awareness about education, health, and WASH issues. Sh"
+            type: text
+          - name: t013
+            label: "Subscribe to Updates"
+            type: string
+          - name: t014
+            label: "Stay informed about our programs, impact stories, and upcomi"
+            type: text
+          - name: t015
+            label: "Host an Event"
+            type: string
+          - name: t016
+            label: "Organize a fundraiser or awareness event in your community. "
+            type: text
+          - name: t017
+            label: "Why Your Support Matters"
+            type: string
+          - name: t018
+            label: "Every contribution, whether financial, time, or advocacy, di"
+            type: text
+          - name: t019
+            label: "Provide quality education to children who would otherwise no"
+            type: text
+          - name: t020
+            label: "Deliver lifesaving healthcare services to remote communities"
+            type: text
+          - name: t021
+            label: "Build clean water and sanitation systems that change lives"
+            type: text
+          - name: t022
+            label: "Empower young women to become leaders in their communities"
+            type: text
+          - name: t023
+            label: "Together, we can create lasting change and build a brighter "
+            type: text
+      - name: get_involved_school
+        label: "Get Involved School page (get-involved-school.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Bring Change to Your School"
+            type: string
+          - name: t002
+            label: "School Engagement Programs"
+            type: string
+          - name: t003
+            label: "Empower students and create lasting impact in your school co"
+            type: text
+          - name: t004
+            label: "How Your School Can Participate"
+            type: string
+          - name: t005
+            label: "School Fundraising"
+            type: string
+          - name: t006
+            label: "Organize fundraising activities and events at your school to"
+            type: text
+          - name: t007
+            label: "Student Sponsorship"
+            type: string
+          - name: t008
+            label: "Partner with us to sponsor deserving students, connecting yo"
+            type: text
+          - name: t009
+            label: "Volunteer Projects"
+            type: string
+          - name: t010
+            label: "Engage students and staff in volunteer projects during schoo"
+            type: text
+          - name: t011
+            label: "Awareness Campaigns"
+            type: string
+          - name: t012
+            label: "Help raise awareness about education, health, and WASH issue"
+            type: text
+          - name: t013
+            label: "Benefits for Your School"
+            type: string
+          - name: t014
+            label: "Build Community"
+            type: string
+          - name: t015
+            label: "Foster a culture of giving and service, strengthening school"
+            type: text
+          - name: t016
+            label: "Develop Leaders"
+            type: string
+          - name: t017
+            label: "Provide opportunities for students to develop leadership ski"
+            type: text
+          - name: t018
+            label: "Contact Your School Coordinator"
+            type: string
+          - name: t019
+            label: "Ready to bring our programs to your school? Get in touch wit"
+            type: text
+      - name: girls_appeal
+        label: "Girls' Appeal page (girls-appeal.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Help 300 girls spend seven safe days learning, being mentore"
+            type: text
+          - name: t002
+            label: "16–23 December 2026"
+            type: text
+          - name: t003
+            label: "Obwororo Academy, Ikonge, Nyamira County"
+            type: text
+          - name: t004
+            label: "300 girls aged 10–18"
+            type: text
+          - name: t005
+            label: "Every girl deserves to grow up whole, safe and celebrated"
+            type: string
+          - name: t006
+            label: "In parts of Nyamira County, the December school holiday is w"
+            type: text
+          - name: t007
+            label: "Choose an amount and add your details. We'll then show you h"
+            type: text
+          - name: t008
+            label: "Asante sana! 🙏🏾"
+            type: string
+          - name: t009
+            label: "Please share this appeal so more girls can attend."
+            type: text
+          - name: t010
+            label: "Quick pay by M-Pesa"
+            type: string
+          - name: t011
+            label: "Gives one girl her empowerment gift pack: reusable sanitary "
+            type: text
+          - name: t012
+            label: "Feeds one girl for the whole camp — breakfast, lunch, supper"
+            type: text
+          - name: t013
+            label: "Sponsors one girl's complete seven-day place, from arrival t"
+            type: text
+          - name: t014
+            label: "Sponsors a group of ten girls — ideal for a church, chama, s"
+            type: text
+          - name: t015
+            label: "Self-discovery and confidence"
+            type: string
+          - name: t016
+            label: "Identity, self-esteem, talents, dreams and aspirations."
+            type: text
+          - name: t017
+            label: "FGM awareness and prevention"
+            type: string
+          - name: t018
+            label: "Understanding FGM, myths, health consequences, rights and po"
+            type: text
+          - name: t019
+            label: "Puberty and menstrual health"
+            type: string
+          - name: t020
+            label: "Body changes, menstruation, menstrual hygiene and personal c"
+            type: text
+          - name: t021
+            label: "Child protection and safety"
+            type: string
+          - name: t022
+            label: "Children's rights, consent, boundaries, abuse prevention and"
+            type: text
+          - name: t023
+            label: "Reproductive health and relationships"
+            type: string
+          - name: t024
+            label: "Age-appropriate education on teenage pregnancy, early marria"
+            type: text
+          - name: t025
+            label: "Leadership and life skills"
+            type: string
+          - name: t026
+            label: "Communication, decision-making, financial literacy, educatio"
+            type: text
+          - name: t027
+            label: "My future, my choices"
+            type: string
+          - name: t028
+            label: "Mentorship, goal-setting, talent presentations, commitments "
+            type: text
+          - name: t029
+            label: "Activities include small-group discussions, Q&A sessions, sp"
+            type: text
+          - name: t030
+            label: "A set of reusable sanitary pads, with guidance on use"
+            type: text
+          - name: t031
+            label: "Bathing soap, toothbrush and toothpaste"
+            type: text
+          - name: t032
+            label: "Two pairs of underwear"
+            type: text
+          - name: t033
+            label: "Exercise books, pens and pencils"
+            type: text
+          - name: t034
+            label: "An LMF empowerment booklet and gift bag"
+            type: text
+          - name: t035
+            label: "A certificate of completion"
+            type: text
+          - name: t036
+            label: "Figures are from our programme budget and will be confirmed "
+            type: text
+          - name: t037
+            label: "Written parent or guardian consent and participant assent fo"
+            type: text
+          - name: t038
+            label: "A designated child safeguarding focal person, with confident"
+            type: text
+          - name: t039
+            label: "15 vetted female supervisors, including overnight supervisio"
+            type: text
+          - name: t040
+            label: "Safe, separate sleeping, sanitation and bathing arrangements"
+            type: text
+          - name: t041
+            label: "First aid on site and emergency medical referral arrangement"
+            type: text
+          - name: t042
+            label: "Pre- and post-programme assessments, attendance records and "
+            type: text
+          - name: t043
+            label: "By M-Pesa: choose your amount, add your name and phone numbe"
+            type: text
+          - name: t044
+            label: "Yes. The foundation's bank account is being set up — email l"
+            type: text
+          - name: t045
+            label: "Yes. We confirm every gift we receive, and supporters receiv"
+            type: text
+          - name: t046
+            label: "Any amount above what the programme needs goes to continued "
+            type: text
+          - name: t047
+            label: "Absolutely. Choose an amount for the number of girls you wan"
+            type: text
+          - name: t048
+            label: "Stand with 300 girls this December"
+            type: string
+          - name: t049
+            label: "Every girl deserves to grow, learn, dream and fulfil her pot"
+            type: text
+      - name: health
+        label: "Health page (health.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Building Healthier Communities"
+            type: string
+          - name: t002
+            label: "Our Health Programs"
+            type: string
+          - name: t003
+            label: "Our comprehensive health programs address community needs th"
+            type: text
+          - name: t004
+            label: "a) Community Health Education and Awareness"
+            type: string
+          - name: t005
+            label: "Health talks on hygiene, nutrition, sexual and reproductive "
+            type: text
+          - name: t006
+            label: "School-based health clubs"
+            type: text
+          - name: t007
+            label: "Door-to-door health education"
+            type: text
+          - name: t008
+            label: "Community dialogues on cultural practices affecting health ("
+            type: text
+          - name: t009
+            label: "b) Maternal and Child Health Support"
+            type: string
+          - name: t010
+            label: "Home-based ANC follow-ups"
+            type: text
+          - name: t011
+            label: "Encouraging skilled birth attendance"
+            type: text
+          - name: t012
+            label: "Immunization campaigns"
+            type: text
+          - name: t013
+            label: "Distribution of mosquito nets to pregnant women and children"
+            type: text
+          - name: t014
+            label: "Nutrition Outreach Programs"
+            type: string
+          - name: t015
+            label: "Screening children for malnutrition using MUAC"
+            type: text
+          - name: t016
+            label: "Providing ready-to-use therapeutic foods (RUTF)"
+            type: text
+          - name: t017
+            label: "Educating mothers on breastfeeding and complementary feeding"
+            type: text
+          - name: t018
+            label: "c) Maternal and Neonatal Health Interventions"
+            type: string
+          - name: t019
+            label: "Four key intervention areas for maternal and neonatal health"
+            type: text
+          - name: t020
+            label: "Safe Delivery Kits & Emergency Services"
+            type: string
+          - name: t021
+            label: "Distribution of safe delivery kits"
+            type: text
+          - name: t022
+            label: "Training of Traditional Birth Attendants (TBAs) on referrals"
+            type: text
+          - name: t023
+            label: "Mobile ultrasound services"
+            type: text
+          - name: t024
+            label: "Community transport systems for emergencies (motorbike ambul"
+            type: text
+          - name: t025
+            label: "Nutrition-Focused Interventions"
+            type: string
+          - name: t026
+            label: "Blanket supplementary feeding programs"
+            type: text
+          - name: t027
+            label: "Community gardens"
+            type: text
+          - name: t028
+            label: "Cash-transfer programs to improve household food security"
+            type: text
+          - name: t029
+            label: "Mental Health and Psychosocial Support (MHPSS)"
+            type: string
+          - name: t030
+            label: "Community counseling groups"
+            type: text
+          - name: t031
+            label: "Training CHWs in psychological first aid"
+            type: text
+          - name: t032
+            label: "Early Pregnancy Prevention Support"
+            type: string
+          - name: t033
+            label: "Poverty and Economic Vulnerability"
+            type: text
+          - name: t034
+            label: "Lack of Sexual and Reproductive Health Education"
+            type: text
+          - name: t035
+            label: "Cultural Norms and Gender Inequalities"
+            type: text
+          - name: t036
+            label: "Peer Pressure and Social Influence"
+            type: text
+          - name: t037
+            label: "Sexual Violence and Coercion"
+            type: text
+          - name: t038
+            label: "Limited Access to Youth-Friendly Services"
+            type: text
+          - name: t039
+            label: "Health Risks and Social Consequences of Early Pregnancy"
+            type: string
+          - name: t040
+            label: "Health Risks Include:"
+            type: string
+          - name: t041
+            label: "Obstetric complications (obstructed labor, fistula)"
+            type: text
+          - name: t042
+            label: "Higher risk of maternal death"
+            type: text
+          - name: t043
+            label: "Anemia and malnutrition"
+            type: text
+          - name: t044
+            label: "Higher rates of unsafe abortions"
+            type: text
+          - name: t045
+            label: "Social Consequences:"
+            type: string
+          - name: t046
+            label: "School dropout"
+            type: text
+          - name: t047
+            label: "Stigma and discrimination"
+            type: text
+          - name: t048
+            label: "Forced early marriage"
+            type: text
+          - name: t049
+            label: "Our Prevention and Response Strategy"
+            type: string
+          - name: t050
+            label: "Comprehensive Sexuality Education (CSE)"
+            type: text
+          - name: t051
+            label: "Youth-Friendly Health Services"
+            type: text
+          - name: t052
+            label: "Community Sensitization and Dialogue"
+            type: text
+          - name: t053
+            label: "Empowerment and Economic Support Programs"
+            type: text
+          - name: t054
+            label: "Multi-sectoral Collaboration"
+            type: text
+          - name: t055
+            label: "Prevention and Response to Gender-Based Violence"
+            type: text
+          - name: t056
+            label: "Rehabilitation Services for Children Living with Disabilitie"
+            type: string
+          - name: t057
+            label: "Overview"
+            type: string
+          - name: t058
+            label: "Rehabilitation helps children develop independence and funct"
+            type: text
+          - name: t059
+            label: "Physiotherapy"
+            type: text
+          - name: t060
+            label: "Occupational Therapy"
+            type: text
+          - name: t061
+            label: "Speech and Language Therapy"
+            type: text
+          - name: t062
+            label: "Audiology & Vision Support"
+            type: text
+          - name: t063
+            label: "Parental and Caregiver Support"
+            type: string
+          - name: t064
+            label: "Health centres play a major role in empowering parents by pr"
+            type: text
+          - name: t065
+            label: "Counselling and emotional support after diagnosis"
+            type: text
+          - name: t066
+            label: "Training caregivers on feeding, positioning, hygiene, seizur"
+            type: text
+          - name: t067
+            label: "Support groups for parents of children with disabilities"
+            type: text
+          - name: t068
+            label: "Community-Based Rehabilitation (CBR)"
+            type: string
+          - name: t069
+            label: "In many low-resource settings, health centres work with comm"
+            type: text
+          - name: t070
+            label: "Home-based physiotherapy exercises"
+            type: text
+          - name: t071
+            label: "Teaching parents how to stimulate the child's development"
+            type: text
+          - name: t072
+            label: "Identifying environmental barriers"
+            type: text
+          - name: t073
+            label: "Encouraging school attendance and social inclusion"
+            type: text
+          - name: t074
+            label: "CBR is cost-effective and reaches families who cannot visit "
+            type: text
+          - name: t075
+            label: "Referrals and Linkages"
+            type: string
+          - name: t076
+            label: "Health centres connect families with essential services and "
+            type: text
+          - name: t077
+            label: "Health centres connect families with:"
+            type: text
+          - name: t078
+            label: "Specialized hospitals"
+            type: text
+          - name: t079
+            label: "Rehabilitation centres"
+            type: text
+          - name: t080
+            label: "Orthopaedic workshops"
+            type: text
+          - name: t081
+            label: "Special needs schools"
+            type: text
+          - name: t082
+            label: "Social welfare offices"
+            type: text
+          - name: t083
+            label: "NGOs providing assistive devices"
+            type: text
+          - name: t084
+            label: "Community Health Projects to Uplift Communities and Improve "
+            type: string
+          - name: t085
+            label: "In many communities—particularly rural areas—people face lon"
+            type: text
+          - name: t086
+            label: "How Community Health Uplifts Communities / Free Medical Camp"
+            type: string
+          - name: t087
+            label: "Bringing services closer to homes"
+            type: text
+          - name: t088
+            label: "Reducing transport costs and time"
+            type: text
+          - name: t089
+            label: "Preventing diseases through education"
+            type: text
+          - name: t090
+            label: "Ensuring early treatment through CHVs"
+            type: text
+          - name: t091
+            label: "Providing continuous care for chronic patients"
+            type: text
+          - name: t092
+            label: "Strengthening trust between community and health workers"
+            type: text
+          - name: t093
+            label: "Improving maternal and child health"
+            type: text
+          - name: t094
+            label: "Health Targets"
+            type: string
+          - name: t095
+            label: "Reduce Teenage Pregnancies Maternal Mortality"
+            type: string
+          - name: t096
+            label: "Working to reduce maternal deaths through improved healthcar"
+            type: text
+          - name: t097
+            label: "encourage self reliance on children living with disabilities"
+            type: text
+          - name: t098
+            label: "Improve Child Nutrition"
+            type: string
+          - name: t099
+            label: "Ensuring children receive adequate nutrition through school "
+            type: text
+          - name: t100
+            label: "Increase Health Literacy"
+            type: string
+          - name: t101
+            label: "Empowering communities with knowledge to make informed healt"
+            type: text
+      - name: index
+        label: "Home page (index.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Transforming Lives Through Education, Health, and Sustainabl"
+            type: string
+          - name: t002
+            label: "What We Do"
+            type: string
+          - name: t003
+            label: "The Lonah Maiko Foundation is dedicated to creating lasting "
+            type: text
+          - name: t004
+            label: "Education Programs"
+            type: string
+          - name: t005
+            label: "Our Education Programs focus on giving every learner an equa"
+            type: text
+          - name: t006
+            label: "Healthcare Initiatives"
+            type: string
+          - name: t007
+            label: "Community health initiatives in rural and hard-to-reach area"
+            type: text
+          - name: t008
+            label: "WASH Programs"
+            type: string
+          - name: t009
+            label: "Our WASH Programs strengthen community health and dignity by"
+            type: text
+          - name: t010
+            label: "Student Sponsorship"
+            type: string
+          - name: t011
+            label: "Our Student Sponsorship Program is designed to support vulne"
+            type: text
+          - name: t012
+            label: "Community Empowerment"
+            type: string
+          - name: t013
+            label: "Our Community Empowerment Program strengthens families and l"
+            type: text
+          - name: t014
+            label: "Strategic Partnerships"
+            type: string
+          - name: t015
+            label: "Our Strategic Partnerships Program focuses on building stron"
+            type: text
+          - name: t016
+            label: "Our Mission and Vision"
+            type: string
+          - name: t017
+            label: "Our Mission"
+            type: string
+          - name: t018
+            label: "To improve the quality of life for disadvantaged communities"
+            type: text
+          - name: t019
+            label: "Our Vision"
+            type: string
+          - name: t020
+            label: "A future where every child has access to quality education, "
+            type: text
+          - name: t021
+            label: "Our Board"
+            type: string
+          - name: t022
+            label: "Meet the dedicated leaders guiding The Lonah Maiko Foundatio"
+            type: text
+          - name: t023
+            label: "Lonah Maiko"
+            type: string
+          - name: t024
+            label: "Founder & CEO of The Lonah Maiko Foundation"
+            type: text
+          - name: t025
+            label: "She is a trained teacher with additional qualifications in P"
+            type: text
+          - name: t026
+            label: "Steve Onsase"
+            type: string
+          - name: t027
+            label: "Board Chair"
+            type: string
+          - name: t028
+            label: "Senior Medical Doctor and Registrar in Obstetrics and Gyneco"
+            type: text
+          - name: t029
+            label: "Board-certified Senior Medical Doctor and Registrar in Obste"
+            type: text
+          - name: t030
+            label: "Faith Moturi Mokonge"
+            type: string
+          - name: t031
+            label: "Board Member"
+            type: string
+          - name: t032
+            label: "Kenya Registered Nurse"
+            type: text
+          - name: t033
+            label: "Registered Nurse licensed by the Nursing Council of Kenya wi"
+            type: text
+          - name: t034
+            label: "Diana Ongera"
+            type: string
+          - name: t035
+            label: "Board Member"
+            type: string
+          - name: t036
+            label: "Certified Clinical and Community Nutritionist"
+            type: text
+          - name: t037
+            label: "With 9 years of experience in clinical and community health,"
+            type: text
+          - name: t038
+            label: "Emily Osiemo"
+            type: string
+          - name: t039
+            label: "Board Member"
+            type: string
+          - name: t040
+            label: "Lawyer, Law Society of Kenya"
+            type: text
+          - name: t041
+            label: "Emily Osiemo is a dedicated lawyer registered with the Law S"
+            type: text
+          - name: t042
+            label: "Simon Carroll"
+            type: string
+          - name: t043
+            label: "Advisor / Consultant"
+            type: string
+          - name: t044
+            label: "CEO & Founder, Global School Partners (Australia)"
+            type: text
+          - name: t045
+            label: "Simon Carroll is the CEO and co-founder of Global School Par"
+            type: text
+          - name: t046
+            label: "The Lonah Maiko Foundation"
+            type: string
+          - name: t047
+            label: "The Lonah Maiko Foundation (LMF) is a community-centered org"
+            type: text
+          - name: t048
+            label: "Stay Updated"
+            type: string
+          - name: t049
+            label: "Subscribe to our newsletter for updates on our programs and "
+            type: text
+      - name: news
+        label: "News page (news.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "News & Updates"
+            type: string
+          - name: t002
+            label: "Latest project updates and success stories from our communit"
+            type: text
+          - name: t003
+            label: "Latest News"
+            type: string
+          - name: t004
+            label: "Stay updated with our latest project developments, impact st"
+            type: text
+          - name: t005
+            label: "27 November 2026 · Ikonge Village"
+            type: text
+          - name: t006
+            label: "Six children. One family reunited. A new beginning."
+            type: text
+          - name: t007
+            label: "The Lonah Maiko Foundation (LMF) intervened to support six c"
+            type: text
+          - name: t008
+            label: "The children had been moving from door to door, seeking food"
+            type: text
+          - name: t009
+            label: "All six children are now safe and cared for, and the girls a"
+            type: text
+          - name: t010
+            label: "For these six children, the change is already visible. They "
+            type: text
+          - name: t011
+            label: "Our work continues. The children need support with education"
+            type: text
+          - name: t012
+            label: "How you can help"
+            type: string
+          - name: t013
+            label: "“Sometimes changing a child's world doesn't begin with milli"
+            type: text
+          - name: t014
+            label: "December 2025"
+            type: text
+          - name: t015
+            label: "Faith's Journey: From Poverty to Promise"
+            type: string
+          - name: t016
+            label: "Meet Faith, a bright young girl who was on the brink of chil"
+            type: text
+          - name: t017
+            label: "November 2025"
+            type: text
+          - name: t018
+            label: "Empowering Children with Disabilities Through Education"
+            type: string
+          - name: t019
+            label: "The Lonah Maiko Foundation proudly supports children with di"
+            type: text
+          - name: t020
+            label: "October 2025"
+            type: text
+          - name: t021
+            label: "Investing in Girls' Education: Breaking the Poverty Cycle"
+            type: string
+          - name: t022
+            label: "Following UN recommendations, our foundation prioritizes gir"
+            type: text
+          - name: t023
+            label: "September 2025"
+            type: text
+          - name: t024
+            label: "Education vs. Exploitation: Saving Futures from Child Labor"
+            type: string
+          - name: t025
+            label: "Many children in our program areas face the harsh choice bet"
+            type: text
+          - name: t026
+            label: "August 2025"
+            type: text
+          - name: t027
+            label: "Scholarship Program Updates: Rising to Meet Needs"
+            type: string
+          - name: t028
+            label: "Due to rising living costs in Kenya, we've updated our schol"
+            type: text
+          - name: t029
+            label: "July 2025"
+            type: text
+          - name: t030
+            label: "Building Lifelong Connections: Sponsors Meet Their Students"
+            type: string
+          - name: t031
+            label: "Our sponsors receive detailed student profiles, school repor"
+            type: text
+          - name: t032
+            label: "Subscribe to Our Newsletter"
+            type: string
+          - name: t033
+            label: "Get regular updates on our latest initiatives and impact sto"
+            type: text
+      - name: projects
+        label: "Projects page (projects.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Our Programs"
+            type: string
+          - name: t002
+            label: "Making a difference through integrated development initiativ"
+            type: text
+          - name: t003
+            label: "Program Areas"
+            type: string
+          - name: t004
+            label: "We work across three main areas to create sustainable develo"
+            type: text
+          - name: t005
+            label: "Education Programs"
+            type: string
+          - name: t006
+            label: "Scholarships, teacher training, and student support to ensur"
+            type: text
+          - name: t007
+            label: "Health Programs"
+            type: string
+          - name: t008
+            label: "Healthcare services, maternal health, disease prevention, an"
+            type: text
+          - name: t009
+            label: "WASH Programs"
+            type: string
+          - name: t010
+            label: "Water systems, sanitation facilities, and hygiene education "
+            type: text
+          - name: t011
+            label: "Impact by the Numbers"
+            type: string
+          - name: t012
+            label: "Support Our Programs"
+            type: string
+          - name: t013
+            label: "Your donation directly funds these life-changing initiatives"
+            type: text
+      - name: scholarships
+        label: "Scholarships page (scholarships.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "ABOUT SCHOLARSHIPS"
+            type: string
+          - name: t002
+            label: "Support Students in Kenya"
+            type: string
+          - name: t003
+            label: "The Lonah Maiko Foundation currently has many needy students"
+            type: text
+          - name: t004
+            label: "Students Waiting for Scholarships"
+            type: string
+          - name: t005
+            label: "For many, receiving a scholarship means that they can attend"
+            type: text
+          - name: t006
+            label: "'For over a decade, education for girls has been identified "
+            type: text
+          - name: t007
+            label: "Our Commitment to Girls' Education"
+            type: string
+          - name: t008
+            label: "The Lonah Maiko Foundation fully supports the United Nations"
+            type: text
+          - name: t009
+            label: "Supporting Children with Disabilities"
+            type: string
+          - name: t010
+            label: "The Lonah Maiko Foundation seeks to support children with di"
+            type: text
+          - name: t011
+            label: "What You'll Receive"
+            type: string
+          - name: t012
+            label: "Scholarship donors receive a student profile, student school"
+            type: text
+          - name: t013
+            label: "Standard Scholarship"
+            type: string
+          - name: t014
+            label: "Includes:"
+            type: text
+          - name: t015
+            label: "A place in school for the year"
+            type: text
+          - name: t016
+            label: "Full, new school uniform"
+            type: text
+          - name: t017
+            label: "Stationery and exercise books"
+            type: text
+          - name: t018
+            label: "Scholarship Plus"
+            type: string
+          - name: t019
+            label: "Everything in Standard Scholarship, plus:"
+            type: text
+          - name: t020
+            label: "Daily lunch at school for the student"
+            type: text
+          - name: t021
+            label: "Additional $270/year for nutritional support"
+            type: text
+          - name: t022
+            label: "Important Update"
+            type: string
+          - name: t023
+            label: "Due to the rapidly rising cost of living in Kenya, we have h"
+            type: text
+          - name: t024
+            label: "Payment Options"
+            type: string
+          - name: t025
+            label: "Payment can be made as a lump sum or in monthly installments"
+            type: text
+      - name: sponsorship
+        label: "Sponsorship page (sponsorship.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Invest in a Student's Future"
+            type: string
+          - name: t002
+            label: "Student Sponsorship Program"
+            type: string
+          - name: t003
+            label: "Change a life through education. Sponsor a deserving student"
+            type: text
+          - name: t004
+            label: "How Sponsorship Works"
+            type: string
+          - name: t005
+            label: "1. Choose Your Student"
+            type: string
+          - name: t006
+            label: "Browse profiles of deserving students and select one to spon"
+            type: text
+          - name: t007
+            label: "2. Provide Support"
+            type: string
+          - name: t008
+            label: "Your sponsorship covers tuition, books, uniforms, and living"
+            type: text
+          - name: t009
+            label: "3. Build Relationships"
+            type: string
+          - name: t010
+            label: "Stay connected through letters, updates, and occasional vide"
+            type: text
+          - name: t011
+            label: "4. Celebrate Success"
+            type: string
+          - name: t012
+            label: "Watch your student graduate and pursue their dreams, knowing"
+            type: text
+          - name: t013
+            label: "Sponsorship Levels"
+            type: string
+          - name: t014
+            label: "Monthly: $30/month"
+            type: string
+          - name: t015
+            label: "Basic educational materials"
+            type: text
+          - name: t016
+            label: "Quarterly updates"
+            type: text
+          - name: t017
+            label: "Annual report card"
+            type: text
+          - name: t018
+            label: "Standard: $50/month"
+            type: string
+          - name: t019
+            label: "Full tuition support"
+            type: text
+          - name: t020
+            label: "Books and materials"
+            type: text
+          - name: t021
+            label: "Bi-monthly updates"
+            type: text
+          - name: t022
+            label: "Monthly letter exchange"
+            type: text
+          - name: t023
+            label: "Premium: $100/month"
+            type: string
+          - name: t024
+            label: "Full support + extras"
+            type: text
+          - name: t025
+            label: "Monthly updates"
+            type: text
+          - name: t026
+            label: "Video calls (quarterly)"
+            type: text
+          - name: t027
+            label: "Special gifts/packages"
+            type: text
+      - name: submit
+        label: "Submit page (submit.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "✔ Message Sent Successfully!"
+            type: text
+          - name: t002
+            label: "Thank you for reaching out. We'll get back to you within 5 b"
+            type: text
+          - name: t003
+            label: "Partnership Form"
+            type: string
+          - name: t004
+            label: "Interested in partnering with The Lonah Maiko Foundation? Te"
+            type: text
+          - name: t005
+            label: "We'll review your request and get back to you within 5 busin"
+            type: text
+      - name: wash
+        label: "WASH page (wash.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Clean Water, Sanitation & Hygiene for All"
+            type: string
+          - name: t002
+            label: "WASH Program Overview"
+            type: string
+          - name: t003
+            label: "Water, sanitation, and hygiene (WASH) are fundamental human "
+            type: text
+          - name: t004
+            label: "Water Supply"
+            type: string
+          - name: t005
+            label: "Building boreholes, wells, and water harvesting systems to p"
+            type: text
+          - name: t006
+            label: "Sanitation Facilities"
+            type: string
+          - name: t007
+            label: "Constructing and maintaining proper toilets and washing faci"
+            type: text
+          - name: t008
+            label: "Hygiene Education"
+            type: string
+          - name: t009
+            label: "Training communities on handwashing, menstrual hygiene, food"
+            type: text
+          - name: t010
+            label: "School WASH Programs"
+            type: string
+          - name: t011
+            label: "Implementing comprehensive WASH initiatives in schools to im"
+            type: text
+          - name: t012
+            label: "System Maintenance"
+            type: string
+          - name: t013
+            label: "Establishing maintenance systems and training local teams to"
+            type: text
+          - name: t014
+            label: "Environmental Care"
+            type: string
+          - name: t015
+            label: "Protecting water sources and promoting environmental conserv"
+            type: text
+          - name: t016
+            label: "Why WASH Matters"
+            type: string
+          - name: t017
+            label: "Access to clean water and sanitation is a fundamental human "
+            type: text
+          - name: t018
+            label: "Our WASH programs have reached thousands of people, providin"
+            type: text
+          - name: t019
+            label: "WASH Impact"
+            type: string
+          - name: t020
+            label: "10,000+ People Benefited"
+            type: string
+          - name: t021
+            label: "Our WASH programs have directly improved water and sanitatio"
+            type: text
+          - name: t022
+            label: "Reduced Water-Borne Diseases"
+            type: string
+          - name: t023
+            label: "Communities with WASH programs experience a 50% reduction in"
+            type: text
+          - name: t024
+            label: "Improved School Attendance"
+            type: string
+          - name: t025
+            label: "Girls' school attendance increased by 30% in schools with pr"
+            type: text
+      - name: young_women
+        label: "Young Women page (young-women.html)"
+        type: object
+        fields:
+          - name: t001
+            label: "Empowering Young Women Leaders"
+            type: string
+          - name: t002
+            label: "Young Women Empowerment Program"
+            type: string
+          - name: t003
+            label: "We believe young women are the change agents of tomorrow. Ou"
+            type: text
+          - name: t004
+            label: "Program Components"
+            type: string
+          - name: t005
+            label: "Quality Education"
+            type: string
+          - name: t006
+            label: "Full support for secondary and tertiary education, helping y"
+            type: text
+          - name: t007
+            label: "Skills Development"
+            type: string
+          - name: t008
+            label: "Training in digital literacy, financial management, leadersh"
+            type: text
+          - name: t009
+            label: "Mentorship & Leadership"
+            type: string
+          - name: t010
+            label: "One-on-one mentoring from successful women leaders and role "
+            type: text
+          - name: t011
+            label: "Health & Wellness"
+            type: string
+          - name: t012
+            label: "Comprehensive health education including reproductive health"
+            type: text
+          - name: t013
+            label: "Community Networks"
+            type: string
+          - name: t014
+            label: "Building peer support networks and community connections to "
+            type: text
+          - name: t015
+            label: "Economic Opportunities"
+            type: string
+          - name: t016
+            label: "Support for microfinance, business training, and job placeme"
+            type: text
+          - name: t017
+            label: "Where We Are Starting"
+            type: string
+          - name: t018
+            label: "Our First Programme: December 2026"
+            type: string
+          - name: t019
+            label: "What We Will Measure"
+            type: string
+          - name: t020
+            label: "Every participant completes a short assessment before and af"
+            type: text
+          - name: t021
+            label: "Our Goal"
+            type: string
+          - name: t022
+            label: "To grow a network of confident young women who finish their "
+            type: text

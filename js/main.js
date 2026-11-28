@@ -556,3 +556,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 })();
+
+/* Page text edited in Pages CMS (data/text.json): replaces plain-text headings/paragraphs tagged data-text */
+(function () {
+    lmfData('data/text.json').then(function (map) {
+        if (!map) return;
+        function apply() {
+            document.querySelectorAll('[data-text]').forEach(function (el) {
+                var p = el.getAttribute('data-text').split('.'), v = map[p[0]] && map[p[0]][p[1]];
+                if (typeof v !== 'string' || !v.trim()) return;
+                if (v.trim() === el.textContent.replace(/\s+/g, ' ').trim()) return;
+                el.textContent = v;
+            });
+        }
+        if (document.readyState !== 'loading') apply(); else document.addEventListener('DOMContentLoaded', apply);
+    });
+})();
