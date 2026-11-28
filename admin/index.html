@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Site editor login | The Lonah Maiko Foundation</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap">
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: Montserrat, Arial, sans-serif; background: linear-gradient(160deg, #0A2F3F 0%, #071C27 100%); color: #0F2430; padding: 20px; }
+        .box { width: 100%; max-width: 380px; background: #fff; border-radius: 16px; padding: 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+        .logo { display: block; width: 72px; height: 72px; margin: 0 auto 14px; border-radius: 50%; background: #0A2F3F; padding: 6px; }
+        h1 { font-size: 1.25rem; text-align: center; margin: 0 0 4px; color: #0A2F3F; }
+        p.sub { text-align: center; color: #5b6b78; font-size: .9rem; margin: 0 0 22px; }
+        label { display: block; font-weight: 700; font-size: .85rem; margin: 0 0 6px; }
+        input { width: 100%; padding: 13px 14px; border: 1px solid #cfd9e2; border-radius: 8px; font-size: 16px; font-family: inherit; margin-bottom: 16px; }
+        input:focus { outline: 3px solid #19E3EE; border-color: #007A87; }
+        button { width: 100%; padding: 14px; border: 0; border-radius: 8px; background: #19E3EE; color: #0A2F3F; font-weight: 800; font-size: 1rem; cursor: pointer; font-family: inherit; }
+        button:disabled { opacity: .6; cursor: wait; }
+        .err { background: #fdecec; color: #8a1c1c; border-radius: 8px; padding: 10px 12px; font-size: .88rem; margin-bottom: 14px; }
+        .foot { text-align: center; font-size: .8rem; color: #8a98a5; margin-top: 18px; }
+        .foot a { color: #007A87; }
+    </style>
+</head>
+<body>
+    <form class="box" id="f" autocomplete="on">
+        <img class="logo" src="/Images/logo.png" alt="">
+        <h1>Website editor</h1>
+        <p class="sub">The Lonah Maiko Foundation</p>
+        <div class="err" id="err" role="alert" hidden></div>
+        <label for="u">Username</label>
+        <input id="u" name="username" autocomplete="username" required autocapitalize="none">
+        <label for="p">Password</label>
+        <input id="p" name="password" type="password" autocomplete="current-password" required>
+        <button id="b" type="submit">Log in</button>
+        <p class="foot"><a href="/">&larr; Back to the website</a></p>
+    </form>
+    <script>
+    (function () {
+        var f = document.getElementById('f'), b = document.getElementById('b'), err = document.getElementById('err');
+        try { if (localStorage.getItem('lmfEditToken')) location.replace('/index.html'); } catch (e) {}
+        f.addEventListener('submit', function (e) {
+            e.preventDefault(); err.hidden = true; b.disabled = true; b.textContent = 'Logging in…';
+            fetch('/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: document.getElementById('u').value, password: document.getElementById('p').value }) })
+            .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+            .then(function (x) {
+                if (!x.ok) throw new Error(x.j.error || 'Login failed');
+                localStorage.setItem('lmfEditToken', x.j.token);
+                localStorage.setItem('lmfEditName', x.j.name || '');
+                location.replace('/index.html');
+            })
+            .catch(function (e2) { err.textContent = e2.message || 'Could not log in. Check your internet and try again.'; err.hidden = false; b.disabled = false; b.textContent = 'Log in'; });
+        });
+    })();
+    </script>
+</body>
+</html>

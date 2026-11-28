@@ -275,7 +275,7 @@
             var meta = [n.date, n.place].filter(Boolean).map(esc).join(' &middot; ');
             return '<article class="featured-story" style="margin-bottom:28px;">' + img + '<div class="story-body">' +
                 (meta ? '<div class="news-date">' + meta + '</div>' : '') + '<h4>' + esc(n.title) + '</h4>' +
-                (n.summary ? '<p class="story-lede">' + esc(n.summary) + '</p>' : '') + (n.body || '') +
+                (n.summary ? '<p class="story-lede">' + esc(n.summary) + '</p>' : '') + lmfRich(n.body) +
                 '<a href="donate.html" class="donate-button story-cta">Support our work</a></div></article>';
         }).join('');
         wrap.hidden = false;

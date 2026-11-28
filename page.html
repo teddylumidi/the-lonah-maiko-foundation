@@ -91,7 +91,7 @@
             document.getElementById('cms-page-title').textContent = pg.title || '';
             if (pg.image) document.getElementById('cms-page-img').src = lmfAsset(pg.image);
             document.getElementById('cms-page-hero').hidden = false;
-            body.innerHTML = (pg.intro ? '<p class="section-subtitle">' + pg.intro.replace(/</g, '&lt;') + '</p>' : '') + (pg.body || '');
+            body.innerHTML = (pg.intro ? '<p class="section-subtitle">' + pg.intro.replace(/</g, '&lt;') + '</p>' : '') + lmfRich(pg.body);
         });
     });
     </script>

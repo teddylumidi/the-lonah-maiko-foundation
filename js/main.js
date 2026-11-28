@@ -1,6 +1,21 @@
 /* Content edited in Pages CMS is read live from GitHub, so CMS edits need no Netlify deploy. */
 var LMF_RAW = 'https://raw.githubusercontent.com/teddylumidi/the-lonah-maiko-foundation/main/';
+/* Site editor (edit.thelonahmaikofoundation.com): logged-in editors read fresh content from the API */
+var LMF_EDIT = (function () {
+    try {
+        var tok = localStorage.getItem('lmfEditToken');
+        var host = location.hostname;
+        var editHost = /^edit\./.test(host) || /vercel\.app$/.test(host) || host === 'localhost';
+        if (!tok || !editHost || /\/admin\//.test(location.pathname)) return null;
+        var data = fetch('/api/data', { headers: { Authorization: 'Bearer ' + tok }, cache: 'no-store' })
+            .then(function (r) { if (r.status === 401) { localStorage.removeItem('lmfEditToken'); location.href = '/admin/'; } return r.ok ? r.json() : null; })
+            .catch(function () { return null; });
+        var s = document.createElement('script'); s.src = '/admin/editor.js?v=1'; s.defer = true; document.head.appendChild(s);
+        return { token: tok, data: data };
+    } catch (e) { return null; }
+})();
 function lmfData(path) {
+    if (LMF_EDIT) return LMF_EDIT.data.then(function (all) { return all && all[path] !== undefined ? all[path] : null; });
     var bust = '?t=' + Math.floor(Date.now() / 60000);
     return fetch(LMF_RAW + path + bust, { cache: 'no-store' })
         .then(function (r) { if (!r.ok) throw 0; return r.json(); })
@@ -10,6 +25,9 @@ function lmfHash(t) {
     var x = 5381;
     for (var i = 0; i < t.length; i++) x = (Math.imul(x, 33) ^ t.charCodeAt(i)) >>> 0;
     return x.toString(16);
+}
+function lmfRich(html) {
+    return String(html || '').replace(/(src|href)="\/?(Images\/uploads\/[^"]+)"/g, function (m, a, p) { return a + '="' + LMF_RAW + p + '"'; });
 }
 function lmfAsset(p) {
     if (!p || /^https?:/.test(p)) return p;
@@ -590,14 +608,15 @@ document.addEventListener('DOMContentLoaded', function () {
             var here = location.pathname.split('/').pop() || 'index.html';
             if (here === 'page.html') here = 'page.html?p=' + (new URLSearchParams(location.search).get('p') || '');
             var main = document.querySelector('main'); if (!main) return;
-            list.forEach(function (sec) {
+            list.forEach(function (sec, idx) {
                 if (!sec || (sec.page || '') !== here.replace(/^\//, '')) return;
                 var el = document.createElement('section');
+                el.setAttribute('data-sec-index', idx);
                 el.className = 'section container cms-rich cms-section';
                 var h = '';
                 if (sec.image) h += '<div class="cms-section-media"><img src="' + lmfAsset(sec.image).replace(/"/g, '&quot;') + '" alt=""></div>';
                 if (sec.heading) { var t = document.createElement('h3'); t.className = 'section-title'; t.textContent = sec.heading; h += t.outerHTML; }
-                h += sec.body || '';
+                h += lmfRich(sec.body);
                 if (sec.button_text && sec.button_link) { var a = document.createElement('a'); a.className = 'cms-section-btn'; a.href = sec.button_link; a.textContent = sec.button_text; h += a.outerHTML; }
                 el.innerHTML = h;
                 if (sec.position === 'top') main.insertBefore(el, main.firstChild); else main.appendChild(el);
