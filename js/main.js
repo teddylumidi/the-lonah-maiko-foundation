@@ -6,6 +6,11 @@ function lmfData(path) {
         .then(function (r) { if (!r.ok) throw 0; return r.json(); })
         .catch(function () { return fetch(path, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); });
 }
+function lmfHash(t) {
+    var x = 5381;
+    for (var i = 0; i < t.length; i++) x = (Math.imul(x, 33) ^ t.charCodeAt(i)) >>> 0;
+    return x.toString(16);
+}
 function lmfAsset(p) {
     if (!p || /^https?:/.test(p)) return p;
     var clean = p.replace(/^\//, '');
@@ -565,7 +570,11 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('[data-text]').forEach(function (el) {
                 var p = el.getAttribute('data-text').split('.'), v = map[p[0]] && map[p[0]][p[1]];
                 if (typeof v !== 'string' || !v.trim()) return;
-                if (v.trim() === el.textContent.replace(/\s+/g, ' ').trim()) return;
+                var cur = el.textContent.replace(/\s+/g, ' ').trim();
+                if (v.trim() === cur) return;
+                // If the page's HTML was edited directly since this text was tagged, the HTML wins.
+                var src = el.getAttribute('data-text-src');
+                if (src && lmfHash(cur) !== src) return;
                 el.textContent = v;
             });
         }

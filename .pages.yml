@@ -1933,3 +1933,105 @@ content:
           - name: t022
             label: "To grow a network of confident young women who finish their "
             type: text
+
+  # ---- Full page editing (HTML). Saving these republishes the site (uses Netlify credits). ----
+  - name: html_index
+    label: "HTML · Home (index.html)"
+    type: file
+    path: index.html
+    format: code
+  - name: html_404
+    label: "HTML · Page not found (404) (404.html)"
+    type: file
+    path: 404.html
+    format: code
+  - name: html_about
+    label: "HTML · About (redirects to Home) (about.html)"
+    type: file
+    path: about.html
+    format: code
+  - name: html_contact
+    label: "HTML · Contact (contact.html)"
+    type: file
+    path: contact.html
+    format: code
+  - name: html_donate
+    label: "HTML · Donate (donate.html)"
+    type: file
+    path: donate.html
+    format: code
+  - name: html_education
+    label: "HTML · Education (education.html)"
+    type: file
+    path: education.html
+    format: code
+  - name: html_get_involved_business
+    label: "HTML · Get Involved Business (get-involved-business.html)"
+    type: file
+    path: get-involved-business.html
+    format: code
+  - name: html_get_involved_events
+    label: "HTML · Get Involved Events (get-involved-events.html)"
+    type: file
+    path: get-involved-events.html
+    format: code
+  - name: html_get_involved_personal
+    label: "HTML · Get Involved Personal (get-involved-personal.html)"
+    type: file
+    path: get-involved-personal.html
+    format: code
+  - name: html_get_involved_school
+    label: "HTML · Get Involved School (get-involved-school.html)"
+    type: file
+    path: get-involved-school.html
+    format: code
+  - name: html_girls_appeal
+    label: "HTML · Girls' Appeal (girls-appeal.html)"
+    type: file
+    path: girls-appeal.html
+    format: code
+  - name: html_health
+    label: "HTML · Health (health.html)"
+    type: file
+    path: health.html
+    format: code
+  - name: html_news
+    label: "HTML · News (news.html)"
+    type: file
+    path: news.html
+    format: code
+  - name: html_projects
+    label: "HTML · Projects (projects.html)"
+    type: file
+    path: projects.html
+    format: code
+  - name: html_scholarships
+    label: "HTML · Scholarships (scholarships.html)"
+    type: file
+    path: scholarships.html
+    format: code
+  - name: html_sponsorship
+    label: "HTML · Sponsorship (sponsorship.html)"
+    type: file
+    path: sponsorship.html
+    format: code
+  - name: html_submit
+    label: "HTML · Submit (submit.html)"
+    type: file
+    path: submit.html
+    format: code
+  - name: html_wash
+    label: "HTML · WASH (wash.html)"
+    type: file
+    path: wash.html
+    format: code
+  - name: html_young_women
+    label: "HTML · Young Women (young-women.html)"
+    type: file
+    path: young-women.html
+    format: code
+  - name: html_styles
+    label: "HTML · Site styles (style.css)"
+    type: file
+    path: style.css
+    format: code
